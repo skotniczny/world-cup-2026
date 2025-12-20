@@ -12,10 +12,10 @@
   --wc-space-sm: 0.25rem;
   --wc-space-lg: 0.5rem;
   --wc-match-max-width: 110px;
+  --wc-headings-ff: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
 
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+  font-family: system-ui, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: var(--wc-color-natural900);
@@ -55,6 +55,7 @@ body {
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--wc-headings-ff);
   margin-top: 0;
 }
 

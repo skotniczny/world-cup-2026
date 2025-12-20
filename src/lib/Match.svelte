@@ -99,6 +99,10 @@
     vertical-align: middle;
   }
 
+  .team-name {
+    font-family: var(--wc-headings-ff);
+  }
+
   .team-emoji {
     font-size: 1.5rem;
     line-height: 1;

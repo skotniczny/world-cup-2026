@@ -125,6 +125,10 @@
     position: relative;
   }
 
+  .table_team {
+    font-family: var(--wc-headings-ff);
+  }
+
   .table_pos::before {
     content: "";
     display: block;
