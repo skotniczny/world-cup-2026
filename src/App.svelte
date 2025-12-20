@@ -1,7 +1,8 @@
 <script lang="ts">
-  import Group from "./lib/Group.svelte"
   import { Router, Link, Route } from "svelte5-router"
+  import Group from "./lib/Group.svelte"
   import Home from "./lib/Home.svelte"
+  import Standings from "./lib/Standings.svelte";
 
   let url:string = $state("")
   let basepath:string = $state("/world-cup-2026")
@@ -22,10 +23,12 @@
     <li><Link to="{basepath}/group/J">Grupa J</Link></li>
     <li><Link to="{basepath}/group/K">Grupa K</Link></li>
     <li><Link to="{basepath}/group/L">Grupa L</Link></li>
+    <li><Link to="{basepath}/standings">Standings</Link></li>
   </ul>
 </nav>
 <main id="main">
   <Route path="/" component={Home} />
+  <Route path="/standings" component={Standings} />
   <Route path="/group/:groupName" component={Group} />
 </main>
 </Router>
