@@ -3,25 +3,25 @@
   import { Router, Link, Route } from "svelte5-router"
   import Home from "./lib/Home.svelte"
 
-  export let url = ""
+  let url:string = $state("")
+  let basepath:string = $state("/world-cup-2026")
 </script>
-
-<Router {url}>
+<Router {url} {basepath}>
 <nav class="nav">
   <ul>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/group/A">Grupa A</Link></li>
-    <li><Link to="/group/B">Grupa B</Link></li>
-    <li><Link to="/group/C">Grupa C</Link></li>
-    <li><Link to="/group/D">Grupa D</Link></li>
-    <li><Link to="/group/E">Grupa E</Link></li>
-    <li><Link to="/group/F">Grupa F</Link></li>
-    <li><Link to="/group/G">Grupa G</Link></li>
-    <li><Link to="/group/H">Grupa H</Link></li>
-    <li><Link to="/group/I">Grupa I</Link></li>
-    <li><Link to="/group/J">Grupa J</Link></li>
-    <li><Link to="/group/K">Grupa K</Link></li>
-    <li><Link to="/group/L">Grupa L</Link></li>
+    <li><Link to="{basepath}/">Home</Link></li>
+    <li><Link to="{basepath}/group/A">Grupa A</Link></li>
+    <li><Link to="{basepath}/group/B">Grupa B</Link></li>
+    <li><Link to="{basepath}/group/C">Grupa C</Link></li>
+    <li><Link to="{basepath}/group/D">Grupa D</Link></li>
+    <li><Link to="{basepath}/group/E">Grupa E</Link></li>
+    <li><Link to="{basepath}/group/F">Grupa F</Link></li>
+    <li><Link to="{basepath}/group/G">Grupa G</Link></li>
+    <li><Link to="{basepath}/group/H">Grupa H</Link></li>
+    <li><Link to="{basepath}/group/I">Grupa I</Link></li>
+    <li><Link to="{basepath}/group/J">Grupa J</Link></li>
+    <li><Link to="{basepath}/group/K">Grupa K</Link></li>
+    <li><Link to="{basepath}/group/L">Grupa L</Link></li>
   </ul>
 </nav>
 <main id="main">
