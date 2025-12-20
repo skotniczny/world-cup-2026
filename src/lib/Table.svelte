@@ -19,9 +19,9 @@
         <th>Goals For</th>
         <th>Goals Against</th>
         {:else}
-        <th title="Points">P</th>
-        <th title="Goals For">GF</th>
-        <th title="Goals Against">GA</th>
+        <th title="Points" class="text-help">P</th>
+        <th title="Goals For" class="text-help">GF</th>
+        <th title="Goals Against" class="text-help">GA</th>
         {/if}
       </tr>
     </thead>
@@ -68,6 +68,10 @@
   .standings td {
     padding: 0.35rem 1rem;
     text-wrap: nowrap;
+  }
+
+  .standings th {
+    font-weight: 400;
   }
 
   .standings td {

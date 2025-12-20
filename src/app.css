@@ -182,6 +182,11 @@ a:hover {
   text-align: left;
 }
 
+.text-help {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
 .text-right {
   text-align: right;
 }
