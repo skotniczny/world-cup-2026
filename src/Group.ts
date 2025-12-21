@@ -39,7 +39,7 @@ export default class Group {
     if (scoreAway != null) {
       this.#results[awayIndex][homeIndex] = scoreAway
     }
-    this.#table = this.#calculateTable()
+    this.#table = this.#calculateTable().sort(this.#sortTable)
   }
 
   #calculateTable(): TableRow[] {
@@ -49,6 +49,24 @@ export default class Group {
       const goalsAgainst: number = this.#goalsAgainst(index);
       return [team, points, goalsFor, goalsAgainst];
     });
+  }
+
+  #sortTable = (a:TableRow, b:TableRow) => {
+    // 1. Points
+    const pointsA = a[1];
+    const pointsB = b[1];
+    if (pointsB !== pointsA) return pointsB - pointsA;
+
+    // 2. Goal Difference
+    const goalDiffA = a[2] - a[3];
+    const goalDiffB = b[2] - b[3];
+    if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
+
+    // 3. Goals For
+    const goalsForA = a[2];
+    const goalsForB = b[2];
+    if (goalsForA !== goalsForB) return goalsForB - goalsForA;
+    return 0;
   }
 
   #goalsFor(rowIndex: number): number {
