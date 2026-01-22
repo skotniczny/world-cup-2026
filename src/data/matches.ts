@@ -21,7 +21,7 @@ const findFlag = (country:string):string => FLAGS.find(flag => flag.name === cou
 
 const matches: MatchItem[] = (DATA as unknown as MatchItem[]).map((item, index) => ({
   ...item,
-  id: index,
+  id: index + 1,
   completed: !!item.result,
   homeFlag: findFlag(item.home),
   awayFlag: findFlag(item.away),

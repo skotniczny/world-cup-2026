@@ -7,6 +7,7 @@
   --wc-color-natural200: #182530;
   --wc-color-natural900: rgba(255, 255, 255, 0.87);
   --wc-radius: 8px;
+  --wc-radius-double: 16px;
   --wc-shadow: 0 0 8px rgb(0 0 0 / 0.05);
   --wc-break-lg: 960px;
   --wc-space-sm: 0.25rem;
@@ -42,7 +43,7 @@
   :root {
     --wc-space-sm: 0.5rem;
     --wc-space-lg: 2rem;
-    --wc-match-max-width: 200px
+    --wc-match-max-width: 200px;
   }
 }
 

@@ -3,6 +3,7 @@
   import Group from "./lib/Group.svelte"
   import Home from "./lib/Home.svelte"
   import Standings from "./lib/Standings.svelte";
+  import Knockout from "./lib/Knockout.svelte";
 
   let url:string = $state("")
   let basepath:string = $state("/world-cup-2026")
@@ -24,12 +25,14 @@
     <li><Link to="{basepath}/group/K">Grupa K</Link></li>
     <li><Link to="{basepath}/group/L">Grupa L</Link></li>
     <li><Link to="{basepath}/standings">Standings</Link></li>
+    <li><Link to="{basepath}/knockout">Knockout</Link></li>
   </ul>
 </nav>
 <main id="main">
   <Route path="/" component={Home} />
   <Route path="/standings" component={Standings} />
   <Route path="/group/:groupName" component={Group} />
+  <Route path="/knockout" component={Knockout} />
 </main>
 </Router>
 
