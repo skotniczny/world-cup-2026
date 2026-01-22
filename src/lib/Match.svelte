@@ -3,6 +3,7 @@
   import { updateScore } from "../stores.svelte"
 
   import matches, { type MatchItem } from "../data/matches"
+  import TeamName from "./TeamName.svelte";
 
   const { match }: { match: MatchItem } = $props()
   const { id, datetime, home, homeFlag, away, awayFlag, group, city, stadium, completed } = match
@@ -28,7 +29,7 @@
     <time datetime={datetime}>{new Date(datetime).toLocaleString("pl-PL", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}</time>
   </div>
   <div class="match-form">
-    <label class="match-team text-right" for="{uid}--home"><span class="team-name">{home}</span> <span class="team-emoji">{@html homeFlag}</span></label>
+    <label class="match-team text-right" for="{uid}--home"><TeamName teamName={home} teamFlag={homeFlag} /></label>
     <input
       class="match-score form-ctrl"
       id="{uid}--home"
@@ -48,7 +49,7 @@
       readonly={completed}
       oninput={update}
     />
-    <label class="match-team text-left" for="{uid}--away"><span class="team-name">{away}</span> <span class="team-emoji">{@html awayFlag}</span></label>
+    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away} teamFlag={awayFlag} /></label>
   </div>
   <div class="match-footer">{groupName}{city} • {stadium}</div>
 </div>
@@ -92,19 +93,5 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .team-name,
-  .team-emoji {
-    vertical-align: middle;
-  }
-
-  .team-name {
-    font-family: var(--wc-headings-ff);
-  }
-
-  .team-emoji {
-    font-size: 1.5rem;
-    line-height: 1;
   }
 </style>
