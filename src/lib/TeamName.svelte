@@ -1,5 +1,10 @@
 <script lang="ts">
-const { teamName, teamFlag, reverse = false }: { teamName: string, teamFlag:string, reverse?: boolean } = $props()
+interface Props {
+  teamName: string,
+  teamFlag:string,
+  reverse?: boolean
+}
+const { teamName, teamFlag, reverse = false }: Props = $props()
 </script>
 
 {#if reverse}
