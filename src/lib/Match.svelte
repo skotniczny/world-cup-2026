@@ -49,7 +49,7 @@
       readonly={completed}
       oninput={update}
     />
-    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away} teamFlag={awayFlag} /></label>
+    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away} teamFlag={awayFlag} reverse /></label>
   </div>
   <div class="match-footer">{groupName}{city} • {stadium}</div>
 </div>

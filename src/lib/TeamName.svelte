@@ -1,8 +1,16 @@
 <script lang="ts">
-const { teamName, teamFlag }: { teamName: string, teamFlag:string } = $props()
+const { teamName, teamFlag, reverse = false }: { teamName: string, teamFlag:string, reverse?: boolean } = $props()
 </script>
 
-<span class="team-name">{teamName}</span> <span class="team-emoji">{@html teamFlag}</span>
+{#if reverse}
+<span class="team-emoji">{@html teamFlag}</span> 
+{/if}
+
+<span class="team-name">{teamName}</span>
+
+{#if !reverse}
+<span class="team-emoji">{@html teamFlag}</span>
+{/if}
 
 <style>
   .team-name,
