@@ -1,5 +1,5 @@
 import { type MatchItem } from "./data/matches";
-import matches from "./data/matches";
+import { findMatchById } from "./utils/match";
 
 
 function hasResult(match: MatchItem): [number, number] {
@@ -81,7 +81,8 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
 function updateThirdPlace(match: MatchItem): void {
   try {
     const matchLoser:string = getLoser(match);
-    const thirdPlaceMatch:MatchItem = matches.find(match => match.id === 103)!;
+    const thirdPlaceMatchId: number = 103;
+    const thirdPlaceMatch:MatchItem = findMatchById(thirdPlaceMatchId);
 
     const thirdPlaceSlot: Record<number, { slot: "home" | "away"; }> = {
       101: { slot: "home" },
@@ -98,7 +99,7 @@ export function updateKnockout(match: MatchItem): void {
   const nextMatch = knockoutTree[match.id as keyof typeof knockoutTree];
   try {
       const matchWinner:string = getWinner(match);
-      const nextRoundMatch:MatchItem = matches.find(match => match.id === nextMatch.next)!;
+      const nextRoundMatch:MatchItem = findMatchById(nextMatch.next);
       nextRoundMatch[nextMatch.slot] = matchWinner;
 
       if ([101, 102].includes(match.id)) {

@@ -1,12 +1,7 @@
 <script lang="ts">
-  import matches, { type MatchItem } from "../data/matches"
+  import { type MatchItem } from "../data/matches"
   import MatchKnockout from "./MatchKnockout.svelte"
-
-  const findMatchById = (id: number):MatchItem => {
-    const match = matches.find(match => match.id === id)
-    if (!match) throw Error(`Match ${id} not found`)
-    return match
-  }
+  import { findMatchById } from "../utils/match";
 
   let update = $state({
     stage16Left: 0,
