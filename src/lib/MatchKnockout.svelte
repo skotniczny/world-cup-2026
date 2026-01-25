@@ -4,8 +4,10 @@
 
   import matches, { type MatchItem } from "../data/matches"
   import TeamName from "./TeamName.svelte";
+  import { updateKnockout } from "../Knockout";
 
-  const { match }: { match: MatchItem } = $props()
+  const { match, refreshView }: { match: MatchItem, refreshView?: () => void } = $props()
+
   const { id, datetime, home, homeFlag, away, awayFlag, group, city, stadium, completed } = match
   const uid = $props.id()
 
@@ -19,7 +21,9 @@
   function update() {
     const index:number = matches.findIndex(item => item.id === id)
     matches[index].result = [homeScore, awayScore]
-    updateScore(home, away, [homeScore, awayScore], group)
+    updateKnockout(match)
+
+    if (refreshView != undefined) refreshView()
   }
 </script>
 

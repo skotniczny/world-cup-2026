@@ -8,6 +8,18 @@
     return match
   }
 
+  let update = $state({
+    stage16Left: 0,
+    qfLeft: 0,
+    sfLeft: 0,
+    final: 0,
+    sfRight: 0,
+    qfRight: 0,
+    stage16Right: 0
+  })
+
+  function refresh(stage: keyof typeof update) { update[stage]++ }
+
   const knockout = {
     stage32Left: [73, 75, 74, 77, 83, 84, 81, 82],
     stage16Left: [89, 90, 93, 94],
@@ -48,30 +60,37 @@
     <div class="knockout-stage knockout-stage_left knockout-stage_32">
       {#each knockoutMatches.stage32Left as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout match={match} refreshView={() => refresh("stage16Left")} />
         </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_16">
+      {#key update.stage16Left}
       {#each knockoutMatches.stage16Left as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout match={match} refreshView={() => refresh("qfLeft")} />
         </div>
       {/each}
+      {/key}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_qf">
+      {#key update.qfLeft}
       {#each knockoutMatches.qfLeft as match}
       <div class="knockout-match">
-        <MatchKnockout match={match} />
+        <MatchKnockout match={match} refreshView={() => refresh("sfLeft")} />
       </div>
       {/each}
+      {/key}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_sf">
       <div class="knockout-match knockout-match">
-        <MatchKnockout match={sfLeft} />
+        {#key update.sfLeft}
+        <MatchKnockout match={sfLeft} refreshView={() => refresh("final")} />
+        {/key}
       </div>
     </div>
     <div class="knockout-stage knockout-stage_f">
+      {#key update.final}
       <div class="knockout-match knockout-match_final">
         <div class="knockout-header">Final</div>
         <MatchKnockout match={final} />
@@ -80,30 +99,37 @@
         <div class="knockout-header">Third Place</div>
         <MatchKnockout match={thirdPlace} />
       </div>
+      {/key}
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_sf">
       <div class="knockout-match">
-        <MatchKnockout match={sfRight} />
+        {#key update.sfRight}
+        <MatchKnockout match={sfRight} refreshView={() => refresh("final")} />
+        {/key}
       </div>
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_qf">
+      {#key update.qfRight}
       {#each knockoutMatches.qfRight as match}
       <div class="knockout-match">
-        <MatchKnockout match={match} />
+        <MatchKnockout match={match} refreshView={() => refresh("sfRight")} />
       </div>
       {/each}
+      {/key}
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_16">
+      {#key update.stage16Right}
       {#each knockoutMatches.stage16Right as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout match={match} refreshView={() => refresh("qfRight")} />
         </div>
       {/each}
+      {/key}
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_32">
       {#each knockoutMatches.stage32Right as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout match={match} refreshView={() => refresh("stage16Right")} />
         </div>
       {/each}
     </div>
