@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Result } from "../Group"
   import { updateGroupScore } from "../stores.svelte"
+  import { updateKnockout } from "../Knockout";
 
   import matches, { type MatchItem } from "../data/matches"
   import TeamName from "./TeamName.svelte";
@@ -14,13 +15,18 @@
   let awayScore: Result = $state(match?.result?.[1] ?? null)
 
   if (match.result && match.completed) {
-    updateScore(home, away, [homeScore, awayScore], group)
+    updateGroupScore(match)
   }
 
   function update() {
     const index:number = matches.findIndex(item => item.id === id)
+    const lastGroupMatchId: number = 72
     matches[index].result = [homeScore, awayScore]
+    if (id <= lastGroupMatchId) {
       updateGroupScore(match)
+    } else {
+      updateKnockout(match)
+    }
   }
 </script>
 

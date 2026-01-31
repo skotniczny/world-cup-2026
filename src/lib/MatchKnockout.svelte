@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { Result } from "../Group"
-  import { updateScore } from "../stores.svelte"
 
   import matches, { type MatchItem } from "../data/matches"
   import TeamName from "./TeamName.svelte";
@@ -15,7 +14,7 @@
   let awayScore: Result = $state(match?.result?.[1] ?? null)
 
   if (match.result && match.completed) {
-    updateScore(home, away, [homeScore, awayScore], group)
+    updateKnockout(match)
   }
 
   function update() {
