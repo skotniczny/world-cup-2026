@@ -1,4 +1,5 @@
-import Group, { type Result, type TableRow } from "./Group";
+import type { MatchItem } from "./data/matches";
+import Group, { type TableRow } from "./Group";
 
 export type GroupName = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
 
@@ -32,15 +33,12 @@ export const groupsData: Record<GroupName, { name: string; table: TableRow[] }> 
   L: { name: groups.L.name, table: groups.L.table },
 });
 
-export function updateScore(
-  homeName: string,
-  awayName: string,
-  score: [home: Result, away: Result],
-  groupLetter?: GroupName
-): void {
-  if (groupLetter && homeName && awayName) {
-    const group: Group = groups[groupLetter];
-    group.setScore(homeName, awayName, score);
-    groupsData[groupLetter] = { name: group.name, table: group.table };
+export function updateGroupScore(match: MatchItem): void {
+  const { home, away, result, group } = match;
+
+  if (group && home && away && result) {
+    const groupItem: Group = groups[group];
+    groupItem.setScore(home, away, result);
+    groupsData[group] = { name: groupItem.name, table: groupItem.table };
   }
 }

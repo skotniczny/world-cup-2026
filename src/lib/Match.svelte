@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Result } from "../Group"
-  import { updateScore } from "../stores.svelte"
+  import { updateGroupScore } from "../stores.svelte"
 
   import matches, { type MatchItem } from "../data/matches"
   import TeamName from "./TeamName.svelte";
@@ -20,7 +20,7 @@
   function update() {
     const index:number = matches.findIndex(item => item.id === id)
     matches[index].result = [homeScore, awayScore]
-    updateScore(home, away, [homeScore, awayScore], group)
+      updateGroupScore(match)
   }
 </script>
 
