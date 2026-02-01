@@ -6,7 +6,8 @@ import { type GroupName } from "../stores.svelte"
 export type MatchItem = {
   id: number
   datetime: string
-  group?: GroupName,
+  group?: GroupName
+  stage: string
   home: string
   away: string
   homeFlag: string

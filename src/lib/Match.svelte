@@ -1,16 +1,16 @@
 <script lang="ts">
   import type { Result } from "../Group"
-  import { updateGroupScore, matchesData } from "../stores.svelte"
+  import { updateGroupScore } from "../stores.svelte"
   import { updateKnockout } from "../Knockout";
   import { type MatchItem } from "../data/matches"
   import TeamName from "./TeamName.svelte";
 
   const { match }: { match: MatchItem } = $props()
-  const { id, datetime, homeFlag, awayFlag, group, city, stadium, completed } = match
+  const { id, datetime, homeFlag, awayFlag, stage, group, city, stadium, completed } = match
   const home = $derived(match.home)
   const away  = $derived(match.away)
   const uid = $props.id()
-  const groupName: string = group ? `Grupa ${group} • ` : ""
+  const footerTitle: string = group ? `Group ${group}` : `${stage}`
   const dateTimeFormatOptions: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }
 
   let homeScore: Result = $state(match?.result?.[0] ?? null)
@@ -58,7 +58,7 @@
     />
     <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away} teamFlag={awayFlag} reverse /></label>
   </div>
-  <div class="match-footer">{groupName}{city} • {stadium}</div>
+  <div class="match-footer">{footerTitle} • {city} • {stadium}</div>
 </div>
 
 <style>
