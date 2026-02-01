@@ -1,13 +1,14 @@
 <script lang="ts">
   import Match from "./Match.svelte";
   import Table from "./Table.svelte";
-  import matches, { type MatchItem } from "../data/matches";
+  import { type MatchItem } from "../data/matches";
+  import { matchesData } from "../stores.svelte";
   import { groupsData } from "../stores.svelte";
   import type { GroupName } from "../stores.svelte";
   import type { TableRow } from "../Group";
 
   let { groupName }: { groupName: GroupName } = $props();
-  let groupMatches: MatchItem[] = $derived(matches.filter(m => m.group === groupName))
+  let groupMatches: MatchItem[] = $derived(matchesData.filter(m => m.group === groupName))
   let groupTable: { name: string; table: TableRow[] } = $derived(groupsData[groupName])
 </script>
 

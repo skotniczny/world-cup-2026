@@ -1,28 +1,18 @@
 <script lang="ts">
   import Match from "./Match.svelte"
   import Table from "./Table.svelte"
-  import { groupsData } from "../stores.svelte"
-  import matches from "../data/matches"
+  import { 
+    groupsData,
+    matchesData,
+    sortMatchesByDatetime,
+    sortMatchesByGroup
+  } from "../stores.svelte"
 
   let sort: string = $state("date")
 
   function sortMatches() {
-    if (sort === "date") {
-      matches.sort(
-        (a, b) =>
-          new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
-      );
-    }
-    if (sort === "group") {
-      matches.sort((a, b) => {
-        const valA = a.group && a.group.length > 0 ? a.group : undefined
-        const valB = b.group && b.group.length > 0 ? b.group : undefined
-        if (valA === undefined && valB === undefined) return 0
-        if (valA === undefined) return 1
-        if (valB === undefined) return -1
-        return valA.localeCompare(valB)
-      });
-    }
+    if (sort === "date") sortMatchesByDatetime()
+    if (sort === "group") sortMatchesByGroup()
   }
 </script>
 
@@ -39,7 +29,7 @@
     </div>
     <div class="matches-list">
       {#key sort}
-        {#each matches as item}
+        {#each matchesData as item}
           <Match match={item} />
         {/each}
       {/key}
