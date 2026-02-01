@@ -1,13 +1,15 @@
 <script lang="ts">
   import type { Result } from "../Group"
 
-  import matches, { type MatchItem } from "../data/matches"
-  import TeamName from "./TeamName.svelte";
-  import { updateKnockout } from "../Knockout";
+  import { type MatchItem } from "../data/matches"
+  import TeamName from "./TeamName.svelte"
+  import { updateKnockout } from "../Knockout"
 
-  const { match, refreshView }: { match: MatchItem, refreshView?: () => void } = $props()
+  const { match }: { match: MatchItem } = $props()
 
-  const { id, datetime, home, homeFlag, away, awayFlag, group, city, stadium, completed } = match
+  const { datetime, homeFlag, awayFlag, city, completed } = match
+  const home = $derived(match.home)
+  const away  = $derived(match.away)
   const uid = $props.id()
   const dateTimeFormatOptions: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }
 
@@ -19,11 +21,8 @@
   }
 
   function update() {
-    const index:number = matches.findIndex(item => item.id === id)
-    matches[index].result = [homeScore, awayScore]
+    match.result = [homeScore, awayScore]
     updateKnockout(match)
-
-    if (refreshView != undefined) refreshView()
   }
 </script>
 

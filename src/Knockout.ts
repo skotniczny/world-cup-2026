@@ -1,5 +1,5 @@
 import { type MatchItem } from "./data/matches";
-import { findMatchById } from "./utils/match";
+import { findMatchById } from "./stores.svelte";
 
 
 function hasResult(match: MatchItem): [number, number] {
@@ -95,7 +95,8 @@ function updateThirdPlace(match: MatchItem): void {
 }
 
 export function updateKnockout(match: MatchItem): void {
-  if (match.id < 73) return;
+  const firstKnockoutMatchId = 73;
+  if (match.id < firstKnockoutMatchId) return;
   const nextMatch = knockoutTree[match.id as keyof typeof knockoutTree];
   try {
       const matchWinner:string = getWinner(match);
