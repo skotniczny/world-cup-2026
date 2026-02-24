@@ -1,6 +1,7 @@
 import type { MatchItem } from "./data/matches";
 import Group, { type TableRow } from "./Group";
 import matches from "./data/matches";
+import ThirdPlacedRanking from "./ThirdPlacedRanking";
 
 export type GroupName = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
 
@@ -19,7 +20,9 @@ const groups: Record<GroupName, Group> = {
   L: new Group("L", ["England", "Croatia", "Ghana", "Panama"]),
 };
 
-export const groupsData: Record<GroupName, { name: string; table: TableRow[] }> = $state({
+export type GroupsData = Record<GroupName, { name: string; table: TableRow[] }>
+
+export const groupsData:GroupsData = $state({
   A: { name: groups.A.name, table: groups.A.table },
   B: { name: groups.B.name, table: groups.B.table },
   C: { name: groups.C.name, table: groups.C.table },
@@ -33,6 +36,8 @@ export const groupsData: Record<GroupName, { name: string; table: TableRow[] }> 
   K: { name: groups.K.name, table: groups.K.table },
   L: { name: groups.L.name, table: groups.L.table },
 });
+
+export const thirdPlaces = new ThirdPlacedRanking(groupsData);
 
 export function updateGroupScore(match: MatchItem): void {
   const { home, away, result, group } = match;

@@ -1,13 +1,16 @@
 <script lang="ts">
   import { type TableRow }  from "../Group"
-  interface Props { name: string, table: TableRow[], long?: boolean }
+  import { type ThirdPlacesTableRow } from "../ThirdPlacedRanking";
+  interface Props { name: string, table: TableRow[] | ThirdPlacesTableRow[], long?: boolean, thirdPlaces?: boolean }
   const props: Props = $props();
 
-  const long = props.long ?? false
+  const long:boolean = props.long ?? false
+  const thirdPlaces:boolean = props.thirdPlaces ?? false
+  const mainClass = `standings${thirdPlaces ? ` standings--third-places` : ''}`
 </script>
 
 
-<div class="standings" id="{props.name.replace(' ', '')}">
+<div class="{mainClass}" id="{props.name.replace(' ', '')}">
   <table>
     <caption>{props.name}</caption>
     <thead>
@@ -18,10 +21,16 @@
         <th>Points</th>
         <th>Goals For</th>
         <th>Goals Against</th>
+        {#if thirdPlaces}
+        <th>Group</th>
+        {/if}
         {:else}
         <th title="Points" class="text-help">P</th>
         <th title="Goals For" class="text-help">GF</th>
         <th title="Goals Against" class="text-help">GA</th>
+        {#if thirdPlaces}
+        <th title="Group" class="text-help">GP</th>
+        {/if}
         {/if}
       </tr>
     </thead>
@@ -33,6 +42,9 @@
           <td class="table_points">{row[1]}</td>
           <td class="table_for">{row[2]}</td>
           <td class="table_against">{row[3]}</td>
+          {#if thirdPlaces}
+          <td class="table_against">{row[4]}</td>
+          {/if}
         </tr>
       {/each}
     </tbody>
@@ -89,6 +101,15 @@
 
   .standings tbody tr:nth-child(3) .table_pos::before {
     background-color: var(--wc-color-secondary);
+  }
+
+  .standings--third-places tbody tr:nth-child(3) .table_pos::before,
+  .standings--third-places tbody tr:nth-child(4) .table_pos::before,
+  .standings--third-places tbody tr:nth-child(5) .table_pos::before,
+  .standings--third-places tbody tr:nth-child(6) .table_pos::before,
+  .standings--third-places tbody tr:nth-child(7) .table_pos::before,
+  .standings--third-places tbody tr:nth-child(8) .table_pos::before {
+    background-color: var(--wc-color-accent);
   }
 
   .standings_footer {

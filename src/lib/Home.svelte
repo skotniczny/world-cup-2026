@@ -3,9 +3,10 @@
   import Table from "./Table.svelte"
   import { 
     groupsData,
+    thirdPlaces,
     matchesData,
     sortMatchesByDatetime,
-    sortMatchesByGroup
+    sortMatchesByGroup,
   } from "../stores.svelte"
 
   let sort: string = $state("date")
@@ -40,6 +41,7 @@
     {#each Object.values(groupsData) as group}
       <Table name={group.name} table={group.table} />
     {/each}
+    <Table name="Third-placed Ranking" table={thirdPlaces.table} thirdPlaces />
   </div>
 </div>
 
