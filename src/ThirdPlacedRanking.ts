@@ -1,4 +1,4 @@
-import type { GroupsData } from "./stores.svelte";
+import type { GroupsData } from "./stores/groups.svelte";
 
 export type ThirdPlacesTableRow = [string, number, number, number, string];
 

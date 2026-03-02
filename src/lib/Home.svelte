@@ -1,13 +1,8 @@
 <script lang="ts">
   import Match from "./Match.svelte"
   import Table from "./Table.svelte"
-  import { 
-    groupsData,
-    thirdPlaces,
-    matchesData,
-    sortMatchesByDatetime,
-    sortMatchesByGroup,
-  } from "../stores.svelte"
+  import { groupsData, thirdPlaces } from "../stores/groups.svelte"
+  import { matchesData, sortMatchesByDatetime, sortMatchesByGroup } from "../stores/matches.svelte"
 
   let sort: string = $state("date")
 

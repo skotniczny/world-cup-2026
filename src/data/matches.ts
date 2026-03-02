@@ -1,7 +1,7 @@
 import DATA from "./data.json" assert {type: "json"}
 import FLAGS from "./flags.json" assert {type: "json"}
 import { type Result } from "../Group"
-import { type GroupName } from "../stores.svelte"
+import { type GroupName } from "../stores/groups.svelte"
 
 export type MatchItem = {
   id: number

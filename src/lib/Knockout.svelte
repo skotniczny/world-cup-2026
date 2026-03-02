@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type MatchItem } from "../data/matches"
   import MatchKnockout from "./MatchKnockout.svelte"
-  import { findMatchById } from "../stores.svelte"
+  import { findMatchById } from "../stores/matches.svelte"
 
   const knockout = {
     stage32Left: [73, 75, 74, 77, 83, 84, 81, 82],

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { groupsData } from "../stores.svelte"
+  import { groupsData } from "../stores/groups.svelte"
   import Table from "./Table.svelte"
 </script>
 

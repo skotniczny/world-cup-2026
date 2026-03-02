@@ -1,5 +1,5 @@
 import { type MatchItem } from "./data/matches";
-import { findMatchById } from "./stores.svelte";
+import { findMatchById } from "./stores/matches.svelte";
 
 const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
   // Round of 32
