@@ -42,9 +42,9 @@ export const thirdPlaces = new ThirdPlacedRanking(groupsData);
 export function updateGroupScore(match: MatchItem): void {
   const { home, away, result, group } = match;
 
-  if (group && home && away && result) {
-    const groupItem: Group = groups[group];
-    groupItem.setScore(home, away, result);
-    groupsData[group] = { name: groupItem.name, table: groupItem.table };
-  }
+  if (!group || !result) return;
+
+  const groupItem = groups[group];
+  groupItem.setScore(home, away, result);
+  groupsData[group] = { name: groupItem.name, table: groupItem.table };
 }
