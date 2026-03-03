@@ -39,6 +39,11 @@ export const groupsData:GroupsData = $state({
 
 export const thirdPlaces = new ThirdPlacedRanking(groupsData);
 
+export function getTeamAt(group: GroupName, position: number): string {
+  if (position < 1 || position > 4) throw Error("Argument exception, position is out of range")
+  return groupsData[group].table[position - 1][0];
+}
+
 export function updateGroupScore(match: MatchItem): void {
   const { home, away, result, group } = match;
 

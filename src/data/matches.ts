@@ -18,7 +18,7 @@ export type MatchItem = {
   completed: boolean
 }
 
-const findFlag = (country:string):string => FLAGS.find(flag => flag.name === country)?.emoji ?? "🇺🇳"
+export const findFlag = (country:string):string => FLAGS.find(flag => flag.name === country)?.emoji ?? "🇺🇳"
 
 const matches: MatchItem[] = (DATA as unknown as MatchItem[]).map((item, index) => ({
   ...item,
