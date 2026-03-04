@@ -3,8 +3,16 @@
     "datetime": "2026-06-11T19:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "Mexico",
-    "away": "South Africa",
+    "home": {
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
+    },
+    "away": {
+      "name": "South Africa",
+      "abbreviation": "RSA",
+      "flag": "🇿🇦"
+    },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City"
   },
@@ -12,8 +20,16 @@
     "datetime": "2026-06-12T02:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "Korea Republic",
-    "away": "DEN/MKD/CZE/IRL",
+    "home": {
+      "name": "Korea Republic",
+      "abbreviation": "KOR",
+      "flag": "🇰🇷"
+    },
+    "away": {
+      "name": "DEN/MKD/CZE/IRL",
+      "abbreviation": "DEN/MKD/CZE/IRL",
+      "flag": "🇺🇳"
+    },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
   },
@@ -21,8 +37,16 @@
     "datetime": "2026-06-12T19:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "Canada",
-    "away": "ITA/NRL/WAL/BIH",
+    "home": {
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
+    },
+    "away": {
+      "name": "ITA/NIR/WAL/BIH",
+      "abbreviation": "ITA/NIR/WAL/BIH",
+      "flag": "🇺🇳"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -30,8 +54,16 @@
     "datetime": "2026-06-13T01:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "USA",
-    "away": "Paraguay",
+    "home": {
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
+    },
+    "away": {
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -39,8 +71,16 @@
     "datetime": "2026-06-13T19:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "Qatar",
-    "away": "Switzerland",
+    "home": {
+      "name": "Qatar",
+      "abbreviation": "QAT",
+      "flag": "🇶🇦"
+    },
+    "away": {
+      "name": "Switzerland",
+      "abbreviation": "SUI",
+      "flag": "🇨🇭"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -48,8 +88,16 @@
     "datetime": "2026-06-13T22:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Brazil",
-    "away": "Morocco",
+    "home": {
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
+    },
+    "away": {
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -57,8 +105,16 @@
     "datetime": "2026-06-14T01:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Haiti",
-    "away": "Scotland",
+    "home": {
+      "name": "Haiti",
+      "abbreviation": "HAI",
+      "flag": "🇭🇹"
+    },
+    "away": {
+      "name": "Scotland",
+      "abbreviation": "SCO",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -66,8 +122,16 @@
     "datetime": "2026-06-14T04:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "Australia",
-    "away": "TUR/ROU/SVK/KOS",
+    "home": {
+      "name": "Australia",
+      "abbreviation": "AUS",
+      "flag": "🇦🇺"
+    },
+    "away": {
+      "name": "TUR/ROU/SVK/KOS",
+      "abbreviation": "TUR/ROU/SVK/KOS",
+      "flag": "🇺🇳"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -75,8 +139,16 @@
     "datetime": "2026-06-14T17:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Germany",
-    "away": "Curaçao",
+    "home": {
+      "name": "Germany",
+      "abbreviation": "GER",
+      "flag": "🇩🇪"
+    },
+    "away": {
+      "name": "Curaçao",
+      "abbreviation": "CUW",
+      "flag": "🇨🇼"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -84,8 +156,16 @@
     "datetime": "2026-06-14T20:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "Netherlands",
-    "away": "Japan",
+    "home": {
+      "name": "Netherlands",
+      "abbreviation": "NED",
+      "flag": "🇳🇱"
+    },
+    "away": {
+      "name": "Japan",
+      "abbreviation": "JPN",
+      "flag": "🇯🇵"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -93,8 +173,16 @@
     "datetime": "2026-06-14T23:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Côte d'Ivoire",
-    "away": "Ecuador",
+    "home": {
+      "name": "Côte d'Ivoire",
+      "abbreviation": "CIV",
+      "flag": "🇨🇮"
+    },
+    "away": {
+      "name": "Ecuador",
+      "abbreviation": "ECU",
+      "flag": "🇪🇨"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -102,8 +190,16 @@
     "datetime": "2026-06-15T02:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "UKR/SWE/POL/ALB",
-    "away": "Tunisia",
+    "home": {
+      "name": "UKR/SWE/POL/ALB",
+      "abbreviation": "UKR/SWE/POL/ALB",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Tunisia",
+      "abbreviation": "TUN",
+      "flag": "🇹🇳"
+    },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey"
   },
@@ -111,8 +207,16 @@
     "datetime": "2026-06-15T16:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Spain",
-    "away": "Cabo Verde",
+    "home": {
+      "name": "Spain",
+      "abbreviation": "ESP",
+      "flag": "🇪🇸"
+    },
+    "away": {
+      "name": "Cabo Verde",
+      "abbreviation": "CPV",
+      "flag": "🇨🇻"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -120,8 +224,16 @@
     "datetime": "2026-06-15T19:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "Belgium",
-    "away": "Egypt",
+    "home": {
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
+    },
+    "away": {
+      "name": "Egypt",
+      "abbreviation": "EGY",
+      "flag": "🇪🇬"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -129,8 +241,16 @@
     "datetime": "2026-06-15T22:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Saudi Arabia",
-    "away": "Uruguay",
+    "home": {
+      "name": "Saudi Arabia",
+      "abbreviation": "KSA",
+      "flag": "🇸🇦"
+    },
+    "away": {
+      "name": "Uruguay",
+      "abbreviation": "URU",
+      "flag": "🇺🇾"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -138,8 +258,16 @@
     "datetime": "2026-06-16T01:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "IR Iran",
-    "away": "New Zealand",
+    "home": {
+      "name": "IR Iran",
+      "abbreviation": "IRN",
+      "flag": "🇮🇷"
+    },
+    "away": {
+      "name": "New Zealand",
+      "abbreviation": "NZL",
+      "flag": "🇳🇿"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -147,8 +275,16 @@
     "datetime": "2026-06-16T19:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "France",
-    "away": "Senegal",
+    "home": {
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
+    },
+    "away": {
+      "name": "Senegal",
+      "abbreviation": "SEN",
+      "flag": "🇸🇳"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -156,8 +292,16 @@
     "datetime": "2026-06-16T22:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "BOL/SUR/IRQ",
-    "away": "Norway",
+    "home": {
+      "name": "BOL/SUR/IRQ",
+      "abbreviation": "BOL/SUR/IRQ",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -165,8 +309,16 @@
     "datetime": "2026-06-17T01:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Argentina",
-    "away": "Algeria",
+    "home": {
+      "name": "Argentina",
+      "abbreviation": "ARG",
+      "flag": "🇦🇷"
+    },
+    "away": {
+      "name": "Algeria",
+      "abbreviation": "ALG",
+      "flag": "🇩🇿"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -174,8 +326,16 @@
     "datetime": "2026-06-17T04:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Austria",
-    "away": "Jordan",
+    "home": {
+      "name": "Austria",
+      "abbreviation": "AUT",
+      "flag": "🇦🇹"
+    },
+    "away": {
+      "name": "Jordan",
+      "abbreviation": "JOR",
+      "flag": "🇯🇴"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -183,8 +343,16 @@
     "datetime": "2026-06-17T17:00:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "Portugal",
-    "away": "NCL/JAM/COD",
+    "home": {
+      "name": "Portugal",
+      "abbreviation": "POR",
+      "flag": "🇵🇹"
+    },
+    "away": {
+      "name": "NCL/JAM/COD",
+      "abbreviation": "NCL/JAM/COD",
+      "flag": "🇺🇳"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -192,8 +360,16 @@
     "datetime": "2026-06-17T20:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "England",
-    "away": "Croatia",
+    "home": {
+      "name": "England",
+      "abbreviation": "ENG",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+    },
+    "away": {
+      "name": "Croatia",
+      "abbreviation": "CRO",
+      "flag": "🇭🇷"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -201,8 +377,16 @@
     "datetime": "2026-06-17T23:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "Ghana",
-    "away": "Panama",
+    "home": {
+      "name": "Ghana",
+      "abbreviation": "GHA",
+      "flag": "🇬🇭"
+    },
+    "away": {
+      "name": "Panama",
+      "abbreviation": "PAN",
+      "flag": "🇵🇦"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -210,8 +394,16 @@
     "datetime": "2026-06-18T02:00:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "Uzbekistan",
-    "away": "Colombia",
+    "home": {
+      "name": "Uzbekistan",
+      "abbreviation": "UZB",
+      "flag": "🇺🇿"
+    },
+    "away": {
+      "name": "Colombia",
+      "abbreviation": "COL",
+      "flag": "🇨🇴"
+    },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City"
   },
@@ -219,8 +411,16 @@
     "datetime": "2026-06-18T16:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "DEN/MKD/CZE/IRL",
-    "away": "South Africa",
+    "home": {
+      "name": "DEN/MKD/CZE/IRL",
+      "abbreviation": "DEN/MKD/CZE/IRL",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "South Africa",
+      "abbreviation": "RSA",
+      "flag": "🇿🇦"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -228,8 +428,16 @@
     "datetime": "2026-06-18T19:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "Switzerland",
-    "away": "ITA/NRL/WAL/BIH",
+    "home": {
+      "name": "Switzerland",
+      "abbreviation": "SUI",
+      "flag": "🇨🇭"
+    },
+    "away": {
+      "name": "ITA/NIR/WAL/BIH",
+      "abbreviation": "ITA/NIR/WAL/BIH",
+      "flag": "🇺🇳"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -237,8 +445,16 @@
     "datetime": "2026-06-18T22:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "Canada",
-    "away": "Qatar",
+    "home": {
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
+    },
+    "away": {
+      "name": "Qatar",
+      "abbreviation": "QAT",
+      "flag": "🇶🇦"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -246,8 +462,16 @@
     "datetime": "2026-06-19T01:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "Mexico",
-    "away": "Korea Republic",
+    "home": {
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
+    },
+    "away": {
+      "name": "Korea Republic",
+      "abbreviation": "KOR",
+      "flag": "🇰🇷"
+    },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
   },
@@ -255,8 +479,16 @@
     "datetime": "2026-06-19T19:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "USA",
-    "away": "Australia",
+    "home": {
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
+    },
+    "away": {
+      "name": "Australia",
+      "abbreviation": "AUS",
+      "flag": "🇦🇺"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -264,8 +496,16 @@
     "datetime": "2026-06-19T22:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Scotland",
-    "away": "Morocco",
+    "home": {
+      "name": "Scotland",
+      "abbreviation": "SCO",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+    },
+    "away": {
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -273,8 +513,16 @@
     "datetime": "2026-06-20T01:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Brazil",
-    "away": "Haiti",
+    "home": {
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
+    },
+    "away": {
+      "name": "Haiti",
+      "abbreviation": "HAI",
+      "flag": "🇭🇹"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -282,8 +530,16 @@
     "datetime": "2026-06-20T04:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "TUR/ROU/SVK/KOS",
-    "away": "Paraguay",
+    "home": {
+      "name": "TUR/ROU/SVK/KOS",
+      "abbreviation": "TUR/ROU/SVK/KOS",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -291,8 +547,16 @@
     "datetime": "2026-06-20T17:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "Netherlands",
-    "away": "UKR/SWE/POL/ALB",
+    "home": {
+      "name": "Netherlands",
+      "abbreviation": "NED",
+      "flag": "🇳🇱"
+    },
+    "away": {
+      "name": "UKR/SWE/POL/ALB",
+      "abbreviation": "UKR/SWE/POL/ALB",
+      "flag": "🇺🇳"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -300,8 +564,16 @@
     "datetime": "2026-06-20T20:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Germany",
-    "away": "Côte d'Ivoire",
+    "home": {
+      "name": "Germany",
+      "abbreviation": "GER",
+      "flag": "🇩🇪"
+    },
+    "away": {
+      "name": "Côte d'Ivoire",
+      "abbreviation": "CIV",
+      "flag": "🇨🇮"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -309,8 +581,16 @@
     "datetime": "2026-06-21T00:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Ecuador",
-    "away": "Curaçao",
+    "home": {
+      "name": "Ecuador",
+      "abbreviation": "ECU",
+      "flag": "🇪🇨"
+    },
+    "away": {
+      "name": "Curaçao",
+      "abbreviation": "CUW",
+      "flag": "🇨🇼"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -318,8 +598,16 @@
     "datetime": "2026-06-21T04:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "Tunisia",
-    "away": "Japan",
+    "home": {
+      "name": "Tunisia",
+      "abbreviation": "TUN",
+      "flag": "🇹🇳"
+    },
+    "away": {
+      "name": "Japan",
+      "abbreviation": "JPN",
+      "flag": "🇯🇵"
+    },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey"
   },
@@ -327,8 +615,16 @@
     "datetime": "2026-06-21T16:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Spain",
-    "away": "Saudi Arabia",
+    "home": {
+      "name": "Spain",
+      "abbreviation": "ESP",
+      "flag": "🇪🇸"
+    },
+    "away": {
+      "name": "Saudi Arabia",
+      "abbreviation": "KSA",
+      "flag": "🇸🇦"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -336,8 +632,16 @@
     "datetime": "2026-06-21T19:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "Belgium",
-    "away": "IR Iran",
+    "home": {
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
+    },
+    "away": {
+      "name": "IR Iran",
+      "abbreviation": "IRN",
+      "flag": "🇮🇷"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -345,8 +649,16 @@
     "datetime": "2026-06-21T22:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Uruguay",
-    "away": "Cabo Verde",
+    "home": {
+      "name": "Uruguay",
+      "abbreviation": "URU",
+      "flag": "🇺🇾"
+    },
+    "away": {
+      "name": "Cabo Verde",
+      "abbreviation": "CPV",
+      "flag": "🇨🇻"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -354,8 +666,16 @@
     "datetime": "2026-06-22T01:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "New Zealand",
-    "away": "Egypt",
+    "home": {
+      "name": "New Zealand",
+      "abbreviation": "NZL",
+      "flag": "🇳🇿"
+    },
+    "away": {
+      "name": "Egypt",
+      "abbreviation": "EGY",
+      "flag": "🇪🇬"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -363,8 +683,16 @@
     "datetime": "2026-06-22T17:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Argentina",
-    "away": "Austria",
+    "home": {
+      "name": "Argentina",
+      "abbreviation": "ARG",
+      "flag": "🇦🇷"
+    },
+    "away": {
+      "name": "Austria",
+      "abbreviation": "AUT",
+      "flag": "🇦🇹"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -372,8 +700,16 @@
     "datetime": "2026-06-22T21:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "France",
-    "away": "BOL/SUR/IRQ",
+    "home": {
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
+    },
+    "away": {
+      "name": "BOL/SUR/IRQ",
+      "abbreviation": "BOL/SUR/IRQ",
+      "flag": "🇺🇳"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -381,8 +717,16 @@
     "datetime": "2026-06-23T00:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "Norway",
-    "away": "Senegal",
+    "home": {
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
+    },
+    "away": {
+      "name": "Senegal",
+      "abbreviation": "SEN",
+      "flag": "🇸🇳"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -390,8 +734,16 @@
     "datetime": "2026-06-23T03:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Jordan",
-    "away": "Algeria",
+    "home": {
+      "name": "Jordan",
+      "abbreviation": "JOR",
+      "flag": "🇯🇴"
+    },
+    "away": {
+      "name": "Algeria",
+      "abbreviation": "ALG",
+      "flag": "🇩🇿"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -399,8 +751,16 @@
     "datetime": "2026-06-23T17:00:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "Portugal",
-    "away": "Uzbekistan",
+    "home": {
+      "name": "Portugal",
+      "abbreviation": "POR",
+      "flag": "🇵🇹"
+    },
+    "away": {
+      "name": "Uzbekistan",
+      "abbreviation": "UZB",
+      "flag": "🇺🇿"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -408,8 +768,16 @@
     "datetime": "2026-06-23T20:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "England",
-    "away": "Ghana",
+    "home": {
+      "name": "England",
+      "abbreviation": "ENG",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+    },
+    "away": {
+      "name": "Ghana",
+      "abbreviation": "GHA",
+      "flag": "🇬🇭"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -417,8 +785,16 @@
     "datetime": "2026-06-23T23:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "Panama",
-    "away": "Croatia",
+    "home": {
+      "name": "Panama",
+      "abbreviation": "PAN",
+      "flag": "🇵🇦"
+    },
+    "away": {
+      "name": "Croatia",
+      "abbreviation": "CRO",
+      "flag": "🇭🇷"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -426,8 +802,16 @@
     "datetime": "2026-06-24T02:00:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "Colombia",
-    "away": "NCL/JAM/COD",
+    "home": {
+      "name": "Colombia",
+      "abbreviation": "COL",
+      "flag": "🇨🇴"
+    },
+    "away": {
+      "name": "NCL/JAM/COD",
+      "abbreviation": "NCL/JAM/COD",
+      "flag": "🇺🇳"
+    },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
   },
@@ -435,8 +819,16 @@
     "datetime": "2026-06-24T19:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "ITA/NRL/WAL/BIH",
-    "away": "Qatar",
+    "home": {
+      "name": "ITA/NIR/WAL/BIH",
+      "abbreviation": "ITA/NIR/WAL/BIH",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Qatar",
+      "abbreviation": "QAT",
+      "flag": "🇶🇦"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -444,8 +836,16 @@
     "datetime": "2026-06-24T19:00:00Z",
     "stage": "First Stage",
     "group": "B",
-    "home": "Switzerland",
-    "away": "Canada",
+    "home": {
+      "name": "Switzerland",
+      "abbreviation": "SUI",
+      "flag": "🇨🇭"
+    },
+    "away": {
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -453,8 +853,16 @@
     "datetime": "2026-06-24T22:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Morocco",
-    "away": "Haiti",
+    "home": {
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
+    },
+    "away": {
+      "name": "Haiti",
+      "abbreviation": "HAI",
+      "flag": "🇭🇹"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -462,8 +870,16 @@
     "datetime": "2026-06-24T22:00:00Z",
     "stage": "First Stage",
     "group": "C",
-    "home": "Scotland",
-    "away": "Brazil",
+    "home": {
+      "name": "Scotland",
+      "abbreviation": "SCO",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+    },
+    "away": {
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -471,8 +887,16 @@
     "datetime": "2026-06-25T01:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "South Africa",
-    "away": "Korea Republic",
+    "home": {
+      "name": "South Africa",
+      "abbreviation": "RSA",
+      "flag": "🇿🇦"
+    },
+    "away": {
+      "name": "Korea Republic",
+      "abbreviation": "KOR",
+      "flag": "🇰🇷"
+    },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey"
   },
@@ -480,8 +904,16 @@
     "datetime": "2026-06-25T01:00:00Z",
     "stage": "First Stage",
     "group": "A",
-    "home": "DEN/MKD/CZE/IRL",
-    "away": "Mexico",
+    "home": {
+      "name": "DEN/MKD/CZE/IRL",
+      "abbreviation": "DEN/MKD/CZE/IRL",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
+    },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City"
   },
@@ -489,8 +921,16 @@
     "datetime": "2026-06-25T20:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Curaçao",
-    "away": "Côte d'Ivoire",
+    "home": {
+      "name": "Curaçao",
+      "abbreviation": "CUW",
+      "flag": "🇨🇼"
+    },
+    "away": {
+      "name": "Côte d'Ivoire",
+      "abbreviation": "CIV",
+      "flag": "🇨🇮"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -498,8 +938,16 @@
     "datetime": "2026-06-25T20:00:00Z",
     "stage": "First Stage",
     "group": "E",
-    "home": "Ecuador",
-    "away": "Germany",
+    "home": {
+      "name": "Ecuador",
+      "abbreviation": "ECU",
+      "flag": "🇪🇨"
+    },
+    "away": {
+      "name": "Germany",
+      "abbreviation": "GER",
+      "flag": "🇩🇪"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -507,8 +955,16 @@
     "datetime": "2026-06-25T23:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "Tunisia",
-    "away": "Netherlands",
+    "home": {
+      "name": "Tunisia",
+      "abbreviation": "TUN",
+      "flag": "🇹🇳"
+    },
+    "away": {
+      "name": "Netherlands",
+      "abbreviation": "NED",
+      "flag": "🇳🇱"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -516,8 +972,16 @@
     "datetime": "2026-06-25T23:00:00Z",
     "stage": "First Stage",
     "group": "F",
-    "home": "Japan",
-    "away": "UKR/SWE/POL/ALB",
+    "home": {
+      "name": "Japan",
+      "abbreviation": "JPN",
+      "flag": "🇯🇵"
+    },
+    "away": {
+      "name": "UKR/SWE/POL/ALB",
+      "abbreviation": "UKR/SWE/POL/ALB",
+      "flag": "🇺🇳"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -525,8 +989,16 @@
     "datetime": "2026-06-26T02:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "Paraguay",
-    "away": "Australia",
+    "home": {
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
+    },
+    "away": {
+      "name": "Australia",
+      "abbreviation": "AUS",
+      "flag": "🇦🇺"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -534,8 +1006,16 @@
     "datetime": "2026-06-26T02:00:00Z",
     "stage": "First Stage",
     "group": "D",
-    "home": "TUR/ROU/SVK/KOS",
-    "away": "USA",
+    "home": {
+      "name": "TUR/ROU/SVK/KOS",
+      "abbreviation": "TUR/ROU/SVK/KOS",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -543,8 +1023,16 @@
     "datetime": "2026-06-26T19:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "Senegal",
-    "away": "BOL/SUR/IRQ",
+    "home": {
+      "name": "Senegal",
+      "abbreviation": "SEN",
+      "flag": "🇸🇳"
+    },
+    "away": {
+      "name": "BOL/SUR/IRQ",
+      "abbreviation": "BOL/SUR/IRQ",
+      "flag": "🇺🇳"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -552,8 +1040,16 @@
     "datetime": "2026-06-26T19:00:00Z",
     "stage": "First Stage",
     "group": "I",
-    "home": "Norway",
-    "away": "France",
+    "home": {
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
+    },
+    "away": {
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -561,8 +1057,16 @@
     "datetime": "2026-06-27T00:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Uruguay",
-    "away": "Spain",
+    "home": {
+      "name": "Uruguay",
+      "abbreviation": "URU",
+      "flag": "🇺🇾"
+    },
+    "away": {
+      "name": "Spain",
+      "abbreviation": "ESP",
+      "flag": "🇪🇸"
+    },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
   },
@@ -570,8 +1074,16 @@
     "datetime": "2026-06-27T00:00:00Z",
     "stage": "First Stage",
     "group": "H",
-    "home": "Cabo Verde",
-    "away": "Saudi Arabia",
+    "home": {
+      "name": "Cabo Verde",
+      "abbreviation": "CPV",
+      "flag": "🇨🇻"
+    },
+    "away": {
+      "name": "Saudi Arabia",
+      "abbreviation": "KSA",
+      "flag": "🇸🇦"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -579,8 +1091,16 @@
     "datetime": "2026-06-27T03:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "New Zealand",
-    "away": "Belgium",
+    "home": {
+      "name": "New Zealand",
+      "abbreviation": "NZL",
+      "flag": "🇳🇿"
+    },
+    "away": {
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -588,8 +1108,16 @@
     "datetime": "2026-06-27T03:00:00Z",
     "stage": "First Stage",
     "group": "G",
-    "home": "Egypt",
-    "away": "IR Iran",
+    "home": {
+      "name": "Egypt",
+      "abbreviation": "EGY",
+      "flag": "🇪🇬"
+    },
+    "away": {
+      "name": "IR Iran",
+      "abbreviation": "IRN",
+      "flag": "🇮🇷"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -597,8 +1125,16 @@
     "datetime": "2026-06-27T21:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "Panama",
-    "away": "England",
+    "home": {
+      "name": "Panama",
+      "abbreviation": "PAN",
+      "flag": "🇵🇦"
+    },
+    "away": {
+      "name": "England",
+      "abbreviation": "ENG",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -606,8 +1142,16 @@
     "datetime": "2026-06-27T21:00:00Z",
     "stage": "First Stage",
     "group": "L",
-    "home": "Croatia",
-    "away": "Ghana",
+    "home": {
+      "name": "Croatia",
+      "abbreviation": "CRO",
+      "flag": "🇭🇷"
+    },
+    "away": {
+      "name": "Ghana",
+      "abbreviation": "GHA",
+      "flag": "🇬🇭"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -615,8 +1159,16 @@
     "datetime": "2026-06-27T23:30:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "NCL/JAM/COD",
-    "away": "Uzbekistan",
+    "home": {
+      "name": "NCL/JAM/COD",
+      "abbreviation": "NCL/JAM/COD",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "Uzbekistan",
+      "abbreviation": "UZB",
+      "flag": "🇺🇿"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -624,8 +1176,16 @@
     "datetime": "2026-06-27T23:30:00Z",
     "stage": "First Stage",
     "group": "K",
-    "home": "Colombia",
-    "away": "Portugal",
+    "home": {
+      "name": "Colombia",
+      "abbreviation": "COL",
+      "flag": "🇨🇴"
+    },
+    "away": {
+      "name": "Portugal",
+      "abbreviation": "POR",
+      "flag": "🇵🇹"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -633,8 +1193,16 @@
     "datetime": "2026-06-28T02:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Algeria",
-    "away": "Austria",
+    "home": {
+      "name": "Algeria",
+      "abbreviation": "ALG",
+      "flag": "🇩🇿"
+    },
+    "away": {
+      "name": "Austria",
+      "abbreviation": "AUT",
+      "flag": "🇦🇹"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -642,8 +1210,16 @@
     "datetime": "2026-06-28T02:00:00Z",
     "stage": "First Stage",
     "group": "J",
-    "home": "Jordan",
-    "away": "Argentina",
+    "home": {
+      "name": "Jordan",
+      "abbreviation": "JOR",
+      "flag": "🇯🇴"
+    },
+    "away": {
+      "name": "Argentina",
+      "abbreviation": "ARG",
+      "flag": "🇦🇷"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -651,8 +1227,16 @@
     "datetime": "2026-06-28T19:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "2A",
-    "away": "2B",
+    "home": {
+      "name": "2A",
+      "abbreviation": "2A",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2B",
+      "abbreviation": "2B",
+      "flag": "🇺🇳"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -660,8 +1244,16 @@
     "datetime": "2026-06-29T17:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1C",
-    "away": "2F",
+    "home": {
+      "name": "1C",
+      "abbreviation": "1C",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2F",
+      "abbreviation": "2F",
+      "flag": "🇺🇳"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -669,8 +1261,16 @@
     "datetime": "2026-06-29T20:30:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1E",
-    "away": "3ABCDF",
+    "home": {
+      "name": "1E",
+      "abbreviation": "1E",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3ABCDF",
+      "abbreviation": "3ABCDF",
+      "flag": "🇺🇳"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -678,8 +1278,16 @@
     "datetime": "2026-06-30T01:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1F",
-    "away": "2C",
+    "home": {
+      "name": "1F",
+      "abbreviation": "1F",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2C",
+      "abbreviation": "2C",
+      "flag": "🇺🇳"
+    },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey"
   },
@@ -687,8 +1295,16 @@
     "datetime": "2026-06-30T17:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "2E",
-    "away": "2I",
+    "home": {
+      "name": "2E",
+      "abbreviation": "2E",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2I",
+      "abbreviation": "2I",
+      "flag": "🇺🇳"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -696,8 +1312,16 @@
     "datetime": "2026-06-30T21:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1I",
-    "away": "3CDFGH",
+    "home": {
+      "name": "1I",
+      "abbreviation": "1I",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3CDFGH",
+      "abbreviation": "3CDFGH",
+      "flag": "🇺🇳"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -705,8 +1329,16 @@
     "datetime": "2026-07-01T01:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1A",
-    "away": "3CEFHI",
+    "home": {
+      "name": "1A",
+      "abbreviation": "1A",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3CEFHI",
+      "abbreviation": "3CEFHI",
+      "flag": "🇺🇳"
+    },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City"
   },
@@ -714,8 +1346,16 @@
     "datetime": "2026-07-01T16:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1L",
-    "away": "3EHIJK",
+    "home": {
+      "name": "1L",
+      "abbreviation": "1L",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3EHIJK",
+      "abbreviation": "3EHIJK",
+      "flag": "🇺🇳"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -723,8 +1363,16 @@
     "datetime": "2026-07-01T20:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1G",
-    "away": "3AEHIJ",
+    "home": {
+      "name": "1G",
+      "abbreviation": "1G",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3AEHIJ",
+      "abbreviation": "3AEHIJ",
+      "flag": "🇺🇳"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -732,8 +1380,16 @@
     "datetime": "2026-07-02T00:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1D",
-    "away": "3BEFIJ",
+    "home": {
+      "name": "1D",
+      "abbreviation": "1D",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3BEFIJ",
+      "abbreviation": "3BEFIJ",
+      "flag": "🇺🇳"
+    },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area"
   },
@@ -741,8 +1397,16 @@
     "datetime": "2026-07-02T19:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1H",
-    "away": "2J",
+    "home": {
+      "name": "1H",
+      "abbreviation": "1H",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2J",
+      "abbreviation": "2J",
+      "flag": "🇺🇳"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -750,8 +1414,16 @@
     "datetime": "2026-07-02T23:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "2K",
-    "away": "2L",
+    "home": {
+      "name": "2K",
+      "abbreviation": "2K",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2L",
+      "abbreviation": "2L",
+      "flag": "🇺🇳"
+    },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
   },
@@ -759,8 +1431,16 @@
     "datetime": "2026-07-03T03:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1B",
-    "away": "3EFGIJ",
+    "home": {
+      "name": "1B",
+      "abbreviation": "1B",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3EFGIJ",
+      "abbreviation": "3EFGIJ",
+      "flag": "🇺🇳"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -768,8 +1448,16 @@
     "datetime": "2026-07-03T18:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "2D",
-    "away": "2G",
+    "home": {
+      "name": "2D",
+      "abbreviation": "2D",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2G",
+      "abbreviation": "2G",
+      "flag": "🇺🇳"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -777,8 +1465,16 @@
     "datetime": "2026-07-03T22:00:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1J",
-    "away": "2H",
+    "home": {
+      "name": "1J",
+      "abbreviation": "1J",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "2H",
+      "abbreviation": "2H",
+      "flag": "🇺🇳"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -786,8 +1482,16 @@
     "datetime": "2026-07-04T01:30:00Z",
     "stage": "Round of 32",
     "group": "",
-    "home": "1K",
-    "away": "3DEIJL",
+    "home": {
+      "name": "1K",
+      "abbreviation": "1K",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "3DEIJL",
+      "abbreviation": "3DEIJL",
+      "flag": "🇺🇳"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -795,8 +1499,16 @@
     "datetime": "2026-07-04T17:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W73",
-    "away": "W75",
+    "home": {
+      "name": "W73",
+      "abbreviation": "W73",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W75",
+      "abbreviation": "W75",
+      "flag": "🇺🇳"
+    },
     "stadium": "Houston Stadium",
     "city": "Houston"
   },
@@ -804,8 +1516,16 @@
     "datetime": "2026-07-04T21:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W74",
-    "away": "W77",
+    "home": {
+      "name": "W74",
+      "abbreviation": "W74",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W77",
+      "abbreviation": "W77",
+      "flag": "🇺🇳"
+    },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
   },
@@ -813,8 +1533,16 @@
     "datetime": "2026-07-05T20:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W76",
-    "away": "W78",
+    "home": {
+      "name": "W76",
+      "abbreviation": "W76",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W78",
+      "abbreviation": "W78",
+      "flag": "🇺🇳"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   },
@@ -822,8 +1550,16 @@
     "datetime": "2026-07-06T00:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W79",
-    "away": "W80",
+    "home": {
+      "name": "W79",
+      "abbreviation": "W79",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W80",
+      "abbreviation": "W80",
+      "flag": "🇺🇳"
+    },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City"
   },
@@ -831,8 +1567,16 @@
     "datetime": "2026-07-06T19:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W83",
-    "away": "W84",
+    "home": {
+      "name": "W83",
+      "abbreviation": "W83",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W84",
+      "abbreviation": "W84",
+      "flag": "🇺🇳"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -840,8 +1584,16 @@
     "datetime": "2026-07-07T00:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W81",
-    "away": "W82",
+    "home": {
+      "name": "W81",
+      "abbreviation": "W81",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W82",
+      "abbreviation": "W82",
+      "flag": "🇺🇳"
+    },
     "stadium": "Seattle Stadium",
     "city": "Seattle"
   },
@@ -849,8 +1601,16 @@
     "datetime": "2026-07-07T16:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W86",
-    "away": "W88",
+    "home": {
+      "name": "W86",
+      "abbreviation": "W86",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W88",
+      "abbreviation": "W88",
+      "flag": "🇺🇳"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -858,8 +1618,16 @@
     "datetime": "2026-07-07T20:00:00Z",
     "stage": "Round of 16",
     "group": "",
-    "home": "W85",
-    "away": "W87",
+    "home": {
+      "name": "W85",
+      "abbreviation": "W85",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W87",
+      "abbreviation": "W87",
+      "flag": "🇺🇳"
+    },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
   },
@@ -867,8 +1635,16 @@
     "datetime": "2026-07-09T20:00:00Z",
     "stage": "Quarter-final",
     "group": "",
-    "home": "W89",
-    "away": "W90",
+    "home": {
+      "name": "W89",
+      "abbreviation": "W89",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W90",
+      "abbreviation": "W90",
+      "flag": "🇺🇳"
+    },
     "stadium": "Boston Stadium",
     "city": "Boston"
   },
@@ -876,8 +1652,16 @@
     "datetime": "2026-07-10T19:00:00Z",
     "stage": "Quarter-final",
     "group": "",
-    "home": "W93",
-    "away": "W94",
+    "home": {
+      "name": "W93",
+      "abbreviation": "W93",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W94",
+      "abbreviation": "W94",
+      "flag": "🇺🇳"
+    },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
   },
@@ -885,8 +1669,16 @@
     "datetime": "2026-07-11T21:00:00Z",
     "stage": "Quarter-final",
     "group": "",
-    "home": "W91",
-    "away": "W92",
+    "home": {
+      "name": "W91",
+      "abbreviation": "W91",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W92",
+      "abbreviation": "W92",
+      "flag": "🇺🇳"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -894,8 +1686,16 @@
     "datetime": "2026-07-12T01:00:00Z",
     "stage": "Quarter-final",
     "group": "",
-    "home": "W95",
-    "away": "W96",
+    "home": {
+      "name": "W95",
+      "abbreviation": "W95",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W96",
+      "abbreviation": "W96",
+      "flag": "🇺🇳"
+    },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City"
   },
@@ -903,8 +1703,16 @@
     "datetime": "2026-07-14T19:00:00Z",
     "stage": "Semi-final",
     "group": "",
-    "home": "W97",
-    "away": "W98",
+    "home": {
+      "name": "W97",
+      "abbreviation": "W97",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W98",
+      "abbreviation": "W98",
+      "flag": "🇺🇳"
+    },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
   },
@@ -912,8 +1720,16 @@
     "datetime": "2026-07-15T19:00:00Z",
     "stage": "Semi-final",
     "group": "",
-    "home": "W99",
-    "away": "W100",
+    "home": {
+      "name": "W99",
+      "abbreviation": "W99",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W100",
+      "abbreviation": "W100",
+      "flag": "🇺🇳"
+    },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta"
   },
@@ -921,8 +1737,16 @@
     "datetime": "2026-07-18T21:00:00Z",
     "stage": "Play-off for third place",
     "group": "",
-    "home": "RU101",
-    "away": "RU102",
+    "home": {
+      "name": "RU101",
+      "abbreviation": "RU101",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "RU102",
+      "abbreviation": "RU102",
+      "flag": "🇺🇳"
+    },
     "stadium": "Miami Stadium",
     "city": "Miami"
   },
@@ -930,8 +1754,16 @@
     "datetime": "2026-07-19T19:00:00Z",
     "stage": "Final",
     "group": "",
-    "home": "W101",
-    "away": "W102",
+    "home": {
+      "name": "W101",
+      "abbreviation": "W101",
+      "flag": "🇺🇳"
+    },
+    "away": {
+      "name": "W102",
+      "abbreviation": "W102",
+      "flag": "🇺🇳"
+    },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"
   }
