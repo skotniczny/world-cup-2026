@@ -7,7 +7,7 @@ export type GroupName = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J
 
 const groups: Record<GroupName, Group> = {
   A: new Group("A", ["Mexico", "South Africa", "Korea Republic", "DEN/MKD/CZE/IRL"]),
-  B: new Group("B", ["Canada", "ITA/NRL/WAL/BIH", "Qatar", "Switzerland"]),
+  B: new Group("B", ["Canada", "ITA/NIR/WAL/BIH", "Qatar", "Switzerland"]),
   C: new Group("C", ["Brazil", "Morocco", "Haiti", "Scotland"]),
   D: new Group("D", ["USA", "Paraguay", "Australia", "TUR/ROU/SVK/KOS"]),
   E: new Group("E", ["Germany", "Curaçao", "Côte d'Ivoire", "Ecuador"]),
