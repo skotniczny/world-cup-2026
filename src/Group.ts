@@ -33,13 +33,8 @@ export default class Group {
       throw new Error("Team cannot play against itself");
     } 
     const [scoreHome, scoreAway] = result;
-    if (scoreHome == null && scoreAway == null) return
-    if (scoreHome != null) {
-      this.#results[homeIndex][awayIndex] = scoreHome
-    }
-    if (scoreAway != null) {
-      this.#results[awayIndex][homeIndex] = scoreAway
-    }
+    this.#results[homeIndex][awayIndex] = scoreHome
+    this.#results[awayIndex][homeIndex] = scoreAway
     this.#table = this.#calculateTable().sort(this.#sortTable)
   }
 
