@@ -1,4 +1,5 @@
-export type TableRow = [string, number, number, number];
+// [Team, Matches Played, Goals For, Goals Against, Goal Difference, Points]
+export type TableRow = [string, number, number, number, number, number];
 export type Result = number | null;
 
 export default class Group {
@@ -44,22 +45,24 @@ export default class Group {
 
   #calculateTable(): TableRow[] {
     return this.teams.map((team, index) => {
+      const matchesPlayed: number = this.#matchesPlayed(index);
       const points: number = this.#sumPoints(index);
       const goalsFor: number = this.#goalsFor(index);
       const goalsAgainst: number = this.#goalsAgainst(index);
-      return [team, points, goalsFor, goalsAgainst];
+      const goalDifference: number = goalsFor - goalsAgainst;
+      return [team, matchesPlayed, goalsFor, goalsAgainst, goalDifference, points];
     });
   }
 
   #sortTable = (a:TableRow, b:TableRow) => {
     // 1. Points
-    const pointsA = a[1];
-    const pointsB = b[1];
+    const pointsA = a[5];
+    const pointsB = b[5];
     if (pointsB !== pointsA) return pointsB - pointsA;
 
     // 2. Goal Difference
-    const goalDiffA = a[2] - a[3];
-    const goalDiffB = b[2] - b[3];
+    const goalDiffA = a[4];
+    const goalDiffB = b[4];
     if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
 
     // 3. Goals For
@@ -67,6 +70,17 @@ export default class Group {
     const goalsForB = b[2];
     if (goalsForA !== goalsForB) return goalsForB - goalsForA;
     return 0;
+  }
+
+  #matchesPlayed(teamIndex: number): number {
+    let count = 0;
+    for (let i = 0; i < this.#results.length; i++) {
+      if (i === teamIndex) continue;
+      const home = this.#results[teamIndex][i];
+      const away = this.#results[i][teamIndex];
+      if (home != null && away != null) count++;
+    }
+    return count;
   }
 
   #goalsFor(rowIndex: number): number {

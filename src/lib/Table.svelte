@@ -18,16 +18,18 @@
         <th></th>
         <th>Team</th>
         {#if long}
-        <th>Points</th>
+        <th>Matches Played</th>
         <th>Goals For</th>
         <th>Goals Against</th>
+        <th>Goal Difference</th>
+        <th>Points</th>
         {#if thirdPlaces}
         <th>Group</th>
         {/if}
         {:else}
-        <th title="Points" class="text-help">P</th>
         <th title="Goals For" class="text-help">GF</th>
         <th title="Goals Against" class="text-help">GA</th>
+        <th title="Points" class="text-help">Pts</th>
         {#if thirdPlaces}
         <th title="Group" class="text-help">GP</th>
         {/if}
@@ -39,11 +41,17 @@
         <tr>
           <td class="table_pos">{i + 1}</td>
           <td class="table_team">{row[0]}</td>
-          <td class="table_points">{row[1]}</td>
+          {#if long}
+          <td class="table_mp">{row[1]}</td>
+          {/if}
           <td class="table_for">{row[2]}</td>
           <td class="table_against">{row[3]}</td>
+          {#if long}
+          <td class="table_gd">{row[4]}</td>
+          {/if}
+          <td class="table_points">{row[5]}</td>
           {#if thirdPlaces}
-          <td class="table_against">{row[4]}</td>
+          <td class="table_group">{row[6]}</td>
           {/if}
         </tr>
       {/each}
