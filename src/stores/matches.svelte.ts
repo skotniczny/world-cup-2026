@@ -3,13 +3,6 @@ import matches from "../data/matches";
 
 export const matchesData: MatchItem[] = $state(matches.map(match => ({ ...match })))
 
-export function updateMatch(updatedMatch: MatchItem): void {
-  const index = matchesData.findIndex(match => match.id === updatedMatch.id)
-  if (index !== -1) {
-    matchesData[index] = { ...updatedMatch }
-  }
-}
-
 export function findMatchById(id: number):MatchItem {
   const match: MatchItem | undefined = matchesData.find(match => match.id === id)
   if (!match) throw Error(`Match ${id} not found`)
