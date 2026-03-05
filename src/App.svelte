@@ -6,25 +6,24 @@
   import Standings from "./lib/Standings.svelte";
   import Knockout from "./lib/Knockout.svelte";
 
-  let url: string = $state("")
-  let basepath: string = $state("/world-cup-2026")
+  const basepath = "/world-cup-2026"
 </script>
-<Router {url} {basepath}>
+<Router {basepath}>
 <nav class="nav">
   <ul>
-    <li><Link to="{basepath}/">Home</Link></li>
+    <li><Link to="">Home</Link></li>
     {#each groupNames as g}
-      <li><Link to="{basepath}/group/{g}">Group {g}</Link></li>
+      <li><Link to="group/{g}">Group {g}</Link></li>
     {/each}
-    <li><Link to="{basepath}/standings">Standings</Link></li>
-    <li><Link to="{basepath}/knockout">Knockout</Link></li>
+    <li><Link to="standings">Standings</Link></li>
+    <li><Link to="knockout">Knockout</Link></li>
   </ul>
 </nav>
 <main id="main">
-  <Route path="/" component={Home} />
-  <Route path="/standings" component={Standings} />
-  <Route path="/group/:groupName" component={Group} />
-  <Route path="/knockout" component={Knockout} />
+  <Route path="" component={Home} />
+  <Route path="standings" component={Standings} />
+  <Route path="group/:groupName" component={Group} />
+  <Route path="knockout" component={Knockout} />
 </main>
 </Router>
 
