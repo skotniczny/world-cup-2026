@@ -1,0 +1,266 @@
+{
+  "A": [
+    {
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
+    },
+    {
+      "name": "South Africa",
+      "abbreviation": "RSA",
+      "flag": "🇿🇦"
+    },
+    {
+      "name": "Korea Republic",
+      "abbreviation": "KOR",
+      "flag": "🇰🇷"
+    },
+    {
+      "name": "DEN/MKD/CZE/IRL",
+      "abbreviation": "DEN/MKD/CZE/IRL",
+      "flag": "🇺🇳"
+    }
+  ],
+  "B": [
+    {
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
+    },
+    {
+      "name": "ITA/NIR/WAL/BIH",
+      "abbreviation": "ITA/NIR/WAL/BIH",
+      "flag": "🇺🇳"
+    },
+    {
+      "name": "Qatar",
+      "abbreviation": "QAT",
+      "flag": "🇶🇦"
+    },
+    {
+      "name": "Switzerland",
+      "abbreviation": "SUI",
+      "flag": "🇨🇭"
+    }
+  ],
+  "C": [
+    {
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
+    },
+    {
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
+    },
+    {
+      "name": "Haiti",
+      "abbreviation": "HAI",
+      "flag": "🇭🇹"
+    },
+    {
+      "name": "Scotland",
+      "abbreviation": "SCO",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+    }
+  ],
+  "D": [
+    {
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
+    },
+    {
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
+    },
+    {
+      "name": "Australia",
+      "abbreviation": "AUS",
+      "flag": "🇦🇺"
+    },
+    {
+      "name": "TUR/ROU/SVK/KOS",
+      "abbreviation": "TUR/ROU/SVK/KOS",
+      "flag": "🇺🇳"
+    }
+  ],
+  "E": [
+    {
+      "name": "Germany",
+      "abbreviation": "GER",
+      "flag": "🇩🇪"
+    },
+    {
+      "name": "Curaçao",
+      "abbreviation": "CUW",
+      "flag": "🇨🇼"
+    },
+    {
+      "name": "Côte d'Ivoire",
+      "abbreviation": "CIV",
+      "flag": "🇨🇮"
+    },
+    {
+      "name": "Ecuador",
+      "abbreviation": "ECU",
+      "flag": "🇪🇨"
+    }
+  ],
+  "F": [
+    {
+      "name": "Netherlands",
+      "abbreviation": "NED",
+      "flag": "🇳🇱"
+    },
+    {
+      "name": "Japan",
+      "abbreviation": "JPN",
+      "flag": "🇯🇵"
+    },
+    {
+      "name": "UKR/SWE/POL/ALB",
+      "abbreviation": "UKR/SWE/POL/ALB",
+      "flag": "🇺🇳"
+    },
+    {
+      "name": "Tunisia",
+      "abbreviation": "TUN",
+      "flag": "🇹🇳"
+    }
+  ],
+  "G": [
+    {
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
+    },
+    {
+      "name": "Egypt",
+      "abbreviation": "EGY",
+      "flag": "🇪🇬"
+    },
+    {
+      "name": "IR Iran",
+      "abbreviation": "IRN",
+      "flag": "🇮🇷"
+    },
+    {
+      "name": "New Zealand",
+      "abbreviation": "NZL",
+      "flag": "🇳🇿"
+    }
+  ],
+  "H": [
+    {
+      "name": "Spain",
+      "abbreviation": "ESP",
+      "flag": "🇪🇸"
+    },
+    {
+      "name": "Cabo Verde",
+      "abbreviation": "CPV",
+      "flag": "🇨🇻"
+    },
+    {
+      "name": "Saudi Arabia",
+      "abbreviation": "KSA",
+      "flag": "🇸🇦"
+    },
+    {
+      "name": "Uruguay",
+      "abbreviation": "URU",
+      "flag": "🇺🇾"
+    }
+  ],
+  "I": [
+    {
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
+    },
+    {
+      "name": "Senegal",
+      "abbreviation": "SEN",
+      "flag": "🇸🇳"
+    },
+    {
+      "name": "BOL/SUR/IRQ",
+      "abbreviation": "BOL/SUR/IRQ",
+      "flag": "🇺🇳"
+    },
+    {
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
+    }
+  ],
+  "J": [
+    {
+      "name": "Argentina",
+      "abbreviation": "ARG",
+      "flag": "🇦🇷"
+    },
+    {
+      "name": "Algeria",
+      "abbreviation": "ALG",
+      "flag": "🇩🇿"
+    },
+    {
+      "name": "Austria",
+      "abbreviation": "AUT",
+      "flag": "🇦🇹"
+    },
+    {
+      "name": "Jordan",
+      "abbreviation": "JOR",
+      "flag": "🇯🇴"
+    }
+  ],
+  "K": [
+    {
+      "name": "Portugal",
+      "abbreviation": "POR",
+      "flag": "🇵🇹"
+    },
+    {
+      "name": "NCL/JAM/COD",
+      "abbreviation": "NCL/JAM/COD",
+      "flag": "🇺🇳"
+    },
+    {
+      "name": "Uzbekistan",
+      "abbreviation": "UZB",
+      "flag": "🇺🇿"
+    },
+    {
+      "name": "Colombia",
+      "abbreviation": "COL",
+      "flag": "🇨🇴"
+    }
+  ],
+  "L": [
+    {
+      "name": "England",
+      "abbreviation": "ENG",
+      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+    },
+    {
+      "name": "Croatia",
+      "abbreviation": "CRO",
+      "flag": "🇭🇷"
+    },
+    {
+      "name": "Ghana",
+      "abbreviation": "GHA",
+      "flag": "🇬🇭"
+    },
+    {
+      "name": "Panama",
+      "abbreviation": "PAN",
+      "flag": "🇵🇦"
+    }
+  ]
+}

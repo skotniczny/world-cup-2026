@@ -8,6 +8,7 @@ try {
   const matches = await data.json()
   const output = []
   const teamsOrPlaceholders = {};
+  const groups = {};
   for (const match of matches.Results) {
     const item = makeItem(match)
     output.push(item)
@@ -19,10 +20,19 @@ try {
     if (!teamsOrPlaceholders[item.away.abbreviation]) {
       teamsOrPlaceholders[item.away.abbreviation] = item.away
     }
+
+    if (item.group) {
+      if (!groups[item.group]) groups[item.group] = [];
+      if (!groups[item.group].some(t => t.abbreviation === item.home.abbreviation)) groups[item.group].push(item.home)
+      if (!groups[item.group].some(t => t.abbreviation === item.away.abbreviation)) groups[item.group].push(item.away)
+    }
   }
   await Promise.all([
     writeFile("./src/data/data.json", JSON.stringify(output, null, 2)),
-    writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2))
+    writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2)),
+    writeFile("./src/data/groups.json", JSON.stringify(
+      Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))), null, 2
+    ))
   ])
 } catch (error) {
   console.debug(error)
