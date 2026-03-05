@@ -98,7 +98,7 @@ export default class Group {
   #sumPoints(teamIndex: number): number {
     let points: number = 0;
     for (let index = 0; index < this.#results.length; index += 1) {
-      if (teamIndex == index) continue;
+      if (teamIndex === index) continue;
       const home: Result = this.#results[teamIndex][index] ?? null;
       const away: Result = this.#results[index][teamIndex] ?? null;
       points += this.#getPoints(home, away);
