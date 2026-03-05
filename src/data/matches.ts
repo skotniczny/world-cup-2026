@@ -1,6 +1,6 @@
 import DATA from "./data.json" with {type: "json"}
-import { type Result } from "../Group"
-import { type GroupName } from "../stores/groups.svelte"
+import type { Result } from "../Group"
+import type { GroupName } from "./groups"
 
 export type TeamInfo = {
   name: string

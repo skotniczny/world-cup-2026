@@ -2,8 +2,9 @@
 // Source: FIFA World Cup 2026 regulations.
 import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" with { type: "json" };
 
-import { type GroupName, getTeamAt, thirdPlaces } from "./stores/groups.svelte";
+import type { GroupName } from "./data/groups";
 import type { TeamInfo } from "./data/matches";
+import { getTeamAt, thirdPlaces } from "./stores/groups.svelte";
 import { findMatchById } from "./stores/matches.svelte";
 
 type GroupSlot = { group: GroupName; position: number };

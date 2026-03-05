@@ -1,4 +1,5 @@
 import type { TeamInfo } from "./data/matches";
+import type { GroupName } from "./data/groups";
 
 // [Team, Matches Played, Goals For, Goals Against, Goal Difference, Points]
 export type TableRow = [TeamInfo, number, number, number, number, number];
@@ -15,7 +16,7 @@ export default class Group {
 
   #table: TableRow[] = [];
 
-  constructor(groupName: string, readonly teams: TeamInfo[]) {
+  constructor(groupName: GroupName, readonly teams: TeamInfo[]) {
     if (teams.length !== 4) throw new Error("Require 4 Teams");
     this.name = `Group ${groupName}`;
     this.#table = this.#calculateTable()

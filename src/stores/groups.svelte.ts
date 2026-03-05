@@ -1,25 +1,22 @@
 import type { MatchItem, TeamInfo } from "../data/matches";
-import { getTeam } from "../data/teams";
+import { type GroupName, getGroup } from "../data/groups";
 import Group, { type TableRow } from "../Group";
+import ThirdPlacedRanking from "../ThirdPlacedRanking";
 import { updateRoundOf32 } from "../RoundOf32Setup";
 
-import ThirdPlacedRanking from "../ThirdPlacedRanking";
-
-export type GroupName = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
-
 const groups: Record<GroupName, Group> = {
-  A: new Group("A", [getTeam("MEX"), getTeam("RSA"), getTeam("KOR"), getTeam("DEN/MKD/CZE/IRL")]),
-  B: new Group("B", [getTeam("CAN"), getTeam("ITA/NIR/WAL/BIH"), getTeam("QAT"), getTeam("SUI")]),
-  C: new Group("C", [getTeam("BRA"), getTeam("MAR"), getTeam("HAI"), getTeam("SCO")]),
-  D: new Group("D", [getTeam("USA"), getTeam("PAR"), getTeam("AUS"), getTeam("TUR/ROU/SVK/KOS")]),
-  E: new Group("E", [getTeam("GER"), getTeam("CUW"), getTeam("CIV"), getTeam("ECU")]),
-  F: new Group("F", [getTeam("NED"), getTeam("JPN"), getTeam("UKR/SWE/POL/ALB"), getTeam("TUN")]),
-  G: new Group("G", [getTeam("BEL"), getTeam("EGY"), getTeam("IRN"), getTeam("NZL")]),
-  H: new Group("H", [getTeam("ESP"), getTeam("CPV"), getTeam("KSA"), getTeam("URU")]),
-  I: new Group("I", [getTeam("FRA"), getTeam("SEN"), getTeam("BOL/SUR/IRQ"), getTeam("NOR")]),
-  J: new Group("J", [getTeam("ARG"), getTeam("ALG"), getTeam("AUT"), getTeam("JOR")]),
-  K: new Group("K", [getTeam("POR"), getTeam("NCL/JAM/COD"), getTeam("UZB"), getTeam("COL")]),
-  L: new Group("L", [getTeam("ENG"), getTeam("CRO"), getTeam("GHA"), getTeam("PAN")]),
+  A: new Group("A", getGroup("A")),
+  B: new Group("B", getGroup("B")),
+  C: new Group("C", getGroup("C")),
+  D: new Group("D", getGroup("D")),
+  E: new Group("E", getGroup("E")),
+  F: new Group("F", getGroup("F")),
+  G: new Group("G", getGroup("G")),
+  H: new Group("H", getGroup("H")),
+  I: new Group("I", getGroup("I")),
+  J: new Group("J", getGroup("J")),
+  K: new Group("K", getGroup("K")),
+  L: new Group("L", getGroup("L")),
 };
 
 export type GroupsData = Record<GroupName, { name: string; table: TableRow[] }>
