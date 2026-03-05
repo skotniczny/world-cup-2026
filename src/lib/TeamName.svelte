@@ -28,6 +28,7 @@ const { teamName, teamFlag, reverse = false }: Props = $props()
   }
 
   .team-emoji {
+    font-family: "Twemoji Country Flags", system-ui;
     font-size: 1.5rem;
     line-height: 1;
   }
