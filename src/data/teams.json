@@ -1,0 +1,562 @@
+{
+  "MEX": {
+    "name": "Mexico",
+    "abbreviation": "MEX",
+    "flag": "🇲🇽"
+  },
+  "RSA": {
+    "name": "South Africa",
+    "abbreviation": "RSA",
+    "flag": "🇿🇦"
+  },
+  "KOR": {
+    "name": "Korea Republic",
+    "abbreviation": "KOR",
+    "flag": "🇰🇷"
+  },
+  "DEN/MKD/CZE/IRL": {
+    "name": "DEN/MKD/CZE/IRL",
+    "abbreviation": "DEN/MKD/CZE/IRL",
+    "flag": "🇺🇳"
+  },
+  "CAN": {
+    "name": "Canada",
+    "abbreviation": "CAN",
+    "flag": "🇨🇦"
+  },
+  "ITA/NIR/WAL/BIH": {
+    "name": "ITA/NIR/WAL/BIH",
+    "abbreviation": "ITA/NIR/WAL/BIH",
+    "flag": "🇺🇳"
+  },
+  "USA": {
+    "name": "USA",
+    "abbreviation": "USA",
+    "flag": "🇺🇸"
+  },
+  "PAR": {
+    "name": "Paraguay",
+    "abbreviation": "PAR",
+    "flag": "🇵🇾"
+  },
+  "QAT": {
+    "name": "Qatar",
+    "abbreviation": "QAT",
+    "flag": "🇶🇦"
+  },
+  "SUI": {
+    "name": "Switzerland",
+    "abbreviation": "SUI",
+    "flag": "🇨🇭"
+  },
+  "BRA": {
+    "name": "Brazil",
+    "abbreviation": "BRA",
+    "flag": "🇧🇷"
+  },
+  "MAR": {
+    "name": "Morocco",
+    "abbreviation": "MAR",
+    "flag": "🇲🇦"
+  },
+  "HAI": {
+    "name": "Haiti",
+    "abbreviation": "HAI",
+    "flag": "🇭🇹"
+  },
+  "SCO": {
+    "name": "Scotland",
+    "abbreviation": "SCO",
+    "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+  },
+  "AUS": {
+    "name": "Australia",
+    "abbreviation": "AUS",
+    "flag": "🇦🇺"
+  },
+  "TUR/ROU/SVK/KOS": {
+    "name": "TUR/ROU/SVK/KOS",
+    "abbreviation": "TUR/ROU/SVK/KOS",
+    "flag": "🇺🇳"
+  },
+  "GER": {
+    "name": "Germany",
+    "abbreviation": "GER",
+    "flag": "🇩🇪"
+  },
+  "CUW": {
+    "name": "Curaçao",
+    "abbreviation": "CUW",
+    "flag": "🇨🇼"
+  },
+  "NED": {
+    "name": "Netherlands",
+    "abbreviation": "NED",
+    "flag": "🇳🇱"
+  },
+  "JPN": {
+    "name": "Japan",
+    "abbreviation": "JPN",
+    "flag": "🇯🇵"
+  },
+  "CIV": {
+    "name": "Côte d'Ivoire",
+    "abbreviation": "CIV",
+    "flag": "🇨🇮"
+  },
+  "ECU": {
+    "name": "Ecuador",
+    "abbreviation": "ECU",
+    "flag": "🇪🇨"
+  },
+  "UKR/SWE/POL/ALB": {
+    "name": "UKR/SWE/POL/ALB",
+    "abbreviation": "UKR/SWE/POL/ALB",
+    "flag": "🇺🇳"
+  },
+  "TUN": {
+    "name": "Tunisia",
+    "abbreviation": "TUN",
+    "flag": "🇹🇳"
+  },
+  "ESP": {
+    "name": "Spain",
+    "abbreviation": "ESP",
+    "flag": "🇪🇸"
+  },
+  "CPV": {
+    "name": "Cabo Verde",
+    "abbreviation": "CPV",
+    "flag": "🇨🇻"
+  },
+  "BEL": {
+    "name": "Belgium",
+    "abbreviation": "BEL",
+    "flag": "🇧🇪"
+  },
+  "EGY": {
+    "name": "Egypt",
+    "abbreviation": "EGY",
+    "flag": "🇪🇬"
+  },
+  "KSA": {
+    "name": "Saudi Arabia",
+    "abbreviation": "KSA",
+    "flag": "🇸🇦"
+  },
+  "URU": {
+    "name": "Uruguay",
+    "abbreviation": "URU",
+    "flag": "🇺🇾"
+  },
+  "IRN": {
+    "name": "IR Iran",
+    "abbreviation": "IRN",
+    "flag": "🇮🇷"
+  },
+  "NZL": {
+    "name": "New Zealand",
+    "abbreviation": "NZL",
+    "flag": "🇳🇿"
+  },
+  "FRA": {
+    "name": "France",
+    "abbreviation": "FRA",
+    "flag": "🇫🇷"
+  },
+  "SEN": {
+    "name": "Senegal",
+    "abbreviation": "SEN",
+    "flag": "🇸🇳"
+  },
+  "BOL/SUR/IRQ": {
+    "name": "BOL/SUR/IRQ",
+    "abbreviation": "BOL/SUR/IRQ",
+    "flag": "🇺🇳"
+  },
+  "NOR": {
+    "name": "Norway",
+    "abbreviation": "NOR",
+    "flag": "🇳🇴"
+  },
+  "ARG": {
+    "name": "Argentina",
+    "abbreviation": "ARG",
+    "flag": "🇦🇷"
+  },
+  "ALG": {
+    "name": "Algeria",
+    "abbreviation": "ALG",
+    "flag": "🇩🇿"
+  },
+  "AUT": {
+    "name": "Austria",
+    "abbreviation": "AUT",
+    "flag": "🇦🇹"
+  },
+  "JOR": {
+    "name": "Jordan",
+    "abbreviation": "JOR",
+    "flag": "🇯🇴"
+  },
+  "POR": {
+    "name": "Portugal",
+    "abbreviation": "POR",
+    "flag": "🇵🇹"
+  },
+  "NCL/JAM/COD": {
+    "name": "NCL/JAM/COD",
+    "abbreviation": "NCL/JAM/COD",
+    "flag": "🇺🇳"
+  },
+  "ENG": {
+    "name": "England",
+    "abbreviation": "ENG",
+    "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+  },
+  "CRO": {
+    "name": "Croatia",
+    "abbreviation": "CRO",
+    "flag": "🇭🇷"
+  },
+  "GHA": {
+    "name": "Ghana",
+    "abbreviation": "GHA",
+    "flag": "🇬🇭"
+  },
+  "PAN": {
+    "name": "Panama",
+    "abbreviation": "PAN",
+    "flag": "🇵🇦"
+  },
+  "UZB": {
+    "name": "Uzbekistan",
+    "abbreviation": "UZB",
+    "flag": "🇺🇿"
+  },
+  "COL": {
+    "name": "Colombia",
+    "abbreviation": "COL",
+    "flag": "🇨🇴"
+  },
+  "2A": {
+    "name": "2A",
+    "abbreviation": "2A",
+    "flag": "🇺🇳"
+  },
+  "2B": {
+    "name": "2B",
+    "abbreviation": "2B",
+    "flag": "🇺🇳"
+  },
+  "1C": {
+    "name": "1C",
+    "abbreviation": "1C",
+    "flag": "🇺🇳"
+  },
+  "2F": {
+    "name": "2F",
+    "abbreviation": "2F",
+    "flag": "🇺🇳"
+  },
+  "1E": {
+    "name": "1E",
+    "abbreviation": "1E",
+    "flag": "🇺🇳"
+  },
+  "3ABCDF": {
+    "name": "3ABCDF",
+    "abbreviation": "3ABCDF",
+    "flag": "🇺🇳"
+  },
+  "1F": {
+    "name": "1F",
+    "abbreviation": "1F",
+    "flag": "🇺🇳"
+  },
+  "2C": {
+    "name": "2C",
+    "abbreviation": "2C",
+    "flag": "🇺🇳"
+  },
+  "2E": {
+    "name": "2E",
+    "abbreviation": "2E",
+    "flag": "🇺🇳"
+  },
+  "2I": {
+    "name": "2I",
+    "abbreviation": "2I",
+    "flag": "🇺🇳"
+  },
+  "1I": {
+    "name": "1I",
+    "abbreviation": "1I",
+    "flag": "🇺🇳"
+  },
+  "3CDFGH": {
+    "name": "3CDFGH",
+    "abbreviation": "3CDFGH",
+    "flag": "🇺🇳"
+  },
+  "1A": {
+    "name": "1A",
+    "abbreviation": "1A",
+    "flag": "🇺🇳"
+  },
+  "3CEFHI": {
+    "name": "3CEFHI",
+    "abbreviation": "3CEFHI",
+    "flag": "🇺🇳"
+  },
+  "1L": {
+    "name": "1L",
+    "abbreviation": "1L",
+    "flag": "🇺🇳"
+  },
+  "3EHIJK": {
+    "name": "3EHIJK",
+    "abbreviation": "3EHIJK",
+    "flag": "🇺🇳"
+  },
+  "1G": {
+    "name": "1G",
+    "abbreviation": "1G",
+    "flag": "🇺🇳"
+  },
+  "3AEHIJ": {
+    "name": "3AEHIJ",
+    "abbreviation": "3AEHIJ",
+    "flag": "🇺🇳"
+  },
+  "1D": {
+    "name": "1D",
+    "abbreviation": "1D",
+    "flag": "🇺🇳"
+  },
+  "3BEFIJ": {
+    "name": "3BEFIJ",
+    "abbreviation": "3BEFIJ",
+    "flag": "🇺🇳"
+  },
+  "1H": {
+    "name": "1H",
+    "abbreviation": "1H",
+    "flag": "🇺🇳"
+  },
+  "2J": {
+    "name": "2J",
+    "abbreviation": "2J",
+    "flag": "🇺🇳"
+  },
+  "2K": {
+    "name": "2K",
+    "abbreviation": "2K",
+    "flag": "🇺🇳"
+  },
+  "2L": {
+    "name": "2L",
+    "abbreviation": "2L",
+    "flag": "🇺🇳"
+  },
+  "1B": {
+    "name": "1B",
+    "abbreviation": "1B",
+    "flag": "🇺🇳"
+  },
+  "3EFGIJ": {
+    "name": "3EFGIJ",
+    "abbreviation": "3EFGIJ",
+    "flag": "🇺🇳"
+  },
+  "2D": {
+    "name": "2D",
+    "abbreviation": "2D",
+    "flag": "🇺🇳"
+  },
+  "2G": {
+    "name": "2G",
+    "abbreviation": "2G",
+    "flag": "🇺🇳"
+  },
+  "1J": {
+    "name": "1J",
+    "abbreviation": "1J",
+    "flag": "🇺🇳"
+  },
+  "2H": {
+    "name": "2H",
+    "abbreviation": "2H",
+    "flag": "🇺🇳"
+  },
+  "1K": {
+    "name": "1K",
+    "abbreviation": "1K",
+    "flag": "🇺🇳"
+  },
+  "3DEIJL": {
+    "name": "3DEIJL",
+    "abbreviation": "3DEIJL",
+    "flag": "🇺🇳"
+  },
+  "W73": {
+    "name": "W73",
+    "abbreviation": "W73",
+    "flag": "🇺🇳"
+  },
+  "W75": {
+    "name": "W75",
+    "abbreviation": "W75",
+    "flag": "🇺🇳"
+  },
+  "W74": {
+    "name": "W74",
+    "abbreviation": "W74",
+    "flag": "🇺🇳"
+  },
+  "W77": {
+    "name": "W77",
+    "abbreviation": "W77",
+    "flag": "🇺🇳"
+  },
+  "W76": {
+    "name": "W76",
+    "abbreviation": "W76",
+    "flag": "🇺🇳"
+  },
+  "W78": {
+    "name": "W78",
+    "abbreviation": "W78",
+    "flag": "🇺🇳"
+  },
+  "W79": {
+    "name": "W79",
+    "abbreviation": "W79",
+    "flag": "🇺🇳"
+  },
+  "W80": {
+    "name": "W80",
+    "abbreviation": "W80",
+    "flag": "🇺🇳"
+  },
+  "W83": {
+    "name": "W83",
+    "abbreviation": "W83",
+    "flag": "🇺🇳"
+  },
+  "W84": {
+    "name": "W84",
+    "abbreviation": "W84",
+    "flag": "🇺🇳"
+  },
+  "W81": {
+    "name": "W81",
+    "abbreviation": "W81",
+    "flag": "🇺🇳"
+  },
+  "W82": {
+    "name": "W82",
+    "abbreviation": "W82",
+    "flag": "🇺🇳"
+  },
+  "W86": {
+    "name": "W86",
+    "abbreviation": "W86",
+    "flag": "🇺🇳"
+  },
+  "W88": {
+    "name": "W88",
+    "abbreviation": "W88",
+    "flag": "🇺🇳"
+  },
+  "W85": {
+    "name": "W85",
+    "abbreviation": "W85",
+    "flag": "🇺🇳"
+  },
+  "W87": {
+    "name": "W87",
+    "abbreviation": "W87",
+    "flag": "🇺🇳"
+  },
+  "W89": {
+    "name": "W89",
+    "abbreviation": "W89",
+    "flag": "🇺🇳"
+  },
+  "W90": {
+    "name": "W90",
+    "abbreviation": "W90",
+    "flag": "🇺🇳"
+  },
+  "W93": {
+    "name": "W93",
+    "abbreviation": "W93",
+    "flag": "🇺🇳"
+  },
+  "W94": {
+    "name": "W94",
+    "abbreviation": "W94",
+    "flag": "🇺🇳"
+  },
+  "W91": {
+    "name": "W91",
+    "abbreviation": "W91",
+    "flag": "🇺🇳"
+  },
+  "W92": {
+    "name": "W92",
+    "abbreviation": "W92",
+    "flag": "🇺🇳"
+  },
+  "W95": {
+    "name": "W95",
+    "abbreviation": "W95",
+    "flag": "🇺🇳"
+  },
+  "W96": {
+    "name": "W96",
+    "abbreviation": "W96",
+    "flag": "🇺🇳"
+  },
+  "W97": {
+    "name": "W97",
+    "abbreviation": "W97",
+    "flag": "🇺🇳"
+  },
+  "W98": {
+    "name": "W98",
+    "abbreviation": "W98",
+    "flag": "🇺🇳"
+  },
+  "W99": {
+    "name": "W99",
+    "abbreviation": "W99",
+    "flag": "🇺🇳"
+  },
+  "W100": {
+    "name": "W100",
+    "abbreviation": "W100",
+    "flag": "🇺🇳"
+  },
+  "RU101": {
+    "name": "RU101",
+    "abbreviation": "RU101",
+    "flag": "🇺🇳"
+  },
+  "RU102": {
+    "name": "RU102",
+    "abbreviation": "RU102",
+    "flag": "🇺🇳"
+  },
+  "W101": {
+    "name": "W101",
+    "abbreviation": "W101",
+    "flag": "🇺🇳"
+  },
+  "W102": {
+    "name": "W102",
+    "abbreviation": "W102",
+    "flag": "🇺🇳"
+  }
+}

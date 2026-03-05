@@ -7,11 +7,23 @@ try {
   const data = await fetch("https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idSeason=285023")
   const matches = await data.json()
   const output = []
+  const teamsOrPlaceholders = {};
   for (const match of matches.Results) {
     const item = makeItem(match)
     output.push(item)
+
+    if (!teamsOrPlaceholders[item.home.abbreviation]) {
+      teamsOrPlaceholders[item.home.abbreviation] = item.home
+    }
+
+    if (!teamsOrPlaceholders[item.away.abbreviation]) {
+      teamsOrPlaceholders[item.away.abbreviation] = item.away
+    }
   }
-  await writeFile("./src/data/data.json", JSON.stringify(output, null, 2))
+  await Promise.all([
+    writeFile("./src/data/data.json", JSON.stringify(output, null, 2)),
+    writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2))
+  ])
 } catch (error) {
   console.debug(error)
 }
