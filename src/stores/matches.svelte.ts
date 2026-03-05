@@ -17,11 +17,9 @@ export function sortMatchesByDatetime() {
 
 export function sortMatchesByGroup() {
   matchesData.sort((a, b) => {
-    const valA = a.group && a.group.length > 0 ? a.group : undefined
-    const valB = b.group && b.group.length > 0 ? b.group : undefined
-    if (valA === undefined && valB === undefined) return 0
-    if (valA === undefined) return 1
-    if (valB === undefined) return -1
-    return valA.localeCompare(valB)
+    if (!a.group && !b.group) return 0
+    if (!a.group) return 1
+    if (!b.group) return -1
+    return a.group.localeCompare(b.group)
   })
 }
