@@ -152,6 +152,18 @@ a:hover {
   display: inline-block;
   padding: 0.5rem;
   white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.15s ease;
+}
+
+.nav ul li a:hover,
+.nav ul li a:focus {
+  border-bottom-color: var(--wc-color-accent);
+  outline: none;
+}
+
+.nav ul li a[aria-current="page"] {
+  border-bottom-color: var(--wc-color-secondary);
 }
 
 /* Main */
