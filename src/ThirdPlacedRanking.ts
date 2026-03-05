@@ -1,6 +1,7 @@
+import type { TeamInfo } from "./data/matches";
 import type { GroupsData } from "./stores/groups.svelte";
 
-export type ThirdPlacesTableRow = [string, number, number, number, number, number, string];
+export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];
 
 export default class ThirdPlacedRanking {
   #data: GroupsData

@@ -1,4 +1,5 @@
-import { type MatchItem } from "./data/matches";
+import { type MatchItem, type TeamInfo } from "./data/matches";
+import { getTeam } from "./data/teams";
 import { findMatchById } from "./stores/matches.svelte";
 
 const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
@@ -53,11 +54,12 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
   102: { next: 104, slot: "away" },
 }
 
-function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner") {
+function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): TeamInfo {
   const result = match.result;
+  const placeholder = type === "winner" ? `W${match.id}` : `RU${match.id}`;
 
   if (!result || result[0] === null || result[1] === null || result[0] === result[1]) {
-    return type === "winner" ? `W${match.id}` : `RU${match.id}`;
+    return getTeam(placeholder);
   }
   const [scoreHome, scoreAway] = result
   if (type === "winner") {
@@ -77,7 +79,7 @@ function updateThirdPlace(match: MatchItem): void {
   try {
     const thirdPlaceMatchId: number = 103;
     const thirdPlaceMatch:MatchItem = findMatchById(thirdPlaceMatchId);
-    const matchLoserOrPlaceholder:string = getTeamOrPlaceholder(match, "runner");
+    const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
     thirdPlaceMatch[next.slot] = matchLoserOrPlaceholder;
   } catch (e) {
     console.error(e);
@@ -90,7 +92,7 @@ export function updateKnockout(match: MatchItem): void {
   const next = knockoutTree[match.id];
   try {
       const nextMatch:MatchItem = findMatchById(next.next);
-      const matchWinnerOrPlaceholder:string = getTeamOrPlaceholder(match, "winner");
+      const matchWinnerOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "winner");
       nextMatch[next.slot] = matchWinnerOrPlaceholder;
 
       if ([101, 102].includes(match.id)) {

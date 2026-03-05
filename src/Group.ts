@@ -1,5 +1,7 @@
+import type { TeamInfo } from "./data/matches";
+
 // [Team, Matches Played, Goals For, Goals Against, Goal Difference, Points]
-export type TableRow = [string, number, number, number, number, number];
+export type TableRow = [TeamInfo, number, number, number, number, number];
 export type Result = number | null;
 
 export default class Group {
@@ -10,10 +12,10 @@ export default class Group {
     [null, null, undefined, null],
     [null, null, null, undefined],
   ];
-  
+
   #table: TableRow[] = [];
 
-  constructor(groupName: string, readonly teams: string[]) {
+  constructor(groupName: string, readonly teams: TeamInfo[]) {
     if (teams.length !== 4) throw new Error("Require 4 Teams");
     this.name = `Group ${groupName}`;
     this.#table = this.#calculateTable()
@@ -23,9 +25,9 @@ export default class Group {
     return this.#table
   }
 
-  setScore(homeName: string, awayName: string, result: [home: Result, away: Result]): void {
-    const homeIndex: number = this.teams.indexOf(homeName)
-    const awayIndex: number = this.teams.indexOf(awayName)
+  setScore(homeAbbr: string, awayAbbr: string, result: [home: Result, away: Result]): void {
+    const homeIndex: number = this.teams.findIndex(t => t.abbreviation === homeAbbr)
+    const awayIndex: number = this.teams.findIndex(t => t.abbreviation === awayAbbr)
     if (homeIndex === -1 || awayIndex === -1) {
       throw new Error("Unknown team name");
     }

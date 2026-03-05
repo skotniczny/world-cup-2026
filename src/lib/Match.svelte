@@ -6,7 +6,7 @@
   import TeamName from "./TeamName.svelte";
 
   const { match }: { match: MatchItem } = $props()
-  const { id, datetime, homeFlag, awayFlag, stage, group, city, stadium, completed } = match
+  const { id, datetime, stage, group, city, stadium, completed } = match
   const home = $derived(match.home)
   const away  = $derived(match.away)
   const uid = $props.id()
@@ -36,7 +36,7 @@
     <time datetime={datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="match-form">
-    <label class="match-team text-right" for="{uid}--home"><TeamName teamName={home} teamFlag={homeFlag} /></label>
+    <label class="match-team text-right" for="{uid}--home"><TeamName teamName={home.name} teamFlag={home.flag} /></label>
     <input
       class="match-score form-ctrl"
       id="{uid}--home"
@@ -56,7 +56,7 @@
       readonly={completed}
       oninput={update}
     />
-    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away} teamFlag={awayFlag} reverse /></label>
+    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away.name} teamFlag={away.flag} reverse /></label>
   </div>
   <div class="match-footer">{footerTitle} • {city} • {stadium}</div>
 </div>

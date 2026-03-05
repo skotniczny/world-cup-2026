@@ -40,7 +40,7 @@
       {#each props.table as row, i}
         <tr>
           <td class="table_pos">{i + 1}</td>
-          <td class="table_team">{row[0]}</td>
+          <td class="table_team">{long ? row[0].name : row[0].abbreviation} {@html row[0].flag}</td>
           {#if long}
           <td class="table_mp">{row[1]}</td>
           {/if}

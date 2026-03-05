@@ -1,9 +1,9 @@
 // Matchup rules for 8 advancing third-placed teams to their round-of-32 opponents.
 // Source: FIFA World Cup 2026 regulations.
-import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" assert { type: "json" };
+import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" with { type: "json" };
 
 import { type GroupName, getTeamAt, thirdPlaces } from "./stores/groups.svelte";
-import { findFlag } from "./data/matches";
+import type { TeamInfo } from "./data/matches";
 import { findMatchById } from "./stores/matches.svelte";
 
 type GroupSlot = { group: GroupName; position: number };
@@ -31,13 +31,12 @@ const roundOf32Slots = new Map<number, { home: GroupSlot; away: Slot }>([
   [80, { home: { group: "L", position: 1 }, away: { thirdPlaceIndex: 7, position: 3 } }],
 ]);
 
-function resolveSlot(slot: Slot): string {
+function resolveSlot(slot: Slot): TeamInfo {
   if ("group" in slot) return getTeamAt(slot.group, slot.position);
 
   const advancingGroups = thirdPlaces.advancingGroups;
   const matchupValue = thirdPlaceMatchups[advancingGroups];
   if (!matchupValue) throw new Error(`No third-place matchup found for advancing groups: "${advancingGroups}"`);
-
   const group = matchupValue[slot.thirdPlaceIndex] as GroupName;
   return getTeamAt(group, slot.position);
 }
@@ -46,8 +45,6 @@ export function updateRoundOf32(): void {
   for (const [id, { home, away }] of roundOf32Slots) {
     const match = findMatchById(id);
     match.home = resolveSlot(home);
-    match.homeFlag = findFlag(match.home);
     match.away = resolveSlot(away);
-    match.awayFlag = findFlag(match.away);
   }
 }

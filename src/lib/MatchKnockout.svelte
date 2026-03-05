@@ -7,7 +7,7 @@
 
   const { match }: { match: MatchItem } = $props()
 
-  const { datetime, homeFlag, awayFlag, city, completed } = match
+  const { datetime, city, completed } = match
   const home = $derived(match.home)
   const away  = $derived(match.away)
   const uid = $props.id()
@@ -33,7 +33,7 @@
   <div class="matchko-body">
     <div class="matchko-form">
       <label class="matchko-team text-left" for="{uid}--home">
-        <TeamName teamName={home} teamFlag={homeFlag} />
+        <TeamName teamName={home.abbreviation} teamFlag={home.flag} />
       </label>
       <input
         class="matchko-score form-ctrl"
@@ -47,7 +47,7 @@
     </div>
     <div class="matchko-form">
       <label class="matchko-team text-left" for="{uid}--away">
-        <TeamName teamName={away} teamFlag={awayFlag} />
+        <TeamName teamName={away.abbreviation} teamFlag={away.flag} />
       </label>
       <input
         class="matchko-score form-ctrl"
@@ -147,6 +147,7 @@
   .matchko-form {
     display: flex;
     column-gap: var(--wc-space-sm);
+    min-width: 0;
   }
 
   .matchko-score {
