@@ -8,6 +8,7 @@
     "build": "vite build --base=/world-cup-2026",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+    "make-data": "node scripts/make-data.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

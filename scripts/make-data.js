@@ -1,5 +1,5 @@
 import { writeFile } from 'node:fs/promises'
-import FLAGS from "./src/data/flags.json" with { type: "json" }
+import FLAGS from "./flags.json" with { type: "json" }
 
 const findFlag = (country) => FLAGS.find(flag => flag.name === country)?.emoji ?? "🇺🇳"
 
