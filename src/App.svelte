@@ -44,14 +44,9 @@
   list-style: none;
   padding: 0;
   display: inline-flex;
-  text-align: center;
   gap: var(--wc-space-sm);
   overflow: auto;
   max-width: 100%;
-}
-
-.nav ul li {
-  display: inline-block;
 }
 
 .nav ul li :global(a) {
