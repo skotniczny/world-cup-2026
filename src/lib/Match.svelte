@@ -36,7 +36,7 @@
     <time datetime={datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="match-form">
-    <label class="match-team text-right" for="{uid}--home"><TeamName teamName={home.name} teamFlag={home.flag} /></label>
+    <label class="match-team text-right" for="{uid}--home"><TeamName team={home} /></label>
     <input
       class="match-score form-ctrl"
       id="{uid}--home"
@@ -56,7 +56,7 @@
       readonly={completed}
       oninput={update}
     />
-    <label class="match-team text-left" for="{uid}--away"><TeamName teamName={away.name} teamFlag={away.flag} reverse /></label>
+    <label class="match-team text-left" for="{uid}--away"><TeamName team={away} reverse /></label>
   </div>
   <div class="match-footer">{footerTitle} • {city} • {stadium}</div>
 </div>

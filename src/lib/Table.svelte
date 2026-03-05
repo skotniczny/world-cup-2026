@@ -1,6 +1,7 @@
 <script lang="ts">
   import { type TableRow }  from "../Group"
   import { type ThirdPlacesTableRow } from "../ThirdPlacedRanking";
+  import TeamName from "./TeamName.svelte";
   interface Props { name: string, table: TableRow[] | ThirdPlacesTableRow[], long?: boolean, thirdPlaces?: boolean }
   const props: Props = $props();
 
@@ -40,7 +41,9 @@
       {#each props.table as row, i}
         <tr>
           <td class="table_pos">{i + 1}</td>
-          <td class="table_team">{long ? row[0].name : row[0].abbreviation} {@html row[0].flag}</td>
+          <td class="table_team">
+            <TeamName team={row[0]} compact={!long} />
+          </td>
           {#if long}
           <td class="table_mp">{row[1]}</td>
           {/if}
@@ -152,10 +155,6 @@
 
   .table_pos {
     position: relative;
-  }
-
-  .table_team {
-    font-family: var(--wc-headings-ff);
   }
 
   .table_pos::before {

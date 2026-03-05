@@ -1,20 +1,22 @@
 <script lang="ts">
+import type { TeamInfo } from "../data/matches"
+
 interface Props {
-  teamName: string,
-  teamFlag:string,
+  team: TeamInfo
+  compact?: boolean
   reverse?: boolean
 }
-const { teamName, teamFlag, reverse = false }: Props = $props()
+const { team, compact = false, reverse = false }: Props = $props()
 </script>
 
 {#if reverse}
-<span class="team-emoji">{@html teamFlag}</span> 
+<span class="team-emoji">{@html team.flag}</span>
 {/if}
 
-<span class="team-name">{teamName}</span>
+<span class="team-name">{compact ? team.abbreviation : team.name}</span>
 
 {#if !reverse}
-<span class="team-emoji">{@html teamFlag}</span>
+<span class="team-emoji">{@html team.flag}</span>
 {/if}
 
 <style>

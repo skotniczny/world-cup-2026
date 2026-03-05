@@ -33,7 +33,7 @@
   <div class="matchko-body">
     <div class="matchko-form">
       <label class="matchko-team text-left" for="{uid}--home">
-        <TeamName teamName={home.abbreviation} teamFlag={home.flag} />
+        <TeamName team={home} compact />
       </label>
       <input
         class="matchko-score form-ctrl"
@@ -47,7 +47,7 @@
     </div>
     <div class="matchko-form">
       <label class="matchko-team text-left" for="{uid}--away">
-        <TeamName teamName={away.abbreviation} teamFlag={away.flag} />
+        <TeamName team={away} compact />
       </label>
       <input
         class="matchko-score form-ctrl"
