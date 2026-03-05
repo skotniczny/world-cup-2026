@@ -121,51 +121,6 @@ a:hover {
   outline: 2px solid var(--wc-color-accent);
 }
 
-/* Nav */
-
-.nav {
-  position: sticky;
-  top: 0;
-  background: var(--wc-color-natural0);
-  border-radius: 0 0 var(--wc-radius) var(--wc-radius);
-  box-shadow: var(--wc-shadow);
-  z-index: 1;
-  text-align: center;
-}
-
-.nav ul {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  display: inline-flex;
-  text-align: center;
-  gap: var(--wc-space-sm);
-  overflow: auto;
-  max-width: 100%;
-}
-
-.nav ul li {
-  display: inline-block;
-}
-
-.nav ul li a {
-  display: inline-block;
-  padding: 0.5rem;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.15s ease;
-}
-
-.nav ul li a:hover,
-.nav ul li a:focus {
-  border-bottom-color: var(--wc-color-accent);
-  outline: none;
-}
-
-.nav ul li a[aria-current="page"] {
-  border-bottom-color: var(--wc-color-secondary);
-}
-
 /* Main */
 
 #app {
