@@ -1,7 +1,7 @@
 import { writeFile } from 'node:fs/promises'
 import FLAGS from "./flags.json" with { type: "json" }
 
-const findFlag = (country) => FLAGS.find(flag => flag.name === country)?.emoji ?? "🇺🇳"
+const findFlag = (abbreviation) => FLAGS[abbreviation] ?? "🇺🇳"
 
 try {
   const data = await fetch("https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idSeason=285023")
@@ -49,12 +49,12 @@ function makeItem(match) {
     "home": {
       "name": homeName,
       "abbreviation": match.Home?.Abbreviation || match.PlaceHolderA,
-      "flag": findFlag(homeName)
+      "flag": findFlag(match.Home?.Abbreviation)
     },
     "away": {
       "name": awayName,
       "abbreviation": match.Away?.Abbreviation || match.PlaceHolderB,
-      "flag": findFlag(awayName)
+      "flag": findFlag(match.Away?.Abbreviation)
     },
     "stadium": match.Stadium.Name[0].Description,
     "city": match.Stadium.CityName[0].Description
