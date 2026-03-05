@@ -1,7 +1,7 @@
 import type { MatchItem } from "../data/matches";
 import matches from "../data/matches";
 
-export const matchesData: MatchItem[] = $state(matches.map(match => ({ ...match })))
+export const matchesData: MatchItem[] = $state(matches)
 
 export function findMatchById(id: number):MatchItem {
   const match: MatchItem | undefined = matchesData.find(match => match.id === id)
