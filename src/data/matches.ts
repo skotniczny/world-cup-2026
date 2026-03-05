@@ -1,4 +1,4 @@
-import DATA from "./data.json" with {type: "json"}
+import MATCHES from "./matches.json" with {type: "json"}
 import type { Result } from "../Group"
 import type { GroupName } from "./groups"
 
@@ -21,7 +21,7 @@ export type MatchItem = {
   completed: boolean
 }
 
-const matches: MatchItem[] = (DATA as unknown as MatchItem[]).map((item, index) => ({
+const matches: MatchItem[] = (MATCHES as unknown as MatchItem[]).map((item, index) => ({
   ...item,
   id: index + 1,
   completed: !!item.result,
