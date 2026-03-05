@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { TeamInfo } from "../data/matches"
+import type { TeamInfo } from "../data/teams"
 
 interface Props {
   team: TeamInfo

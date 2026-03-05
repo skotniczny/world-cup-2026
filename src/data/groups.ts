@@ -1,5 +1,5 @@
 import GROUPS_DATA from "./groups.json" with { type: "json" }
-import type { TeamInfo } from "./matches"
+import type { TeamInfo } from "./teams"
 
 export type GroupName = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
 

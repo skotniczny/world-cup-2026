@@ -1,4 +1,5 @@
-import { type MatchItem, type TeamInfo } from "./data/matches";
+import type { MatchItem } from "./data/matches";
+import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
 import { findMatchById } from "./stores/matches.svelte";
 

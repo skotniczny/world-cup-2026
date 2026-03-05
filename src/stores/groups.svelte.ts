@@ -1,4 +1,5 @@
-import type { MatchItem, TeamInfo } from "../data/matches";
+import type { MatchItem } from "../data/matches";
+import type { TeamInfo } from "../data/teams";
 import { type GroupName, getGroup } from "../data/groups";
 import Group, { type TableRow } from "../Group";
 import ThirdPlacedRanking from "../ThirdPlacedRanking";

@@ -1,5 +1,10 @@
 import TEAMS_DATA from "./teams.json" with { type: "json" }
-import type { TeamInfo } from "./matches"
+
+export type TeamInfo = {
+  name: string
+  abbreviation: string
+  flag: string
+}
 
 const teams = new Map<string, TeamInfo>(Object.entries(TEAMS_DATA))
 

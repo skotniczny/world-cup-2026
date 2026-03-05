@@ -1,4 +1,4 @@
-import type { TeamInfo } from "./data/matches";
+import type { TeamInfo } from "./data/teams";
 import type { GroupName } from "./data/groups";
 
 // [Team, Matches Played, Goals For, Goals Against, Goal Difference, Points]

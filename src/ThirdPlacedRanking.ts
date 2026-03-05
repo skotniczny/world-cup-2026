@@ -1,4 +1,4 @@
-import type { TeamInfo } from "./data/matches";
+import type { TeamInfo } from "./data/teams";
 import type { GroupsData } from "./stores/groups.svelte";
 
 export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];

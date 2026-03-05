@@ -3,7 +3,7 @@
 import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" with { type: "json" };
 
 import type { GroupName } from "./data/groups";
-import type { TeamInfo } from "./data/matches";
+import type { TeamInfo } from "./data/teams";
 import { getTeamAt, thirdPlaces } from "./stores/groups.svelte";
 import { findMatchById } from "./stores/matches.svelte";
 

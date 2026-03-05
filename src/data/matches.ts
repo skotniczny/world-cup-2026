@@ -1,12 +1,7 @@
 import MATCHES from "./matches.json" with {type: "json"}
 import type { Result } from "../Group"
 import type { GroupName } from "./groups"
-
-export type TeamInfo = {
-  name: string
-  abbreviation: string
-  flag: string
-}
+import type { TeamInfo } from "./teams"
 
 export type MatchItem = {
   id: number
