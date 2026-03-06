@@ -9,9 +9,15 @@
 
   const { datetime, city, completed } = match
   const home = $derived(match.home)
-  const away  = $derived(match.away)
+  const away = $derived(match.away)
   const uid = $props.id()
-  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }
+  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }
 
   let homeScore: Result = $state(match?.result?.[0] ?? null)
   let awayScore: Result = $state(match?.result?.[1] ?? null)
@@ -28,7 +34,7 @@
 
 <div class="matchko">
   <div class="matchko-header">
-    <time datetime={datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
+    <time {datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="matchko-body">
     <div class="matchko-form">

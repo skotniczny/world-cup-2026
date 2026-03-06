@@ -13,14 +13,14 @@
     sfRight: [102],
     qfRight: [99, 100],
     stage16Right: [91, 92, 95, 96],
-    stage32Right: [76, 78, 79, 80, 86, 88, 85, 87]
+    stage32Right: [76, 78, 79, 80, 86, 88, 85, 87],
   }
 
   const knockoutMatches = $derived(
-    Object.fromEntries(
-      Object.entries(knockout)
-        .map(([key, matchIds]) => [ key, matchIds.map(findMatchById) ])
-    ) as Record<keyof typeof knockout, MatchItem[]>
+    Object.fromEntries(Object.entries(knockout).map(([key, matchIds]) => [key, matchIds.map(findMatchById)])) as Record<
+      keyof typeof knockout,
+      MatchItem[]
+    >,
   )
   const sfLeft: MatchItem = $derived(knockoutMatches.sfLeft[0])
   const sfRight: MatchItem = $derived(knockoutMatches.sfRight[0])
@@ -44,28 +44,27 @@
     <div class="knockout-stage knockout-stage_left knockout-stage_32">
       {#each knockoutMatches.stage32Left as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout {match} />
         </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_16">
       {#each knockoutMatches.stage16Left as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout {match} />
         </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_qf">
       {#each knockoutMatches.qfLeft as match}
-      <div class="knockout-match">
-        <MatchKnockout match={match} />
-      </div>
+        <div class="knockout-match">
+          <MatchKnockout {match} />
+        </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_sf">
       <div class="knockout-match knockout-match">
         <MatchKnockout match={sfLeft} />
-
       </div>
     </div>
     <div class="knockout-stage knockout-stage_f">
@@ -81,27 +80,26 @@
     <div class="knockout-stage knockout-stage_right knockout-stage_sf">
       <div class="knockout-match">
         <MatchKnockout match={sfRight} />
-
       </div>
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_qf">
       {#each knockoutMatches.qfRight as match}
-      <div class="knockout-match">
-        <MatchKnockout match={match} />
-      </div>
+        <div class="knockout-match">
+          <MatchKnockout {match} />
+        </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_16">
       {#each knockoutMatches.stage16Right as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout {match} />
         </div>
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_right knockout-stage_32">
       {#each knockoutMatches.stage32Right as match}
         <div class="knockout-match">
-          <MatchKnockout match={match} />
+          <MatchKnockout {match} />
         </div>
       {/each}
     </div>
@@ -221,7 +219,7 @@
   }
 
   .knockout-stage_qf .knockout-match::after,
-  .knockout-stage_qf .knockout-match::before  {
+  .knockout-stage_qf .knockout-match::before {
     height: 100px;
   }
 

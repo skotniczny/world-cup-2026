@@ -1,17 +1,23 @@
 <script lang="ts">
   import type { Result } from "../Group"
   import { updateGroupScore } from "../stores/groups.svelte"
-  import { updateKnockout } from "../Knockout";
+  import { updateKnockout } from "../Knockout"
   import { type MatchItem } from "../data/matches"
-  import TeamName from "./TeamName.svelte";
+  import TeamName from "./TeamName.svelte"
 
   const { match }: { match: MatchItem } = $props()
   const { id, datetime, stage, group, city, stadium, completed } = match
   const home = $derived(match.home)
-  const away  = $derived(match.away)
+  const away = $derived(match.away)
   const uid = $props.id()
   const footerTitle: string = group ? `Group ${group}` : `${stage}`
-  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }
+  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }
 
   let homeScore: Result = $state(match?.result?.[0] ?? null)
   let awayScore: Result = $state(match?.result?.[1] ?? null)
@@ -33,7 +39,7 @@
 
 <div class="match">
   <div class="match-header">
-    <time datetime={datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
+    <time {datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="match-form">
     <label class="match-team text-right" for="{uid}--home"><TeamName team={home} /></label>

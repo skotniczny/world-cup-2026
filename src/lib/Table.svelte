@@ -1,17 +1,21 @@
 <script lang="ts">
-  import { type TableRow }  from "../Group"
-  import { type ThirdPlacesTableRow } from "../ThirdPlacedRanking";
-  import TeamName from "./TeamName.svelte";
-  interface Props { name: string, table: TableRow[] | ThirdPlacesTableRow[], long?: boolean, thirdPlaces?: boolean }
-  const props: Props = $props();
+  import { type TableRow } from "../Group"
+  import { type ThirdPlacesTableRow } from "../ThirdPlacedRanking"
+  import TeamName from "./TeamName.svelte"
+  interface Props {
+    name: string
+    table: TableRow[] | ThirdPlacesTableRow[]
+    long?: boolean
+    thirdPlaces?: boolean
+  }
+  const props: Props = $props()
 
-  const long:boolean = props.long ?? false
-  const thirdPlaces:boolean = props.thirdPlaces ?? false
-  const mainClass = `standings${thirdPlaces ? ` standings--third-places` : ''}`
+  const long: boolean = props.long ?? false
+  const thirdPlaces: boolean = props.thirdPlaces ?? false
+  const mainClass = `standings${thirdPlaces ? ` standings--third-places` : ""}`
 </script>
 
-
-<div class="{mainClass}" id="{props.name.replace(' ', '')}">
+<div class={mainClass} id={props.name.replace(" ", "")}>
   <table>
     <caption>{props.name}</caption>
     <thead>
@@ -19,21 +23,21 @@
         <th></th>
         <th>Team</th>
         {#if long}
-        <th>Matches Played</th>
-        <th>Goals For</th>
-        <th>Goals Against</th>
-        <th>Goal Difference</th>
-        <th>Points</th>
-        {#if thirdPlaces}
-        <th>Group</th>
-        {/if}
+          <th>Matches Played</th>
+          <th>Goals For</th>
+          <th>Goals Against</th>
+          <th>Goal Difference</th>
+          <th>Points</th>
+          {#if thirdPlaces}
+            <th>Group</th>
+          {/if}
         {:else}
-        <th title="Goals For" class="text-help">GF</th>
-        <th title="Goals Against" class="text-help">GA</th>
-        <th title="Points" class="text-help">Pts</th>
-        {#if thirdPlaces}
-        <th title="Group" class="text-help">GP</th>
-        {/if}
+          <th title="Goals For" class="text-help">GF</th>
+          <th title="Goals Against" class="text-help">GA</th>
+          <th title="Points" class="text-help">Pts</th>
+          {#if thirdPlaces}
+            <th title="Group" class="text-help">GP</th>
+          {/if}
         {/if}
       </tr>
     </thead>
@@ -45,26 +49,26 @@
             <TeamName team={row[0]} compact={!long} />
           </td>
           {#if long}
-          <td class="table_mp">{row[1]}</td>
+            <td class="table_mp">{row[1]}</td>
           {/if}
           <td class="table_for">{row[2]}</td>
           <td class="table_against">{row[3]}</td>
           {#if long}
-          <td class="table_gd">{row[4]}</td>
+            <td class="table_gd">{row[4]}</td>
           {/if}
           <td class="table_points">{row[5]}</td>
           {#if thirdPlaces}
-          <td class="table_group">{row[6]}</td>
+            <td class="table_group">{row[6]}</td>
           {/if}
         </tr>
       {/each}
     </tbody>
   </table>
   {#if long}
-  <ul class="standings_footer">
-    <li class="footer_item footer_item-advance">Advance to knockout stage</li>
-    <li class="footer_item footer_item-ranking">Possible knockout stage based on ranking</li>
-  </ul>
+    <ul class="standings_footer">
+      <li class="footer_item footer_item-advance">Advance to knockout stage</li>
+      <li class="footer_item footer_item-ranking">Possible knockout stage based on ranking</li>
+    </ul>
   {/if}
 </div>
 
