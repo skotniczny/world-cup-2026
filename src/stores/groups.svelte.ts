@@ -20,9 +20,9 @@ const groups: Record<GroupName, Group> = {
   L: new Group("L", getGroup("L")),
 };
 
-export type GroupsData = Record<GroupName, { name: string; table: TableRow[] }>
+export type GroupsData = Record<GroupName, { name: string; table: TableRow[] }>;
 
-export const groupsData:GroupsData = $state({
+export const groupsData: GroupsData = $state({
   A: { name: groups.A.name, table: groups.A.table },
   B: { name: groups.B.name, table: groups.B.table },
   C: { name: groups.C.name, table: groups.C.table },
@@ -38,12 +38,16 @@ export const groupsData:GroupsData = $state({
 });
 
 export const thirdPlaces = {
-  get table() { return getThirdPlacesTable(groupsData); },
-  get advancingGroups() { return getAdvancingGroups(this.table); },
+  get table() {
+    return getThirdPlacesTable(groupsData);
+  },
+  get advancingGroups() {
+    return getAdvancingGroups(this.table);
+  },
 };
 
 export function getTeamAt(group: GroupName, position: number): TeamInfo {
-  if (position < 1 || position > 4) throw Error("Argument exception, position is out of range")
+  if (position < 1 || position > 4) throw Error("Argument exception, position is out of range");
   return groupsData[group].table[position - 1][0];
 }
 
