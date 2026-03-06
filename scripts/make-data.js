@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises'
+import { writeFile } from "node:fs/promises"
 import FLAGS from "./flags.json" with { type: "json" }
 
 const findFlag = (abbreviation) => FLAGS[abbreviation] ?? "🇺🇳"
@@ -7,8 +7,8 @@ try {
   const data = await fetch("https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idSeason=285023")
   const matches = await data.json()
   const output = []
-  const teamsOrPlaceholders = {};
-  const groups = {};
+  const teamsOrPlaceholders = {}
+  const groups = {}
   for (const match of matches.Results) {
     const item = makeItem(match)
     output.push(item)
@@ -22,17 +22,18 @@ try {
     }
 
     if (item.group) {
-      if (!groups[item.group]) groups[item.group] = [];
-      if (!groups[item.group].some(t => t.abbreviation === item.home.abbreviation)) groups[item.group].push(item.home)
-      if (!groups[item.group].some(t => t.abbreviation === item.away.abbreviation)) groups[item.group].push(item.away)
+      if (!groups[item.group]) groups[item.group] = []
+      if (!groups[item.group].some((t) => t.abbreviation === item.home.abbreviation)) groups[item.group].push(item.home)
+      if (!groups[item.group].some((t) => t.abbreviation === item.away.abbreviation)) groups[item.group].push(item.away)
     }
   }
   await Promise.all([
     writeFile("./src/data/matches.json", JSON.stringify(output, null, 2)),
     writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2)),
-    writeFile("./src/data/groups.json", JSON.stringify(
-      Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))), null, 2
-    ))
+    writeFile(
+      "./src/data/groups.json",
+      JSON.stringify(Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))), null, 2),
+    ),
   ])
 } catch (error) {
   console.debug(error)
@@ -43,20 +44,20 @@ function makeItem(match) {
   const homeName = match.Home?.ShortClubName || match.PlaceHolderA
   const awayName = match.Away?.ShortClubName || match.PlaceHolderB
   return {
-    "datetime": match.Date,
-    "stage": match.StageName[0].Description,
-    "group": match.GroupName[0]?.Description.replace("Group ", "") || "" ,
-    "home": {
-      "name": homeName,
-      "abbreviation": match.Home?.Abbreviation || match.PlaceHolderA,
-      "flag": findFlag(match.Home?.Abbreviation)
+    datetime: match.Date,
+    stage: match.StageName[0].Description,
+    group: match.GroupName[0]?.Description.replace("Group ", "") || "",
+    home: {
+      name: homeName,
+      abbreviation: match.Home?.Abbreviation || match.PlaceHolderA,
+      flag: findFlag(match.Home?.Abbreviation),
     },
-    "away": {
-      "name": awayName,
-      "abbreviation": match.Away?.Abbreviation || match.PlaceHolderB,
-      "flag": findFlag(match.Away?.Abbreviation)
+    away: {
+      name: awayName,
+      abbreviation: match.Away?.Abbreviation || match.PlaceHolderB,
+      flag: findFlag(match.Away?.Abbreviation),
     },
-    "stadium": match.Stadium.Name[0].Description,
-    "city": match.Stadium.CityName[0].Description
+    stadium: match.Stadium.Name[0].Description,
+    city: match.Stadium.CityName[0].Description,
   }
 }
