@@ -1,25 +1,20 @@
 import type { TeamInfo } from "./data/teams";
 import type { GroupsData } from "./stores/groups.svelte";
 
+const ADVANCING_THIRD_PLACES = 8;
+
 export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];
 
-export default class ThirdPlacedRanking {
-  #data: GroupsData
-  constructor(source: GroupsData) {
-    this.#data = source
-  }
+export function getThirdPlacesTable(data: GroupsData): ThirdPlacesTableRow[] {
+  const thirdPlacedData:ThirdPlacesTableRow[] = Object
+    .entries(data)
+    .map(([groupKey, { table }]) => [...table[2], groupKey]);
 
-  get table() { 
-    const thirdPlacedData:ThirdPlacesTableRow[] = Object
-      .entries(this.#data)
-      .map(([groupKey, { table }]) => [...table[2], groupKey]);
+    return thirdPlacedData.sort(sortThirdPlacedRanking);
+}
 
-      return thirdPlacedData.sort(sortThirdPlacedRanking);
-    }
-  
-  get advancingGroups() {
-    return this.table.map(i => i[6]).slice(0, 8).sort().join("");
-  }
+export function getAdvancingGroups(table: ThirdPlacesTableRow[]): string {
+  return table.map(i => i[6]).slice(0, ADVANCING_THIRD_PLACES).sort().join("");
 }
 
 const sortThirdPlacedRanking = (a:ThirdPlacesTableRow, b:ThirdPlacesTableRow) => {
