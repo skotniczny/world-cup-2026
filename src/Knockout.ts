@@ -3,7 +3,7 @@ import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
 import { findMatchById } from "./stores/matches.svelte";
 
-const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
+const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
   // Round of 32
   73: { next: 89, slot: "home" },
   75: { next: 89, slot: "away" },
@@ -29,7 +29,6 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
   85: { next: 96, slot: "home" },
   87: { next: 96, slot: "away" },
 
-
   // Round of 16
   89: { next: 97, slot: "home" },
   90: { next: 97, slot: "away" },
@@ -49,11 +48,11 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away"; }> = {
 
   99: { next: 102, slot: "home" },
   100: { next: 102, slot: "away" },
- 
+
   // Semi Finals
   101: { next: 104, slot: "home" },
   102: { next: 104, slot: "away" },
-}
+};
 
 function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): TeamInfo {
   const result = match.result;
@@ -62,7 +61,7 @@ function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): Team
   if (!result || result[0] === null || result[1] === null || result[0] === result[1]) {
     return getTeam(placeholder);
   }
-  const [scoreHome, scoreAway] = result
+  const [scoreHome, scoreAway] = result;
   if (type === "winner") {
     return scoreHome > scoreAway ? match.home : match.away;
   } else {
@@ -71,15 +70,15 @@ function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): Team
 }
 
 function updateThirdPlace(match: MatchItem): void {
-  const thirdPlaceSlot: Record<number, { slot: "home" | "away"; }> = {
+  const thirdPlaceSlot: Record<number, { slot: "home" | "away" }> = {
     101: { slot: "home" },
     102: { slot: "away" },
-  }
-  const next = thirdPlaceSlot[match.id]
+  };
+  const next = thirdPlaceSlot[match.id];
 
   try {
     const thirdPlaceMatchId: number = 103;
-    const thirdPlaceMatch:MatchItem = findMatchById(thirdPlaceMatchId);
+    const thirdPlaceMatch: MatchItem = findMatchById(thirdPlaceMatchId);
     const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
     thirdPlaceMatch[next.slot] = matchLoserOrPlaceholder;
   } catch (e) {
@@ -92,13 +91,13 @@ export function updateKnockout(match: MatchItem): void {
   if (match.id < firstKnockoutMatchId) return;
   const next = knockoutTree[match.id];
   try {
-      const nextMatch:MatchItem = findMatchById(next.next);
-      const matchWinnerOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "winner");
-      nextMatch[next.slot] = matchWinnerOrPlaceholder;
+    const nextMatch: MatchItem = findMatchById(next.next);
+    const matchWinnerOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "winner");
+    nextMatch[next.slot] = matchWinnerOrPlaceholder;
 
-      if ([101, 102].includes(match.id)) {
-        updateThirdPlace(match);
-      }
+    if ([101, 102].includes(match.id)) {
+      updateThirdPlace(match);
+    }
   } catch (e) {
     console.error(e);
   }

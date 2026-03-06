@@ -16,29 +16,32 @@ export default class Group {
 
   #table: TableRow[] = [];
 
-  constructor(groupName: GroupName, readonly teams: TeamInfo[]) {
+  constructor(
+    groupName: GroupName,
+    readonly teams: TeamInfo[],
+  ) {
     if (teams.length !== 4) throw new Error("Require 4 Teams");
     this.name = `Group ${groupName}`;
-    this.#table = this.#calculateTable()
+    this.#table = this.#calculateTable();
   }
 
   get table(): TableRow[] {
-    return this.#table
+    return this.#table;
   }
 
   setScore(homeAbbr: string, awayAbbr: string, result: [home: Result, away: Result]): void {
-    const homeIndex: number = this.teams.findIndex(t => t.abbreviation === homeAbbr)
-    const awayIndex: number = this.teams.findIndex(t => t.abbreviation === awayAbbr)
+    const homeIndex: number = this.teams.findIndex((t) => t.abbreviation === homeAbbr);
+    const awayIndex: number = this.teams.findIndex((t) => t.abbreviation === awayAbbr);
     if (homeIndex === -1 || awayIndex === -1) {
       throw new Error("Unknown team name");
     }
     if (homeIndex === awayIndex) {
       throw new Error("Team cannot play against itself");
-    } 
+    }
     const [scoreHome, scoreAway] = result;
-    this.#results[homeIndex][awayIndex] = scoreHome
-    this.#results[awayIndex][homeIndex] = scoreAway
-    this.#table = this.#calculateTable().sort(this.#sortTable)
+    this.#results[homeIndex][awayIndex] = scoreHome;
+    this.#results[awayIndex][homeIndex] = scoreAway;
+    this.#table = this.#calculateTable().sort(this.#sortTable);
   }
 
   #calculateTable(): TableRow[] {
@@ -52,7 +55,7 @@ export default class Group {
     });
   }
 
-  #sortTable = (a:TableRow, b:TableRow) => {
+  #sortTable = (a: TableRow, b: TableRow) => {
     // 1. Points
     const pointsA = a[5];
     const pointsB = b[5];
@@ -68,7 +71,7 @@ export default class Group {
     const goalsForB = b[2];
     if (goalsForA !== goalsForB) return goalsForB - goalsForA;
     return 0;
-  }
+  };
 
   #matchesPlayed(teamIndex: number): number {
     let count = 0;
@@ -107,7 +110,7 @@ export default class Group {
   }
 
   #getPoints(scoreHome: Result, scoreAway: Result): number {
-    if (scoreHome === null || scoreAway === null) return 0
+    if (scoreHome === null || scoreAway === null) return 0;
     if (scoreHome > scoreAway) return 3;
     if (scoreHome === scoreAway) return 1;
     return 0;

@@ -6,18 +6,22 @@ const ADVANCING_THIRD_PLACES = 8;
 export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];
 
 export function getThirdPlacesTable(data: GroupsData): ThirdPlacesTableRow[] {
-  const thirdPlacedData:ThirdPlacesTableRow[] = Object
+  const thirdPlacedData: ThirdPlacesTableRow[] = Object
     .entries(data)
     .map(([groupKey, { table }]) => [...table[2], groupKey]);
 
-    return thirdPlacedData.sort(sortThirdPlacedRanking);
+  return thirdPlacedData.sort(sortThirdPlacedRanking);
 }
 
 export function getAdvancingGroups(table: ThirdPlacesTableRow[]): string {
-  return table.map(i => i[6]).slice(0, ADVANCING_THIRD_PLACES).sort().join("");
+  return table
+    .map((i) => i[6])
+    .slice(0, ADVANCING_THIRD_PLACES)
+    .sort()
+    .join("");
 }
 
-const sortThirdPlacedRanking = (a:ThirdPlacesTableRow, b:ThirdPlacesTableRow) => {
+const sortThirdPlacedRanking = (a: ThirdPlacesTableRow, b: ThirdPlacesTableRow) => {
   // 1. Points
   const pointsA = a[5];
   const pointsB = b[5];
