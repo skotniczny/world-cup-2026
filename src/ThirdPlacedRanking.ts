@@ -5,20 +5,28 @@ const ADVANCING_THIRD_PLACES = 8;
 
 export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];
 
-export function getThirdPlacesTable(data: GroupsData): ThirdPlacesTableRow[] {
-  const thirdPlacedData: ThirdPlacesTableRow[] = Object
-    .entries(data)
-    .map(([groupKey, { table }]) => [...table[2], groupKey]);
-
-  return thirdPlacedData.sort(sortThirdPlacedRanking);
+export interface ThirdPlaces {
+  readonly table: ThirdPlacesTableRow[];
+  readonly advancingGroups: string;
 }
 
-export function getAdvancingGroups(table: ThirdPlacesTableRow[]): string {
-  return table
-    .map((i) => i[6])
-    .slice(0, ADVANCING_THIRD_PLACES)
-    .sort()
-    .join("");
+export function createThirdPlaces(data: GroupsData): ThirdPlaces {
+  return {
+    get table() {
+      const thirdPlacedData: ThirdPlacesTableRow[] = Object
+        .entries(data)
+        .map(([groupKey, { table }]) => [...table[2], groupKey]);
+
+      return thirdPlacedData.sort(sortThirdPlacedRanking);
+    },
+    get advancingGroups() {
+      return this.table
+        .slice(0, ADVANCING_THIRD_PLACES)
+        .map(row => row[6])
+        .sort()
+        .join("");
+    },
+  };
 }
 
 const sortThirdPlacedRanking = (a: ThirdPlacesTableRow, b: ThirdPlacesTableRow) => {

@@ -2,7 +2,7 @@ import type { MatchItem } from "../data/matches";
 import type { TeamInfo } from "../data/teams";
 import { type GroupName, getGroup } from "../data/groups";
 import Group, { type TableRow } from "../Group";
-import { getThirdPlacesTable, getAdvancingGroups } from "../ThirdPlacedRanking";
+import { type ThirdPlaces, createThirdPlaces } from "../ThirdPlacedRanking";
 import { updateRoundOf32 } from "../RoundOf32Setup";
 
 const groups: Record<GroupName, Group> = {
@@ -37,14 +37,7 @@ export const groupsData: GroupsData = $state({
   L: { name: groups.L.name, table: groups.L.table },
 });
 
-export const thirdPlaces = {
-  get table() {
-    return getThirdPlacesTable(groupsData);
-  },
-  get advancingGroups() {
-    return getAdvancingGroups(this.table);
-  },
-};
+export const thirdPlaces: ThirdPlaces = createThirdPlaces(groupsData);
 
 export function getTeamAt(group: GroupName, position: number): TeamInfo {
   if (position < 1 || position > 4) throw Error("Argument exception, position is out of range");
