@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { Result } from "../Group"
-
-  import { type MatchItem } from "../data/matches"
+  import { type MatchItem, type Result } from "../data/matches"
   import TeamName from "./TeamName.svelte"
   import { updateKnockout } from "../Knockout"
 

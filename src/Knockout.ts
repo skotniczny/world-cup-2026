@@ -1,7 +1,6 @@
-import type { MatchItem } from "./data/matches";
+import type { MatchItem, Result } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
-import type { Result } from "./Group";
 import { findMatchById } from "./stores/matches.svelte";
 
 const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
@@ -60,7 +59,7 @@ function isFilled(result?: [Result, Result]): result is [number, number] {
 }
 
 function rankTeams(match: MatchItem, [home, away]: [number, number]): [winner: TeamInfo, runner: TeamInfo] {
-  return home > away ? [match.home, match.away] : [match.away, match.home]
+  return home > away ? [match.home, match.away] : [match.away, match.home];
 }
 
 function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): TeamInfo {

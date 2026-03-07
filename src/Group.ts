@@ -1,3 +1,4 @@
+import type { Result } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import type { GroupName } from "./data/groups";
 
@@ -9,8 +10,6 @@ export type TableRow = [
   goalDifference: number,
   points: number,
 ];
-
-export type Result = number | null;
 
 export default class Group {
   readonly name: string;
