@@ -22,19 +22,16 @@ export function getAdvancingGroups(table: ThirdPlacesTableRow[]): string {
 }
 
 const sortThirdPlacedRanking = (a: ThirdPlacesTableRow, b: ThirdPlacesTableRow) => {
+  const [, , goalsForA, , goalDiffA, pointsA] = a;
+  const [, , goalsForB, , goalDiffB, pointsB] = b;
+
   // 1. Points
-  const pointsA = a[5];
-  const pointsB = b[5];
   if (pointsB !== pointsA) return pointsB - pointsA;
 
   // 2. Goal Difference
-  const goalDiffA = a[4];
-  const goalDiffB = b[4];
   if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
 
   // 3. Goals For
-  const goalsForA = a[2];
-  const goalsForB = b[2];
   if (goalsForA !== goalsForB) return goalsForB - goalsForA;
   return 0;
 };
