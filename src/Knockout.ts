@@ -1,4 +1,4 @@
-import type { MatchItem, Result } from "./data/matches";
+import { type MatchItem, type Result, firstKnockoutId, semiFinalsIds, thirdPlaceMatchId } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
 import { findMatchById } from "./stores/matches.svelte";
@@ -87,7 +87,6 @@ function updateThirdPlace(match: MatchItem): void {
   const next = thirdPlaceSlot[match.id];
 
   try {
-    const thirdPlaceMatchId: number = 103;
     const thirdPlaceMatch: MatchItem = findMatchById(thirdPlaceMatchId);
     const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
     thirdPlaceMatch[next.slot] = matchLoserOrPlaceholder;
@@ -97,15 +96,14 @@ function updateThirdPlace(match: MatchItem): void {
 }
 
 export function updateKnockout(match: MatchItem): void {
-  const firstKnockoutMatchId = 73;
-  if (match.id < firstKnockoutMatchId) return;
+  if (match.id < firstKnockoutId) return;
   const next = knockoutTree[match.id];
   try {
     const nextMatch: MatchItem = findMatchById(next.next);
     const matchWinnerOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "winner");
     nextMatch[next.slot] = matchWinnerOrPlaceholder;
 
-    if ([101, 102].includes(match.id)) {
+    if (semiFinalsIds.includes(match.id)) {
       updateThirdPlace(match);
     }
   } catch (e) {

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { updateGroupScore } from "../stores/groups.svelte"
   import { updateKnockout } from "../Knockout"
-  import { type MatchItem, type Result } from "../data/matches"
+  import { type MatchItem, type Result, lastGroupMatchId } from "../data/matches"
   import TeamName from "./TeamName.svelte"
 
   const { match }: { match: MatchItem } = $props()
@@ -30,7 +30,6 @@
   }
 
   function update() {
-    const lastGroupMatchId: number = 72
     match.result = [homeScore, awayScore]
     if (hasPenalties) {
       match.penalties = [homePenalty, awayPenalty]
