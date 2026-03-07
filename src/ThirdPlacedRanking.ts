@@ -1,9 +1,9 @@
-import type { TeamInfo } from "./data/teams";
+import type { TableRow } from "./Group";
 import type { GroupsData } from "./stores/groups.svelte";
 
 const ADVANCING_THIRD_PLACES = 8;
 
-export type ThirdPlacesTableRow = [TeamInfo, number, number, number, number, number, string];
+export type ThirdPlacesTableRow = [...TableRow, group: string];
 
 export interface ThirdPlaces {
   readonly table: ThirdPlacesTableRow[];

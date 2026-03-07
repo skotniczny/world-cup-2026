@@ -1,8 +1,15 @@
 import type { TeamInfo } from "./data/teams";
 import type { GroupName } from "./data/groups";
 
-// [Team, Matches Played, Goals For, Goals Against, Goal Difference, Points]
-export type TableRow = [TeamInfo, number, number, number, number, number];
+export type TableRow = [
+  team: TeamInfo,
+  matchesPlayed: number,
+  goalsFor: number,
+  goalsAgainst: number,
+  goalDifference: number,
+  points: number,
+];
+
 export type Result = number | null;
 
 export default class Group {
