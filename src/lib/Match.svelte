@@ -21,6 +21,10 @@
 
   let homeScore: Result = $state(match?.result?.[0] ?? null)
   let awayScore: Result = $state(match?.result?.[1] ?? null)
+  let homePenalty: Result = $state(match?.penalties?.[0] ?? null)
+  let awayPenalty: Result = $state(match?.penalties?.[1] ?? null)
+
+  const isDraw = $derived(!group && homeScore !== null && awayScore !== null && homeScore === awayScore)
 
   if (match.result && match.completed) {
     updateGroupScore(match)
@@ -29,11 +33,21 @@
   function update() {
     const lastGroupMatchId: number = 72
     match.result = [homeScore, awayScore]
+    if (!isDraw) {
+      homePenalty = null
+      awayPenalty = null
+      match.penalties = undefined
+    }
     if (id <= lastGroupMatchId) {
       updateGroupScore(match)
     } else {
       updateKnockout(match)
     }
+  }
+
+  function updatePenalties() {
+    match.penalties = [homePenalty, awayPenalty]
+    updateKnockout(match)
   }
 </script>
 
@@ -43,25 +57,52 @@
   </div>
   <div class="match-form">
     <label class="match-team text-right" for="{uid}--home"><TeamName team={home} /></label>
-    <input
-      class="match-score form-ctrl"
-      id="{uid}--home"
-      type="number"
-      min="0"
-      bind:value={homeScore}
-      readonly={completed}
-      oninput={update}
-    />
-    :
-    <input
-      class="match-score form-ctrl"
-      id="{uid}--away"
-      type="number"
-      min="0"
-      bind:value={awayScore}
-      readonly={completed}
-      oninput={update}
-    />
+    <div class="match-scores">
+      <div class="match-scores-row">
+        <input
+          class="match-score form-ctrl"
+          id="{uid}--home"
+          type="number"
+          min="0"
+          bind:value={homeScore}
+          readonly={completed}
+          oninput={update}
+        />
+        :
+        <input
+          class="match-score form-ctrl"
+          id="{uid}--away"
+          type="number"
+          min="0"
+          bind:value={awayScore}
+          readonly={completed}
+          oninput={update}
+        />
+      </div>
+      {#if isDraw}
+        <div class="match-scores-row">
+          <input
+            class="match-score match-score--pen form-ctrl"
+            id="{uid}--pen-home"
+            type="number"
+            min="0"
+            bind:value={homePenalty}
+            readonly={completed}
+            oninput={updatePenalties}
+          />
+          :
+          <input
+            class="match-score match-score--pen form-ctrl"
+            id="{uid}--pen-away"
+            type="number"
+            min="0"
+            bind:value={awayPenalty}
+            readonly={completed}
+            oninput={updatePenalties}
+          />
+        </div>
+      {/if}
+    </div>
     <label class="match-team text-left" for="{uid}--away"><TeamName team={away} reverse /></label>
   </div>
   <div class="match-footer">{footerTitle} • {city} • {stadium}</div>
@@ -90,6 +131,18 @@
     justify-content: center;
   }
 
+  .match-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .match-scores-row {
+    flex: 1 0 auto;
+    display: flex;
+    column-gap: var(--wc-space-sm);
+  }
+
   .match-score {
     max-width: 48px;
     text-align: center;
@@ -97,6 +150,10 @@
 
   .match-score:read-only {
     background-color: var(--wc-color-natural200);
+  }
+
+  .match-score--pen {
+    border-style: dashed;
   }
 
   .match-team {

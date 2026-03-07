@@ -11,6 +11,7 @@ export type MatchItem = {
   home: TeamInfo;
   away: TeamInfo;
   result?: [Result, Result];
+  penalties?: [Result, Result];
   stadium: string;
   city: string;
   completed: boolean;

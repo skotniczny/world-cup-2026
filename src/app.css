@@ -121,6 +121,10 @@ a:hover {
   outline: 2px solid var(--wc-color-accent);
 }
 
+.form-ctrl[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
 /* Main */
 
 #app {

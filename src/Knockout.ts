@@ -1,6 +1,7 @@
 import type { MatchItem } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
+import type { Result } from "./Group";
 import { findMatchById } from "./stores/matches.svelte";
 
 const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
@@ -54,19 +55,29 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
   102: { next: 104, slot: "away" },
 };
 
+function isFilled(result?: [Result, Result]): result is [number, number] {
+  return !!result && result[0] !== null && result[1] !== null;
+}
+
+function rankTeams(match: MatchItem, [home, away]: [number, number]): [winner: TeamInfo, runner: TeamInfo] {
+  return home > away ? [match.home, match.away] : [match.away, match.home]
+}
+
 function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): TeamInfo {
-  const result = match.result;
   const placeholder = type === "winner" ? `W${match.id}` : `RU${match.id}`;
 
-  if (!result || result[0] === null || result[1] === null || result[0] === result[1]) {
-    return getTeam(placeholder);
+  if (!isFilled(match.result)) return getTeam(placeholder);
+  const [scoreHome, scoreAway] = match.result;
+  if (scoreHome !== scoreAway) {
+    const [winner, runner] = rankTeams(match, [scoreHome, scoreAway]);
+    return type === "winner" ? winner : runner;
   }
-  const [scoreHome, scoreAway] = result;
-  if (type === "winner") {
-    return scoreHome > scoreAway ? match.home : match.away;
-  } else {
-    return scoreHome < scoreAway ? match.home : match.away;
-  }
+
+  if (!isFilled(match.penalties)) return getTeam(placeholder);
+  const [penHome, penAway] = match.penalties;
+  if (penHome === penAway) return getTeam(placeholder);
+  const [winner, runner] = rankTeams(match, [penHome, penAway]);
+  return type === "winner" ? winner : runner;
 }
 
 function updateThirdPlace(match: MatchItem): void {

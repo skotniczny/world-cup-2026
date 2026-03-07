@@ -21,6 +21,10 @@
 
   let homeScore: Result = $state(match?.result?.[0] ?? null)
   let awayScore: Result = $state(match?.result?.[1] ?? null)
+  let homePenalty: Result = $state(match?.penalties?.[0] ?? null)
+  let awayPenalty: Result = $state(match?.penalties?.[1] ?? null)
+
+  const isDraw = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
 
   if (match.result && match.completed) {
     updateKnockout(match)
@@ -28,6 +32,16 @@
 
   function update() {
     match.result = [homeScore, awayScore]
+    if (!isDraw) {
+      homePenalty = null
+      awayPenalty = null
+      match.penalties = undefined
+    }
+    updateKnockout(match)
+  }
+
+  function updatePenalties() {
+    match.penalties = [homePenalty, awayPenalty]
     updateKnockout(match)
   }
 </script>
@@ -41,6 +55,17 @@
       <label class="matchko-team text-left" for="{uid}--home">
         <TeamName team={home} compact />
       </label>
+      {#if isDraw}
+        <input
+          class="matchko-score matchko-score--pen form-ctrl"
+          id="{uid}--pen-home"
+          type="number"
+          min="0"
+          bind:value={homePenalty}
+          readonly={completed}
+          oninput={updatePenalties}
+        />
+      {/if}
       <input
         class="matchko-score form-ctrl"
         id="{uid}--home"
@@ -55,6 +80,17 @@
       <label class="matchko-team text-left" for="{uid}--away">
         <TeamName team={away} compact />
       </label>
+      {#if isDraw}
+        <input
+          class="matchko-score matchko-score--pen form-ctrl"
+          id="{uid}--pen-away"
+          type="number"
+          min="0"
+          bind:value={awayPenalty}
+          readonly={completed}
+          oninput={updatePenalties}
+        />
+      {/if}
       <input
         class="matchko-score form-ctrl"
         id="{uid}--away"
@@ -163,6 +199,11 @@
 
   .matchko-score:read-only {
     background-color: var(--wc-color-natural200);
+  }
+
+  .matchko-score--pen {
+    border-style: dashed;
+    max-width: 36px;
   }
 
   .matchko-team {
