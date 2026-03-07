@@ -32,11 +32,11 @@
             <th>Group</th>
           {/if}
         {:else}
-          <th title="Goals For" class="text-help">GF</th>
-          <th title="Goals Against" class="text-help">GA</th>
-          <th title="Points" class="text-help">Pts</th>
+          <th><abbr class="text-help" title="Goals For">GF</abbr></th>
+          <th><abbr class="text-help" title="Goals Against">GA</abbr></th>
+          <th><abbr class="text-help" title="Points">Pts</abbr></th>
           {#if thirdPlaces}
-            <th title="Group" class="text-help">GP</th>
+            <th><abbr class="text-help" title="Group">GP</abbr></th>
           {/if}
         {/if}
       </tr>
