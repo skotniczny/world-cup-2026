@@ -53,54 +53,52 @@
   </div>
   <div class="match-form">
     <label class="match-team text-right" for="{uid}--home"><TeamName team={home} /></label>
-    <div class="match-scores">
-      <div class="match-scores-row">
-        <input
-          class="match-score form-ctrl"
-          id="{uid}--home"
-          type="number"
-          min="0"
-          bind:value={homeScore}
-          readonly={completed}
-          oninput={update}
-        />
-        :
-        <input
-          class="match-score form-ctrl"
-          id="{uid}--away"
-          type="number"
-          min="0"
-          bind:value={awayScore}
-          readonly={completed}
-          oninput={update}
-        />
-      </div>
-      {#if hasPenalties}
-        <div class="match-scores-row">
-          <input
-            class="match-score match-score--pen form-ctrl"
-            id="{uid}--pen-home"
-            type="number"
-            min="0"
-            bind:value={homePenalty}
-            readonly={completed}
-            oninput={update}
-          />
-          :
-          <input
-            class="match-score match-score--pen form-ctrl"
-            id="{uid}--pen-away"
-            type="number"
-            min="0"
-            bind:value={awayPenalty}
-            readonly={completed}
-            oninput={update}
-          />
-        </div>
-      {/if}
-    </div>
+    <input
+      class="match-score form-ctrl"
+      id="{uid}--home"
+      type="number"
+      min="0"
+      bind:value={homeScore}
+      readonly={completed}
+      oninput={update}
+    />
+    :
+    <input
+      class="match-score form-ctrl"
+      id="{uid}--away"
+      type="number"
+      min="0"
+      bind:value={awayScore}
+      readonly={completed}
+      oninput={update}
+    />
     <label class="match-team text-left" for="{uid}--away"><TeamName team={away} reverse /></label>
   </div>
+  {#if hasPenalties}
+    <div class="match-form">
+      <label class="sr-only" for="{uid}--pen-home"><TeamName team={home} /> – penalties</label>
+      <input
+        class="match-score match-score--pen form-ctrl"
+        id="{uid}--pen-home"
+        type="number"
+        min="0"
+        bind:value={homePenalty}
+        readonly={completed}
+        oninput={update}
+      />
+      :
+      <input
+        class="match-score match-score--pen form-ctrl"
+        id="{uid}--pen-away"
+        type="number"
+        min="0"
+        bind:value={awayPenalty}
+        readonly={completed}
+        oninput={update}
+      />
+      <label class="sr-only" for="{uid}--pen-away"><TeamName team={away} reverse /> – penalties</label>
+    </div>
+  {/if}
   <div class="match-footer">{footerTitle} • {city} • {stadium}</div>
 </div>
 
@@ -125,18 +123,6 @@
     display: flex;
     column-gap: var(--wc-space-sm);
     justify-content: center;
-  }
-
-  .match-scores {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .match-scores-row {
-    flex: 1 0 auto;
-    display: flex;
-    column-gap: var(--wc-space-sm);
   }
 
   .match-score {
