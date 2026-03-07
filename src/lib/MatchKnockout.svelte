@@ -162,7 +162,7 @@
   }
 
   .matchko-score:read-only {
-    background-color: #f1f1f1;
+    background-color: var(--wc-color-natural200);
   }
 
   .matchko-team {

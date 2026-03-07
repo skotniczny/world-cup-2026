@@ -96,7 +96,7 @@
   }
 
   .match-score:read-only {
-    background-color: #f1f1f1;
+    background-color: var(--wc-color-natural200);
   }
 
   .match-team {
