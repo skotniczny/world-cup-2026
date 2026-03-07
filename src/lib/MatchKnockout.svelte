@@ -30,16 +30,13 @@
 
   function update() {
     match.result = [homeScore, awayScore]
-    if (!hasPenalties) {
+    if (hasPenalties) {
+      match.penalties = [homePenalty, awayPenalty]
+    } else {
       homePenalty = null
       awayPenalty = null
       match.penalties = undefined
     }
-    updateKnockout(match)
-  }
-
-  function updatePenalties() {
-    match.penalties = [homePenalty, awayPenalty]
     updateKnockout(match)
   }
 </script>
@@ -61,7 +58,7 @@
           min="0"
           bind:value={homePenalty}
           readonly={completed}
-          oninput={updatePenalties}
+          oninput={update}
         />
       {/if}
       <input
@@ -86,7 +83,7 @@
           min="0"
           bind:value={awayPenalty}
           readonly={completed}
-          oninput={updatePenalties}
+          oninput={update}
         />
       {/if}
       <input
