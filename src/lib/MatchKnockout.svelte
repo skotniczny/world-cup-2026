@@ -22,7 +22,7 @@
   let homePenalty: Result = $state(match?.penalties?.[0] ?? null)
   let awayPenalty: Result = $state(match?.penalties?.[1] ?? null)
 
-  const isDraw = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
+  const hasPenalties = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
 
   if (match.result && match.completed) {
     updateKnockout(match)
@@ -30,7 +30,7 @@
 
   function update() {
     match.result = [homeScore, awayScore]
-    if (!isDraw) {
+    if (!hasPenalties) {
       homePenalty = null
       awayPenalty = null
       match.penalties = undefined
@@ -53,7 +53,7 @@
       <label class="matchko-team text-left" for="{uid}--home">
         <TeamName team={home} compact />
       </label>
-      {#if isDraw}
+      {#if hasPenalties}
         <input
           class="matchko-score matchko-score--pen form-ctrl"
           id="{uid}--pen-home"
@@ -78,7 +78,7 @@
       <label class="matchko-team text-left" for="{uid}--away">
         <TeamName team={away} compact />
       </label>
-      {#if isDraw}
+      {#if hasPenalties}
         <input
           class="matchko-score matchko-score--pen form-ctrl"
           id="{uid}--pen-away"

@@ -23,7 +23,7 @@
   let homePenalty: Result = $state(match?.penalties?.[0] ?? null)
   let awayPenalty: Result = $state(match?.penalties?.[1] ?? null)
 
-  const isDraw = $derived(!group && homeScore !== null && awayScore !== null && homeScore === awayScore)
+  const hasPenalties = $derived(!group && homeScore !== null && awayScore !== null && homeScore === awayScore)
 
   if (match.result && match.completed) {
     updateGroupScore(match)
@@ -32,7 +32,7 @@
   function update() {
     const lastGroupMatchId: number = 72
     match.result = [homeScore, awayScore]
-    if (!isDraw) {
+    if (!hasPenalties) {
       homePenalty = null
       awayPenalty = null
       match.penalties = undefined
@@ -78,7 +78,7 @@
           oninput={update}
         />
       </div>
-      {#if isDraw}
+      {#if hasPenalties}
         <div class="match-scores-row">
           <input
             class="match-score match-score--pen form-ctrl"
