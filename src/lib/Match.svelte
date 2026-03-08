@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type MatchItem, type Result } from "../data/matches"
+  import { type MatchItem, type Result, sanitizeResult } from "../data/matches"
   import { updateMatchScore } from "../stores/matches.svelte"
   import TeamName from "./TeamName.svelte"
 
@@ -25,6 +25,11 @@
   const hasPenalties = $derived(!group && homeScore !== null && awayScore !== null && homeScore === awayScore)
 
   function update() {
+    homeScore = sanitizeResult(homeScore)
+    awayScore = sanitizeResult(awayScore)
+    homePenalty = sanitizeResult(homePenalty)
+    awayPenalty = sanitizeResult(awayPenalty)
+
     if (!hasPenalties) {
       homePenalty = null
       awayPenalty = null

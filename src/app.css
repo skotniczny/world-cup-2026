@@ -2,6 +2,8 @@
   --wc-color-primary: #207de9;
   --wc-color-secondary: #405cf9;
   --wc-color-accent: #5af5cf;
+  --wc-color-danger100: #e53e3e;
+  --wc-color-danger200: #3b1010;
   --wc-color-natural0: #213547;
   --wc-color-natural100: #121f2b;
   --wc-color-natural200: #182530;
@@ -37,6 +39,7 @@
     --wc-color-natural200: #ececec;
     --wc-color-natural300: #d6d6d6;
     --wc-color-natural900: #213547;
+    --wc-color-danger200: #fee2e2;
   }
 }
 
@@ -119,6 +122,15 @@ a:hover {
 
 .form-ctrl:focus {
   outline: 2px solid var(--wc-color-accent);
+}
+
+.form-ctrl:invalid {
+  background-color: var(--wc-color-danger200);
+}
+
+.form-ctrl:invalid:focus {
+  border-color: var(--wc-color-danger100);
+  outline-color: var(--wc-color-danger100);
 }
 
 .form-ctrl[type="number"]::-webkit-inner-spin-button {
