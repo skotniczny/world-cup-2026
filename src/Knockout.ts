@@ -1,4 +1,4 @@
-import { type MatchItem, type Result, firstKnockoutId, semiFinalsIds, thirdPlaceMatchId } from "./data/matches";
+import { type MatchItem, type Result, semiFinalsIds, thirdPlaceMatchId } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
 import { findMatchById } from "./stores/matches.svelte";
@@ -96,7 +96,7 @@ function updateThirdPlace(match: MatchItem): void {
 }
 
 export function updateKnockout(match: MatchItem): void {
-  if (match.id < firstKnockoutId) return;
+  if (match.group) return;
   const next = knockoutTree[match.id];
   try {
     const nextMatch: MatchItem = findMatchById(next.next);

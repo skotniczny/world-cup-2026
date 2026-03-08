@@ -24,7 +24,6 @@ const matches: MatchItem[] = (MATCHES as unknown as MatchItem[]).map((item, inde
   completed: !!item.result,
 }));
 
-export const firstKnockoutId = 73;
 export const semiFinalsIds: readonly [number, number] = [101, 102];
 export const thirdPlaceMatchId = 103;
 
