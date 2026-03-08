@@ -1,7 +1,7 @@
 import { type MatchItem, type Result, semiFinalsIds, thirdPlaceMatchId } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
-import { findMatchById } from "./stores/matches.svelte";
+import { updateMatchTeam } from "./stores/matches.svelte";
 
 const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
   // Round of 32
@@ -86,27 +86,18 @@ function updateThirdPlace(match: MatchItem): void {
   };
   const next = thirdPlaceSlot[match.id];
 
-  try {
-    const thirdPlaceMatch: MatchItem = findMatchById(thirdPlaceMatchId);
-    const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
-    thirdPlaceMatch[next.slot] = matchLoserOrPlaceholder;
-  } catch (e) {
-    console.error(e);
-  }
+  const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
+  updateMatchTeam({ id: thirdPlaceMatchId, [next.slot]: matchLoserOrPlaceholder });
 }
 
 export function updateKnockout(match: MatchItem): void {
   if (match.group) return;
-  const next = knockoutTree[match.id];
-  try {
-    const nextMatch: MatchItem = findMatchById(next.next);
-    const matchWinnerOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "winner");
-    nextMatch[next.slot] = matchWinnerOrPlaceholder;
 
-    if (semiFinalsIds.includes(match.id)) {
-      updateThirdPlace(match);
-    }
-  } catch (e) {
-    console.error(e);
+  const next = knockoutTree[match.id];
+  const matchWinnerOrPlaceholder = getTeamOrPlaceholder(match, "winner");
+  updateMatchTeam({ id: next.next, [next.slot]: matchWinnerOrPlaceholder });
+
+  if (semiFinalsIds.includes(match.id)) {
+    updateThirdPlace(match);
   }
 }

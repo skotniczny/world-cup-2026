@@ -36,6 +36,14 @@ export function initCompletedMatches(): void {
   }
 }
 
+type TeamUpdate = Pick<MatchItem, "id"> & Partial<Pick<MatchItem, "home" | "away">>;
+
+export function updateMatchTeam({ id, home, away }: TeamUpdate): void {
+  const match = findMatchById(id);
+  if (home) match.home = home;
+  if (away) match.away = away;
+}
+
 export function sortMatchesByDatetime() {
   matchesData.sort((a, b) => new Date(a.datetime).getTime() - new Date(b.datetime).getTime());
 }

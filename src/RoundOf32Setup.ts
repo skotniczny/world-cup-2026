@@ -5,7 +5,7 @@ import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" with { type: "
 import type { GroupName } from "./data/groups";
 import type { TeamInfo } from "./data/teams";
 import { getTeamAt, thirdPlaces } from "./stores/groups.svelte";
-import { findMatchById } from "./stores/matches.svelte";
+import { updateMatchTeam } from "./stores/matches.svelte";
 
 type GroupSlot = { group: GroupName; position: number };
 type ThirdPlaceSlot = { thirdPlaceIndex: number; position: 3 };
@@ -44,8 +44,6 @@ function resolveSlot(slot: Slot): TeamInfo {
 
 export function updateRoundOf32(): void {
   for (const [id, { home, away }] of roundOf32Slots) {
-    const match = findMatchById(id);
-    match.home = resolveSlot(home);
-    match.away = resolveSlot(away);
+    updateMatchTeam({ id, home: resolveSlot(home), away: resolveSlot(away) });
   }
 }
