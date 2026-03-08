@@ -133,6 +133,10 @@ a:hover {
   outline-color: var(--wc-color-danger100);
 }
 
+.form-ctrl:read-only {
+  background-color: var(--wc-color-natural200);
+}
+
 .form-ctrl[type="number"]::-webkit-inner-spin-button {
   opacity: 1;
 }

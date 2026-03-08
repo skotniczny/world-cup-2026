@@ -193,10 +193,6 @@
     text-align: center;
   }
 
-  .matchko-score:read-only {
-    background-color: var(--wc-color-natural200);
-  }
-
   .matchko-score--pen {
     border-style: dashed;
     max-width: 36px;

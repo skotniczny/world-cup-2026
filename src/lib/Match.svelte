@@ -125,10 +125,6 @@
     text-align: center;
   }
 
-  .match-score:read-only {
-    background-color: var(--wc-color-natural200);
-  }
-
   .match-score--pen {
     border-style: dashed;
   }
