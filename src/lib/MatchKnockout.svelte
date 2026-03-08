@@ -43,12 +43,12 @@
 </script>
 
 <div class="matchko">
-  <div class="matchko-header">
+  <div class="matchko-header text-truncate">
     <time {datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="matchko-body">
     <div class="matchko-form">
-      <label class="matchko-team text-left" for="{uid}--home">
+      <label class="matchko-team text-truncate text-left" for="{uid}--home">
         <TeamName team={home} compact />
       </label>
       {#if hasPenalties}
@@ -73,7 +73,7 @@
       />
     </div>
     <div class="matchko-form">
-      <label class="matchko-team text-left" for="{uid}--away">
+      <label class="matchko-team text-truncate text-left" for="{uid}--away">
         <TeamName team={away} compact />
       </label>
       {#if hasPenalties}
@@ -98,7 +98,7 @@
       />
     </div>
   </div>
-  <div class="matchko-footer">M{match.id} • {city}</div>
+  <div class="matchko-footer text-truncate">M{match.id} • {city}</div>
 </div>
 
 <style>
@@ -167,10 +167,7 @@
 
   .matchko-header,
   .matchko-footer {
-    white-space: nowrap;
     font-size: 0.875rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   .matchko-body {
@@ -201,8 +198,5 @@
   .matchko-team {
     display: block;
     flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 </style>

@@ -47,7 +47,7 @@
     <time {datetime}>{new Date(datetime).toLocaleString("pl-PL", dateTimeFormatOptions)}</time>
   </div>
   <div class="match-form">
-    <label class="match-team text-right" for="{uid}--home"><TeamName team={home} /></label>
+    <label class="match-team text-truncate text-right" for="{uid}--home"><TeamName team={home} /></label>
     <input
       class="match-score form-ctrl"
       id="{uid}--home"
@@ -67,7 +67,7 @@
       readonly={completed}
       oninput={update}
     />
-    <label class="match-team text-left" for="{uid}--away"><TeamName team={away} reverse /></label>
+    <label class="match-team text-truncate text-left" for="{uid}--away"><TeamName team={away} reverse /></label>
   </div>
   {#if hasPenalties}
     <div class="match-form">
@@ -133,8 +133,5 @@
     display: block;
     flex-grow: 1;
     max-width: var(--wc-match-max-width);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 </style>

@@ -189,6 +189,12 @@ a:hover {
   margin-bottom: var(--wc-space-sm);
 }
 
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
