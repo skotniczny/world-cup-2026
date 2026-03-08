@@ -94,6 +94,8 @@ export function updateKnockout(match: MatchItem): void {
   if (match.group) return;
 
   const next = knockoutTree[match.id];
+  if (!next) return;
+
   const matchWinnerOrPlaceholder = getTeamOrPlaceholder(match, "winner");
   updateMatchTeam({ id: next.next, [next.slot]: matchWinnerOrPlaceholder });
 
