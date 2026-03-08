@@ -1,108 +1,66 @@
 <script lang="ts">
-  import { type MatchItem } from "../data/matches"
   import MatchKnockout from "./MatchKnockout.svelte"
   import { findMatchById } from "../stores/matches.svelte"
 
-  const knockout = {
-    stage32Left: [73, 75, 74, 77, 83, 84, 81, 82],
-    stage16Left: [89, 90, 93, 94],
-    qfLeft: [97, 98],
-    sfLeft: [101],
-    final: [104],
-    third: [103],
-    sfRight: [102],
-    qfRight: [99, 100],
-    stage16Right: [91, 92, 95, 96],
-    stage32Right: [76, 78, 79, 80, 86, 88, 85, 87],
-  }
+  const m = (ids: number[]) => ids.map(findMatchById)
 
-  const knockoutMatches = $derived(
-    Object.fromEntries(Object.entries(knockout).map(([key, matchIds]) => [key, matchIds.map(findMatchById)])) as Record<
-      keyof typeof knockout,
-      MatchItem[]
-    >,
-  )
-  const sfLeft: MatchItem = $derived(knockoutMatches.sfLeft[0])
-  const sfRight: MatchItem = $derived(knockoutMatches.sfRight[0])
-  const thirdPlace: MatchItem = $derived(knockoutMatches.third[0])
-  const final: MatchItem = $derived(knockoutMatches.final[0])
+  const stages = {
+    left: [
+      { matches: m([73, 75, 74, 77, 83, 84, 81, 82]), key: "32", header: "Round of 32" },
+      { matches: m([89, 90, 93, 94]), key: "16", header: "Round of 16" },
+      { matches: m([97, 98]), key: "qf", header: "Quarter-final" },
+      { matches: m([101]), key: "sf", header: "Semi-final" },
+    ],
+    right: [
+      { matches: m([102]), key: "sf", header: "Semi-final" },
+      { matches: m([99, 100]), key: "qf", header: "Quarter-final" },
+      { matches: m([91, 92, 95, 96]), key: "16", header: "Round of 16" },
+      { matches: m([76, 78, 79, 80, 86, 88, 85, 87]), key: "32", header: "Round of 32" },
+    ],
+    final: findMatchById(104),
+    third: findMatchById(103),
+  }
 </script>
 
 <h1>Knockout</h1>
 <div class="knockout-grid">
   <div class="knockout-headers">
-    <div class="knockout-header knockout-stage_left">Round of 32</div>
-    <div class="knockout-header knockout-header_left">Round of 16</div>
-    <div class="knockout-header knockout-header_left">Quarter-final</div>
-    <div class="knockout-header knockout-header_left">Semi-final</div>
-    <div class="knockout-header knockout-stage_right">Semi-final</div>
-    <div class="knockout-header knockout-header_right">Quarter-final</div>
-    <div class="knockout-header knockout-header_right">Round of 16</div>
-    <div class="knockout-header knockout-header_right">Round of 32</div>
+    {#each stages.left as stage}
+      <div class="knockout-header">{stage.header}</div>
+    {/each}
+    {#each stages.right as stage}
+      <div class="knockout-header">{stage.header}</div>
+    {/each}
   </div>
   <div class="knockout-stages">
-    <div class="knockout-stage knockout-stage_left knockout-stage_32">
-      {#each knockoutMatches.stage32Left as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
-    <div class="knockout-stage knockout-stage_left knockout-stage_16">
-      {#each knockoutMatches.stage16Left as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
-    <div class="knockout-stage knockout-stage_left knockout-stage_qf">
-      {#each knockoutMatches.qfLeft as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
-    <div class="knockout-stage knockout-stage_left knockout-stage_sf">
-      <div class="knockout-match">
-        <MatchKnockout match={sfLeft} />
+    {#each stages.left as stage}
+      <div class="knockout-stage knockout-stage_left knockout-stage_{stage.key}">
+        {#each stage.matches as match}
+          <div class="knockout-match">
+            <MatchKnockout {match} />
+          </div>
+        {/each}
       </div>
-    </div>
+    {/each}
     <div class="knockout-stage knockout-stage_f">
       <div class="knockout-match knockout-match_final">
         <div class="knockout-header">Final</div>
-        <MatchKnockout match={final} />
+        <MatchKnockout match={stages.final} />
       </div>
       <div class="knockout-match knockout-match_third-place">
         <div class="knockout-header">Third Place</div>
-        <MatchKnockout match={thirdPlace} />
+        <MatchKnockout match={stages.third} />
       </div>
     </div>
-    <div class="knockout-stage knockout-stage_right knockout-stage_sf">
-      <div class="knockout-match">
-        <MatchKnockout match={sfRight} />
+    {#each stages.right as stage}
+      <div class="knockout-stage knockout-stage_right knockout-stage_{stage.key}">
+        {#each stage.matches as match}
+          <div class="knockout-match">
+            <MatchKnockout {match} />
+          </div>
+        {/each}
       </div>
-    </div>
-    <div class="knockout-stage knockout-stage_right knockout-stage_qf">
-      {#each knockoutMatches.qfRight as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
-    <div class="knockout-stage knockout-stage_right knockout-stage_16">
-      {#each knockoutMatches.stage16Right as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
-    <div class="knockout-stage knockout-stage_right knockout-stage_32">
-      {#each knockoutMatches.stage32Right as match}
-        <div class="knockout-match">
-          <MatchKnockout {match} />
-        </div>
-      {/each}
-    </div>
+    {/each}
   </div>
 </div>
 
