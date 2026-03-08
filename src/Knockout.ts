@@ -3,7 +3,9 @@ import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
 import { updateMatchTeam } from "./stores/matches.svelte";
 
-const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
+type Slot = "home" | "away";
+
+const knockoutTree: Record<number, { next: number; slot: Slot }> = {
   // Round of 32
   73: { next: 89, slot: "home" },
   75: { next: 89, slot: "away" },
@@ -54,6 +56,11 @@ const knockoutTree: Record<number, { next: number; slot: "home" | "away" }> = {
   102: { next: 104, slot: "away" },
 };
 
+const thirdPlaceSlot: Record<number, { slot: Slot }> = {
+  101: { slot: "home" },
+  102: { slot: "away" },
+};
+
 function isFilled(result?: [Result, Result]): result is [number, number] {
   return !!result && result[0] !== null && result[1] !== null;
 }
@@ -80,10 +87,6 @@ function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): Team
 }
 
 function updateThirdPlace(match: MatchItem): void {
-  const thirdPlaceSlot: Record<number, { slot: "home" | "away" }> = {
-    101: { slot: "home" },
-    102: { slot: "away" },
-  };
   const next = thirdPlaceSlot[match.id];
 
   const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
