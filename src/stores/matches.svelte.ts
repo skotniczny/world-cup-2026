@@ -1,5 +1,7 @@
-import type { MatchItem } from "../data/matches";
+import { type MatchItem, lastGroupMatchId } from "../data/matches";
 import matches from "../data/matches";
+import { updateGroupScore } from "./groups.svelte";
+import { updateKnockout } from "../Knockout";
 
 export const matchesData: MatchItem[] = $state(matches);
 
@@ -7,6 +9,31 @@ export function findMatchById(id: number): MatchItem {
   const match: MatchItem | undefined = matchesData.find((match) => match.id === id);
   if (!match) throw Error(`Match ${id} not found`);
   return match;
+}
+
+function updateStandings(match: MatchItem): void {
+  if (match.id <= lastGroupMatchId) {
+    updateGroupScore(match);
+  } else {
+    updateKnockout(match);
+  }
+}
+
+type MatchScore = Pick<MatchItem, "id" | "result" | "penalties">;
+
+export function updateMatchScore({ id, result, penalties }: MatchScore): void {
+  const match = findMatchById(id);
+  match.result = result;
+  match.penalties = penalties;
+  updateStandings(match);
+}
+
+export function initCompletedMatches(): void {
+  for (const match of matchesData) {
+    if (match.result && match.completed) {
+      updateStandings(match);
+    }
+  }
 }
 
 export function sortMatchesByDatetime() {

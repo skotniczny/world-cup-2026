@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { updateGroupScore } from "../stores/groups.svelte"
-  import { updateKnockout } from "../Knockout"
-  import { type MatchItem, type Result, lastGroupMatchId } from "../data/matches"
+  import { type MatchItem, type Result } from "../data/matches"
+  import { updateMatchScore } from "../stores/matches.svelte"
   import TeamName from "./TeamName.svelte"
 
   const { match }: { match: MatchItem } = $props()
-  const { id, datetime, stage, group, city, stadium, completed } = match
+  const { datetime, stage, group, city, stadium, completed } = match
   const home = $derived(match.home)
   const away = $derived(match.away)
   const uid = $props.id()
@@ -25,24 +24,16 @@
 
   const hasPenalties = $derived(!group && homeScore !== null && awayScore !== null && homeScore === awayScore)
 
-  if (match.result && match.completed) {
-    updateGroupScore(match)
-  }
-
   function update() {
-    match.result = [homeScore, awayScore]
-    if (hasPenalties) {
-      match.penalties = [homePenalty, awayPenalty]
-    } else {
+    if (!hasPenalties) {
       homePenalty = null
       awayPenalty = null
-      match.penalties = undefined
     }
-    if (id <= lastGroupMatchId) {
-      updateGroupScore(match)
-    } else {
-      updateKnockout(match)
-    }
+    updateMatchScore({
+      id: match.id,
+      result: [homeScore, awayScore],
+      penalties: hasPenalties ? [homePenalty, awayPenalty] : undefined,
+    })
   }
 </script>
 

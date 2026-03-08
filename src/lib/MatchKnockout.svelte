@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type MatchItem, type Result } from "../data/matches"
+  import { updateMatchScore } from "../stores/matches.svelte"
   import TeamName from "./TeamName.svelte"
-  import { updateKnockout } from "../Knockout"
 
   const { match }: { match: MatchItem } = $props()
 
@@ -24,20 +24,16 @@
 
   const hasPenalties = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
 
-  if (match.result && match.completed) {
-    updateKnockout(match)
-  }
-
   function update() {
-    match.result = [homeScore, awayScore]
-    if (hasPenalties) {
-      match.penalties = [homePenalty, awayPenalty]
-    } else {
+    if (!hasPenalties) {
       homePenalty = null
       awayPenalty = null
-      match.penalties = undefined
     }
-    updateKnockout(match)
+    updateMatchScore({
+      id: match.id,
+      result: [homeScore, awayScore],
+      penalties: hasPenalties ? [homePenalty, awayPenalty] : undefined,
+    })
   }
 </script>
 
