@@ -5,7 +5,7 @@ import type { TeamInfo } from "./teams";
 export type Result = number | null;
 
 export function sanitizeResult(value: Result): Result {
-  if (value === null) return null;
+  if (value === null || Number.isNaN(value)) return null;
   value = Math.trunc(value);
   return value < 0 ? 0 : value;
 }
