@@ -1,4 +1,4 @@
-import { type MatchItem, lastGroupMatchId } from "../data/matches";
+import { type MatchItem } from "../data/matches";
 import matches from "../data/matches";
 import { updateGroupScore } from "./groups.svelte";
 import { updateKnockout } from "../Knockout";
@@ -12,7 +12,7 @@ export function findMatchById(id: number): MatchItem {
 }
 
 function updateStandings(match: MatchItem): void {
-  if (match.id <= lastGroupMatchId) {
+  if (match.group) {
     updateGroupScore(match);
   } else {
     updateKnockout(match);
