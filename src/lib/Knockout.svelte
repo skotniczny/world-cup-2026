@@ -63,7 +63,7 @@
       {/each}
     </div>
     <div class="knockout-stage knockout-stage_left knockout-stage_sf">
-      <div class="knockout-match knockout-match">
+      <div class="knockout-match">
         <MatchKnockout match={sfLeft} />
       </div>
     </div>
