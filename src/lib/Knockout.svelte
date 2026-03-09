@@ -1,24 +1,25 @@
 <script lang="ts">
   import MatchKnockout from "./MatchKnockout.svelte"
+  import { knockoutMatchesByRound } from "../data/knockoutTree"
   import { findMatchById } from "../stores/matches.svelte"
 
   const m = (ids: number[]) => ids.map(findMatchById)
 
   const stages = {
     left: [
-      { matches: m([73, 75, 74, 77, 83, 84, 81, 82]), key: "32", header: "Round of 32" },
-      { matches: m([89, 90, 93, 94]), key: "16", header: "Round of 16" },
-      { matches: m([97, 98]), key: "qf", header: "Quarter-final" },
-      { matches: m([101]), key: "sf", header: "Semi-final" },
+      { matches: m(knockoutMatchesByRound.leftRoundOf32), key: "32", header: "Round of 32" },
+      { matches: m(knockoutMatchesByRound.leftRoundOf16), key: "16", header: "Round of 16" },
+      { matches: m(knockoutMatchesByRound.leftQf), key: "qf", header: "Quarter-final" },
+      { matches: m(knockoutMatchesByRound.leftSf), key: "sf", header: "Semi-final" },
     ],
     right: [
-      { matches: m([102]), key: "sf", header: "Semi-final" },
-      { matches: m([99, 100]), key: "qf", header: "Quarter-final" },
-      { matches: m([91, 92, 95, 96]), key: "16", header: "Round of 16" },
-      { matches: m([76, 78, 79, 80, 86, 88, 85, 87]), key: "32", header: "Round of 32" },
+      { matches: m(knockoutMatchesByRound.rightSf), key: "sf", header: "Semi-final" },
+      { matches: m(knockoutMatchesByRound.rightQf), key: "qf", header: "Quarter-final" },
+      { matches: m(knockoutMatchesByRound.rightRoundOf16), key: "16", header: "Round of 16" },
+      { matches: m(knockoutMatchesByRound.rightRoundOf32), key: "32", header: "Round of 32" },
     ],
-    final: findMatchById(104),
-    third: findMatchById(103),
+    final: findMatchById(knockoutMatchesByRound.final),
+    third: findMatchById(knockoutMatchesByRound.thirdPlace),
   }
 </script>
 
