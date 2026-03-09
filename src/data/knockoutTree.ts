@@ -82,7 +82,9 @@ function buildFlatTree(
   return map;
 }
 
-function collectIdsByLevel(node: TreeNode): [number[], number[], number[], number[]] {
+type BracketLevels = [sf: number[], qf: number[], r16: number[], r32: number[]];
+
+function collectIdsByLevel(node: TreeNode): BracketLevels {
   const levels: number[][] = [];
   let current: TreeNode[] = [node];
   while (current.length > 0) {
@@ -97,7 +99,7 @@ function collectIdsByLevel(node: TreeNode): [number[], number[], number[], numbe
   if (levels.length !== 4) {
     throw new Error(`Expected 4 bracket levels, got ${levels.length}`);
   }
-  return levels as [number[], number[], number[], number[]];
+  return levels as BracketLevels;
 }
 
 export const thirdPlaceMatchId = 103;
