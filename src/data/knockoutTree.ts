@@ -68,10 +68,13 @@ const knockoutTree: Required<TreeNode> = {
   },
 };
 
+type KnockoutFlatMap = Record<number, { next: number; slot: Slot }>;
+
+
 function buildFlatTree(
   node: TreeNode,
-  map: Record<number, { next: number; slot: Slot }> = {},
-): Record<number, { next: number; slot: Slot }> {
+  map: KnockoutFlatMap = {},
+): KnockoutFlatMap {
   for (const slot of ["home", "away"] as const) {
     const child = node[slot];
     if (child) {
@@ -104,7 +107,7 @@ function collectIdsByLevel(node: TreeNode): BracketLevels {
 
 export const thirdPlaceMatchId = 103;
 export const semiFinalsIds: readonly [number, number] = [knockoutTree.home.matchId, knockoutTree.away.matchId];
-export const knockoutTreeFlat = buildFlatTree(knockoutTree);
+export const knockoutTreeFlat: KnockoutFlatMap = buildFlatTree(knockoutTree);
 
 const [leftSf, leftQf, leftRoundOf16, leftRoundOf32] = collectIdsByLevel(knockoutTree.home);
 const [rightSf, rightQf, rightRoundOf16, rightRoundOf32] = collectIdsByLevel(knockoutTree.away);
