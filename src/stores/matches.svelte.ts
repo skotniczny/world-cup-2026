@@ -29,10 +29,10 @@ export function updateMatchScore({ id, result, penalties }: MatchScore): void {
   updateStandings(match);
 }
 
-export function initCompletedMatches(): void {
+export function initGroupStandings(): void {
   for (const match of matchesData) {
-    if (match.result && match.completed) {
-      updateStandings(match);
+    if (match.result && match.completed && match.group) {
+      updateGroupScore(match);
     }
   }
 }

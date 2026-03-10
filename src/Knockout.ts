@@ -2,7 +2,7 @@ import { type MatchItem, type Result } from "./data/matches";
 import { type Slot, knockoutTreeFlat, semiFinalsIds, thirdPlaceMatchId } from "./data/knockoutTree";
 import type { TeamInfo } from "./data/teams";
 import { getTeam } from "./data/teams";
-import { updateMatchTeam } from "./stores/matches.svelte";
+import { findMatchById, updateMatchScore, updateMatchTeam } from "./stores/matches.svelte";
 
 function isFilled(result?: [Result, Result]): result is [number, number] {
   return !!result && result[0] !== null && result[1] !== null;
@@ -29,9 +29,11 @@ function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): Team
   return type === "winner" ? winner : runner;
 }
 
-function updateThirdPlace(match: MatchItem, slot: Slot): void {
-  const matchLoserOrPlaceholder: TeamInfo = getTeamOrPlaceholder(match, "runner");
-  updateMatchTeam({ id: thirdPlaceMatchId, [slot]: matchLoserOrPlaceholder });
+function updateNextRound(nextId: number, slot: Slot, team: TeamInfo): void {
+  if (findMatchById(nextId)[slot].abbreviation !== team.abbreviation) {
+    updateMatchTeam({ id: nextId, [slot]: team });
+    updateMatchScore({ id: nextId, result: undefined, penalties: undefined });
+  }
 }
 
 export function updateKnockout(match: MatchItem): void {
@@ -40,10 +42,9 @@ export function updateKnockout(match: MatchItem): void {
   const next = knockoutTreeFlat[match.id];
   if (!next) return;
 
-  const matchWinnerOrPlaceholder = getTeamOrPlaceholder(match, "winner");
-  updateMatchTeam({ id: next.next, [next.slot]: matchWinnerOrPlaceholder });
+  updateNextRound(next.next, next.slot, getTeamOrPlaceholder(match, "winner"));
 
   if (semiFinalsIds.includes(match.id)) {
-    updateThirdPlace(match, next.slot);
+    updateNextRound(thirdPlaceMatchId, next.slot, getTeamOrPlaceholder(match, "runner"));
   }
 }
