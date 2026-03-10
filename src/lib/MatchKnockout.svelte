@@ -17,28 +17,31 @@
     minute: "2-digit",
   }
 
-  let homeScore: Result = $state(match?.result?.[0] ?? null)
-  let awayScore: Result = $state(match?.result?.[1] ?? null)
-  let homePenalty: Result = $state(match?.penalties?.[0] ?? null)
-  let awayPenalty: Result = $state(match?.penalties?.[1] ?? null)
+  const homeScore: Result = $derived(match.result?.[0] ?? null)
+  const awayScore: Result = $derived(match.result?.[1] ?? null)
+  const homePenalty: Result = $derived(match.penalties?.[0] ?? null)
+  const awayPenalty: Result = $derived(match.penalties?.[1] ?? null)
+  const showPenalties = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
 
-  const hasPenalties = $derived(homeScore !== null && awayScore !== null && homeScore === awayScore)
-
-  function update() {
-    homeScore = sanitizeResult(homeScore)
-    awayScore = sanitizeResult(awayScore)
-    homePenalty = sanitizeResult(homePenalty)
-    awayPenalty = sanitizeResult(awayPenalty)
-
-    if (!hasPenalties) {
-      homePenalty = null
-      awayPenalty = null
-    }
+  function update(patch: { result?: [Result, Result]; penalties?: [Result, Result] }) {
     updateMatchScore({
       id: match.id,
-      result: [homeScore, awayScore],
-      penalties: hasPenalties ? [homePenalty, awayPenalty] : undefined,
+      result: patch.result ?? match.result,
+      penalties: patch.penalties ?? match.penalties,
     })
+  }
+
+  function setHomeScore(value: Result) {
+    update({ result: [sanitizeResult(value), awayScore] })
+  }
+  function setAwayScore(value: Result) {
+    update({ result: [homeScore, sanitizeResult(value)] })
+  }
+  function setHomePenalty(value: Result) {
+    update({ penalties: [sanitizeResult(value), awayPenalty] })
+  }
+  function setAwayPenalty(value: Result) {
+    update({ penalties: [homePenalty, sanitizeResult(value)] })
   }
 </script>
 
@@ -51,15 +54,14 @@
       <label class="matchko-team text-truncate text-left" for="{uid}--home">
         <TeamName team={home} compact />
       </label>
-      {#if hasPenalties}
+      {#if showPenalties}
         <input
           class="matchko-score matchko-score--pen form-ctrl"
           id="{uid}--pen-home"
           type="number"
           min="0"
-          bind:value={homePenalty}
+          bind:value={() => homePenalty, setHomePenalty}
           readonly={completed}
-          oninput={update}
         />
       {/if}
       <input
@@ -67,24 +69,22 @@
         id="{uid}--home"
         type="number"
         min="0"
-        bind:value={homeScore}
+        bind:value={() => homeScore, setHomeScore}
         readonly={completed}
-        oninput={update}
       />
     </div>
     <div class="matchko-form">
       <label class="matchko-team text-truncate text-left" for="{uid}--away">
         <TeamName team={away} compact />
       </label>
-      {#if hasPenalties}
+      {#if showPenalties}
         <input
           class="matchko-score matchko-score--pen form-ctrl"
           id="{uid}--pen-away"
           type="number"
           min="0"
-          bind:value={awayPenalty}
+          bind:value={() => awayPenalty, setAwayPenalty}
           readonly={completed}
-          oninput={update}
         />
       {/if}
       <input
@@ -92,9 +92,8 @@
         id="{uid}--away"
         type="number"
         min="0"
-        bind:value={awayScore}
+        bind:value={() => awayScore, setAwayScore}
         readonly={completed}
-        oninput={update}
       />
     </div>
   </div>
