@@ -131,6 +131,6 @@
   .match-team {
     display: block;
     flex-grow: 1;
-    max-width: var(--wc-match-max-width);
+    max-width: var(--wc-team-max-width);
   }
 </style>
