@@ -16,6 +16,7 @@
   --wc-space-sm: 0.25rem;
   --wc-space-lg: 0.5rem;
   --wc-team-max-width: 110px;
+  --wc-grid-col-min-width: 344px;
   --wc-headings-ff: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
 
   font-family: system-ui, sans-serif;
@@ -48,6 +49,7 @@
     --wc-space-sm: 0.5rem;
     --wc-space-lg: 2rem;
     --wc-team-max-width: 200px;
+    --wc-grid-col-min-width: 400px;
   }
 }
 
