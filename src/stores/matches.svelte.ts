@@ -44,16 +44,3 @@ export function updateMatchTeam({ id, home, away }: TeamUpdate): void {
   if (home) match.home = home;
   if (away) match.away = away;
 }
-
-export function sortMatchesByDatetime() {
-  matchesData.sort((a, b) => new Date(a.datetime).getTime() - new Date(b.datetime).getTime());
-}
-
-export function sortMatchesByGroup() {
-  matchesData.sort((a, b) => {
-    if (!a.group && !b.group) return 0;
-    if (!a.group) return 1;
-    if (!b.group) return -1;
-    return a.group.localeCompare(b.group);
-  });
-}

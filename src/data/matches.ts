@@ -30,4 +30,6 @@ const matches: MatchItem[] = (MATCHES as unknown as MatchItem[]).map((item, inde
   completed: !!item.result,
 }));
 
+export const stages: readonly string[] = [...new Set(matches.map((m) => m.stage))];
+
 export default matches;
