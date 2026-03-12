@@ -66,16 +66,21 @@
 </div>
 
 <style>
+  .knockout-grid {
+    overflow: auto;
+  }
+
   .knockout-headers,
   .knockout-stages {
     display: flex;
-    column-gap: var(--wc-space-lg);
+    column-gap: 2rem;
     position: relative;
   }
 
   .knockout-header,
   .knockout-stage {
     flex-grow: 1;
+    min-width: 164px;
   }
 
   .knockout-stage {
@@ -83,7 +88,6 @@
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    min-width: 0;
   }
 
   .knockout-match {
@@ -99,7 +103,7 @@
   .knockout-stage_f {
     position: absolute;
     top: 120px;
-    left: 50%;
+    left: 767px;
     bottom: 120px;
     width: 300px;
     transform: translateX(-50%);
