@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "format": "prettier --write \"src/**/*.{ts,svelte}\" \"scripts/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.{ts,svelte}\" \"scripts/**/*.js\"",
     "lint": "eslint .",
     "make-data": "node scripts/make-data.js",
     "predeploy": "npm run build",
