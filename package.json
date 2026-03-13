@@ -11,9 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,svelte}\" \"scripts/**/*.js\"",
     "format:check": "prettier --check \"src/**/*.{ts,svelte}\" \"scripts/**/*.js\"",
     "lint": "eslint .",
-    "make-data": "node scripts/make-data.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "make-data": "node scripts/make-data.js"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
@@ -24,7 +22,6 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.14.0",
-    "gh-pages": "^6.3.0",
     "globals": "^17.3.0",
     "prettier": "^3.8.1",
     "prettier-plugin-svelte": "^3.5.1",
