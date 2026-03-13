@@ -113,7 +113,7 @@
     "away": {
       "name": "Scotland",
       "abbreviation": "SCO",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "stadium": "Boston Stadium",
     "city": "Boston"
@@ -363,7 +363,7 @@
     "home": {
       "name": "England",
       "abbreviation": "ENG",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "away": {
       "name": "Croatia",
@@ -499,7 +499,7 @@
     "home": {
       "name": "Scotland",
       "abbreviation": "SCO",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "away": {
       "name": "Morocco",
@@ -771,7 +771,7 @@
     "home": {
       "name": "England",
       "abbreviation": "ENG",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "away": {
       "name": "Ghana",
@@ -873,7 +873,7 @@
     "home": {
       "name": "Scotland",
       "abbreviation": "SCO",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "away": {
       "name": "Brazil",
@@ -1133,7 +1133,7 @@
     "away": {
       "name": "England",
       "abbreviation": "ENG",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New York"

@@ -10,13 +10,13 @@
 </script>
 
 {#if reverse}
-  <span class="team-emoji">{@html team.flag}</span>
+  <span class="team-emoji">{team.flag}</span>
 {/if}
 
 <span class="team-name">{compact ? team.abbreviation : team.name}</span>
 
 {#if !reverse}
-  <span class="team-emoji">{@html team.flag}</span>
+  <span class="team-emoji">{team.flag}</span>
 {/if}
 
 <style>

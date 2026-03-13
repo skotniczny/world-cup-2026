@@ -62,7 +62,7 @@
     {
       "name": "Scotland",
       "abbreviation": "SCO",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     }
   ],
   "D": [
@@ -245,7 +245,7 @@
     {
       "name": "England",
       "abbreviation": "ENG",
-      "flag": "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;"
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     {
       "name": "Croatia",
