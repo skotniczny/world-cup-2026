@@ -29,7 +29,7 @@
     <label for="filter" class="sr-only">Filter stage</label>
     <select id="filter" class="select-ctrl" bind:value={filter}>
       <option selected value="">All stages</option>
-      {#each stages as stage}
+      {#each stages as stage (stage)}
         <option value={stage}>{stage}</option>
       {/each}
     </select>

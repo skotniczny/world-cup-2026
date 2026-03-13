@@ -26,17 +26,17 @@
 <h1>Knockout</h1>
 <div class="knockout-grid">
   <div class="knockout-headers">
-    {#each stages.left as stage}
+    {#each stages.left as stage (stage.key)}
       <div class="knockout-header">{stage.header}</div>
     {/each}
-    {#each stages.right as stage}
+    {#each stages.right as stage (stage.key)}
       <div class="knockout-header">{stage.header}</div>
     {/each}
   </div>
   <div class="knockout-stages">
-    {#each stages.left as stage}
+    {#each stages.left as stage (stage.key)}
       <div class="knockout-stage knockout-stage_left knockout-stage_{stage.key}">
-        {#each stage.matches as match}
+        {#each stage.matches as match (match.id)}
           <div class="knockout-match">
             <MatchKnockout {match} />
           </div>
@@ -53,9 +53,9 @@
         <MatchKnockout match={stages.third} />
       </div>
     </div>
-    {#each stages.right as stage}
+    {#each stages.right as stage (stage.key)}
       <div class="knockout-stage knockout-stage_right knockout-stage_{stage.key}">
-        {#each stage.matches as match}
+        {#each stage.matches as match (match.id)}
           <div class="knockout-match">
             <MatchKnockout {match} />
           </div>

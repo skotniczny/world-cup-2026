@@ -42,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each props.table as row, i}
+      {#each props.table as row, i (row[0].abbreviation)}
         <tr>
           <td class="table_pos">{i + 1}</td>
           <td class="table_team">

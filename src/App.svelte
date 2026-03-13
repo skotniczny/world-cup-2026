@@ -13,7 +13,7 @@
   <nav class="nav">
     <ul>
       <li><Link to="">Home</Link></li>
-      {#each groupNames as g}
+      {#each groupNames as g (g)}
         <li><Link to="group/{g}">Group {g}</Link></li>
       {/each}
       <li><Link to="standings">Standings</Link></li>

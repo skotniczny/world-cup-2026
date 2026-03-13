@@ -10,7 +10,7 @@
 <div class="home-grid">
   <Fixtures />
   <div class="grid-column">
-    {#each Object.values(groupsData) as group}
+    {#each Object.values(groupsData) as group (group.name)}
       <Table name={group.name} table={group.table} />
     {/each}
     <Table name="Third-placed Ranking" table={thirdPlaces.table} thirdPlaces />
