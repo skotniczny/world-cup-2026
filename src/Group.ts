@@ -36,8 +36,8 @@ export default class Group {
   }
 
   setScore(homeAbbr: string, awayAbbr: string, result: [home: Result, away: Result]): void {
-    const homeIndex: number = this.teams.findIndex((t) => t.abbreviation === homeAbbr);
-    const awayIndex: number = this.teams.findIndex((t) => t.abbreviation === awayAbbr);
+    const homeIndex = this.teams.findIndex((t) => t.abbreviation === homeAbbr);
+    const awayIndex = this.teams.findIndex((t) => t.abbreviation === awayAbbr);
     if (homeIndex === -1 || awayIndex === -1) {
       throw new Error("Unknown team name");
     }
@@ -51,12 +51,12 @@ export default class Group {
   }
 
   #calculateTable(): TableRow[] {
-    return this.teams.map((team, index) => {
-      const matchesPlayed: number = this.#matchesPlayed(index);
-      const points: number = this.#sumPoints(index);
-      const goalsFor: number = this.#goalsFor(index);
-      const goalsAgainst: number = this.#goalsAgainst(index);
-      const goalDifference: number = goalsFor - goalsAgainst;
+    return this.teams.map((team, teamIndex) => {
+      const matchesPlayed = this.#matchesPlayed(teamIndex);
+      const points = this.#sumPoints(teamIndex);
+      const goalsFor = this.#goalsFor(teamIndex);
+      const goalsAgainst = this.#goalsAgainst(teamIndex);
+      const goalDifference = goalsFor - goalsAgainst;
       return [team, matchesPlayed, goalsFor, goalsAgainst, goalDifference, points];
     });
   }
@@ -76,37 +76,37 @@ export default class Group {
     return 0;
   };
 
-  #matchesPlayed(teamIndex: number): number {
-    let count = 0;
-    for (let i = 0; i < this.#results.length; i++) {
-      if (i === teamIndex) continue;
-      const home = this.#results[teamIndex][i];
-      const away = this.#results[i][teamIndex];
-      if (home != null && away != null) count++;
+  #matchesPlayed(rowIndex: number): number {
+    let matchesPlayed = 0;
+    for (let columnIndex = 0; columnIndex < this.#results.length; columnIndex++) {
+      if (rowIndex === columnIndex) continue;
+      const home = this.#results[rowIndex][columnIndex];
+      const away = this.#results[columnIndex][rowIndex];
+      if (home != null && away != null) matchesPlayed++;
     }
-    return count;
+    return matchesPlayed;
   }
 
   #goalsFor(rowIndex: number): number {
-    return this.#results[rowIndex].reduce<number>((acc, score, columnIndex) => {
-      if (rowIndex === columnIndex) return acc;
-      return acc + (score ?? 0);
+    return this.#results[rowIndex].reduce<number>((goalsFor, score, columnIndex) => {
+      if (rowIndex === columnIndex) return goalsFor;
+      return goalsFor + (score ?? 0);
     }, 0);
   }
 
   #goalsAgainst(columnIndex: number): number {
-    return this.#results.reduce<number>((acc, row, rowIndex) => {
-      if (rowIndex === columnIndex) return acc;
-      return acc + (row[columnIndex] ?? 0);
+    return this.#results.reduce<number>((goalsAgainst, row, rowIndex) => {
+      if (rowIndex === columnIndex) return goalsAgainst;
+      return goalsAgainst + (row[columnIndex] ?? 0);
     }, 0);
   }
 
-  #sumPoints(teamIndex: number): number {
-    let points: number = 0;
-    for (let index = 0; index < this.#results.length; index += 1) {
-      if (teamIndex === index) continue;
-      const home: Result = this.#results[teamIndex][index] ?? null;
-      const away: Result = this.#results[index][teamIndex] ?? null;
+  #sumPoints(rowIndex: number): number {
+    let points = 0;
+    for (let columnIndex = 0; columnIndex < this.#results.length; columnIndex++) {
+      if (rowIndex === columnIndex) continue;
+      const home = this.#results[rowIndex][columnIndex] ?? null;
+      const away = this.#results[columnIndex][rowIndex] ?? null;
       points += this.#getPoints(home, away);
     }
     return points;
