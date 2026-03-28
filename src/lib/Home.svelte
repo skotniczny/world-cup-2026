@@ -20,7 +20,7 @@
 <style>
   .home-grid {
     display: grid;
-    grid-template-columns: minmax(560px, auto) 1fr;
+    grid-template-columns: var(--wc-home-columns);
     gap: var(--wc-space-lg);
   }
 </style>

@@ -17,6 +17,8 @@
   --wc-space-lg: 0.5rem;
   --wc-team-max-width: 110px;
   --wc-grid-col-min-width: 344px;
+  --wc-grid-columns: 1fr;
+  --wc-home-columns: 1fr;
   --wc-headings-ff: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
 
   font-family: system-ui, sans-serif;
@@ -50,6 +52,8 @@
     --wc-space-lg: 2rem;
     --wc-team-max-width: 200px;
     --wc-grid-col-min-width: 400px;
+    --wc-grid-columns: 1fr 1fr;
+    --wc-home-columns: minmax(560px, auto) 1fr;
   }
 }
 
@@ -157,7 +161,7 @@ a:hover {
 
 .grid-column {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--wc-grid-columns);
   gap: var(--wc-space-sm);
   align-content: start;
 }
