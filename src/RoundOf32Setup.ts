@@ -1,19 +1,15 @@
-// Matchup rules for 8 advancing third-placed teams to their round-of-32 opponents.
-// Source: FIFA World Cup 2026 regulations.
-import THIRD_PLACE_MATCHUPS from "./data/thirdPlaceMatchups.json" with { type: "json" };
+import { thirdPlaceMatchups } from "./data/thirdPlaceMatchups";
 
 import type { GroupName } from "./data/groups";
 import type { TeamInfo } from "./data/teams";
 import { getTeamAt, thirdPlaces } from "./stores/groups.svelte";
 import { updateMatchTeam } from "./stores/matches.svelte";
 
-type GroupSlot = { group: GroupName; position: number };
-type ThirdPlaceSlot = { thirdPlaceIndex: number; position: 3 };
+export type GroupSlot = { group: GroupName; position: number };
+export type ThirdPlaceSlot = { thirdPlaceIndex: number; position: 3 };
 type Slot = GroupSlot | ThirdPlaceSlot;
 
-const thirdPlaceMatchups: Readonly<Record<string, string>> = THIRD_PLACE_MATCHUPS;
-
-const roundOf32Slots = new Map<number, { home: GroupSlot; away: Slot }>([
+export const roundOf32Slots = new Map<number, { home: GroupSlot; away: Slot }>([
   [74, { home: { group: "C", position: 1 }, away: { group: "F", position: 2 } }],
   [76, { home: { group: "F", position: 1 }, away: { group: "C", position: 2 } }],
   [83, { home: { group: "H", position: 1 }, away: { group: "J", position: 2 } }],

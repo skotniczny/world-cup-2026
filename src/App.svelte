@@ -5,6 +5,7 @@
   import Home from "./lib/Home.svelte"
   import Standings from "./lib/Standings.svelte"
   import Knockout from "./lib/Knockout.svelte"
+  import ThirdPlaceBracketResolver from "./lib/ThirdPlaceBracketResolver.svelte"
 
   const basepath = "/world-cup-2026"
 </script>
@@ -18,6 +19,7 @@
       {/each}
       <li><Link to="standings">Standings</Link></li>
       <li><Link to="knockout">Knockout</Link></li>
+      <li><Link to="resolver">Resolver</Link></li>
     </ul>
   </nav>
   <main id="main">
@@ -25,6 +27,7 @@
     <Route path="standings" component={Standings} />
     <Route path="group/:groupName" component={Group} />
     <Route path="knockout" component={Knockout} />
+    <Route path="resolver" component={ThirdPlaceBracketResolver} />
   </main>
 </Router>
 
