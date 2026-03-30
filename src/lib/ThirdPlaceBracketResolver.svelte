@@ -59,16 +59,20 @@
 </section>
 <section aria-live="polite">
   {#if matchups}
-  <h2>Matchups for advancing third-placed teams</h2>
-  <ol class="matchup">
-    {#each matchups as item (item.key)}
-    <li class="matchup-item">
-      <div class="matchup-header">{item.header}</div>
-      <div><span class="team-placeholder" aria-label={item.home.label}>{item.home.display}</span> – <span class="team-placeholder" aria-label={item.away.label}>{item.away.display}</span></div>
-      <div class="matchup-footer">{item.footer}</div>
-    </li>
-    {/each}
-  </ol>
+    <h2>Matchups for advancing third-placed teams</h2>
+    <ol class="matchup">
+      {#each matchups as item (item.key)}
+        <li class="matchup-item">
+          <div class="matchup-header">{item.header}</div>
+          <div>
+            <span class="team-placeholder" aria-label={item.home.label}>{item.home.display}</span>
+            <abbr title="versus" aria-label="versus">vs.</abbr>
+            <span class="team-placeholder" aria-label={item.away.label}>{item.away.display}</span>
+          </div>
+          <div class="matchup-footer">{item.footer}</div>
+        </li>
+      {/each}
+    </ol>
   {/if}
 </section>
 
