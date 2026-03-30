@@ -1,6 +1,6 @@
 <script lang="ts">
   import { groupNames, type GroupName } from "../data/groups"
-  import { thirdPlaceMatchups } from "../data/thirdPlaceMatchups";
+  import { getThirdPlaceMatchup } from "../data/thirdPlaceMatchups"
   import { findMatchById } from "../stores/matches.svelte"
   import { type MatchItem } from "../data/matches";
   import { roundOf32Slots } from "../RoundOf32Setup";
@@ -14,8 +14,7 @@
 
   const matchups = $derived.by(() => {
     if (!maxReached) return null
-    const matchup = thirdPlaceMatchups[advancingGroups]
-    if (!matchup) throw new Error(`No third-place matchup found for advancing groups: "${advancingGroups}"`);
+    const matchup = getThirdPlaceMatchup(advancingGroups)
     return slots.map(([key, item]) => {
       const match: MatchItem = findMatchById(key)
       const date = new Date(match.datetime)

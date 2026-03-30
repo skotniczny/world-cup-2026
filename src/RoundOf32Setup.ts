@@ -1,4 +1,4 @@
-import { thirdPlaceMatchups } from "./data/thirdPlaceMatchups";
+import { getThirdPlaceMatchup } from "./data/thirdPlaceMatchups";
 
 import type { GroupName } from "./data/groups";
 import type { TeamInfo } from "./data/teams";
@@ -32,8 +32,7 @@ function resolveSlot(slot: Slot): TeamInfo {
   if ("group" in slot) return getTeamAt(slot.group, slot.position);
 
   const advancingGroups = thirdPlaces.advancingGroups;
-  const matchupValue = thirdPlaceMatchups[advancingGroups];
-  if (!matchupValue) throw new Error(`No third-place matchup found for advancing groups: "${advancingGroups}"`);
+  const matchupValue = getThirdPlaceMatchup(advancingGroups);
   const group = matchupValue[slot.thirdPlaceIndex] as GroupName;
   return getTeamAt(group, slot.position);
 }
