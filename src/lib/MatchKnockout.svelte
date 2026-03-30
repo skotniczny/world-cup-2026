@@ -166,7 +166,7 @@
 
   .matchko-header,
   .matchko-footer {
-    font-size: 0.875rem;
+    font-size: var(--wc-text-sm);
   }
 
   .matchko-body {

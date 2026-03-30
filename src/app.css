@@ -20,6 +20,7 @@
   --wc-grid-columns: 1fr;
   --wc-home-columns: 1fr;
   --wc-headings-ff: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+  --wc-text-sm: 0.875rem;
 
   font-family: system-ui, sans-serif;
   line-height: 1.5;

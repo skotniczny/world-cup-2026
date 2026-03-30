@@ -128,7 +128,7 @@
   }
 
   .standings_footer {
-    font-size: 0.875rem;
+    font-size: var(--wc-text-sm);
     list-style: none;
     text-align: left;
     padding-left: 1rem;
