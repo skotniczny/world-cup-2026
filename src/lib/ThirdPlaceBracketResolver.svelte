@@ -2,9 +2,9 @@
   import { groupNames, type GroupName } from "../data/groups"
   import { getThirdPlaceMatchup } from "../data/thirdPlaceMatchups"
   import { findMatchById } from "../stores/matches.svelte"
-  import { type MatchItem } from "../data/matches";
-  import { roundOf32Slots } from "../RoundOf32Setup";
-  import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup";
+  import { type MatchItem } from "../data/matches"
+  import { roundOf32Slots } from "../RoundOf32Setup"
+  import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup"
 
   const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
     day: "numeric",
@@ -14,9 +14,12 @@
     minute: "2-digit",
   }
 
-  const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [number, { home: GroupSlot; away: ThirdPlaceSlot }][]
+  const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [
+    number,
+    { home: GroupSlot; away: ThirdPlaceSlot },
+  ][]
 
-  let selected:GroupName[] = $state([])
+  let selected: GroupName[] = $state([])
   const advancingGroups = $derived([...selected].sort().join(""))
   const maxReached = $derived(selected.length >= 8)
 
@@ -47,21 +50,26 @@
 
 <section>
   <h1>Combinations for eight best third‑placed teams</h1>
-  <p>FIFA has pre-defined all 495 possible combinations in the official tournament regulations (<a href="https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf">Annex C</a>).</p>
+  <p>
+    FIFA has pre-defined all 495 possible combinations in the official tournament regulations (<a
+      href="https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf">Annex C</a
+    >).
+  </p>
   <p>Use the tool to select the 8 qualifying groups and instantly see the generated matchups.</p>
 
   <ol class="groups">
     {#each groupNames as g (g)}
-    <li class="groups_item">
-      <label class="groups_label" for={`group${g}`} aria-label={`Group ${g}`}>{g}</label>
-      <input
-        id={`group${g}`}
-        class="sr-only"
-        type="checkbox"
-        value={g}
-        bind:group={selected}
-        disabled={maxReached && !selected.includes(g)} />
-    </li>
+      <li class="groups_item">
+        <label class="groups_label" for={`group${g}`} aria-label={`Group ${g}`}>{g}</label>
+        <input
+          id={`group${g}`}
+          class="sr-only"
+          type="checkbox"
+          value={g}
+          bind:group={selected}
+          disabled={maxReached && !selected.includes(g)}
+        />
+      </li>
     {/each}
   </ol>
 </section>
