@@ -112,13 +112,13 @@
 
   .groups_label,
   .matchup-item {
-    border: 1px solid var(--wc-color-natural300);
     padding: 0.5rem 1rem;
     border-radius: var(--wc-radius);
     box-shadow: var(--wc-shadow);
   }
 
   .groups_label {
+    border: 1px solid var(--wc-color-natural300);
     cursor: pointer;
     display: inline-block;
     width: 3rem;
@@ -143,6 +143,7 @@
   }
 
   .matchup-item {
+    border: 1px solid var(--wc-color-natural200);
     background: var(--wc-color-natural0);
     flex: 0 0 0%;
   }
