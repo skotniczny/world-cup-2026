@@ -6,6 +6,14 @@
   import { roundOf32Slots } from "../RoundOf32Setup";
   import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup";
 
+  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }
+
   const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [number, { home: GroupSlot; away: ThirdPlaceSlot }][]
 
   let selected:GroupName[] = $state([])
@@ -22,7 +30,7 @@
       const awayGroup = matchup[item.away.thirdPlaceIndex]
       return {
         key,
-        header: date.toLocaleDateString("pl-PL"),
+        header: date.toLocaleDateString("pl-PL", dateTimeFormatOptions),
         home: {
           display: `${item.home.position}${homeGroup}`,
           label: `Group ${homeGroup} winner`,
@@ -31,7 +39,7 @@
           display: `${item.away.position}${awayGroup}`,
           label: `Third-placed team from group ${awayGroup}`,
         },
-        footer: `${match.city} • ${match.stadium}`
+        footer: `${match.stage} • ${match.city} • ${match.stadium}`,
       }
     })
   })
