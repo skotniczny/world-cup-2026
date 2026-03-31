@@ -28,11 +28,11 @@ try {
     }
   }
   await Promise.all([
-    writeFile("./src/data/matches.json", JSON.stringify(output, null, 2)),
-    writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2)),
+    writeFile("./src/data/matches.json", JSON.stringify(output, null, 2) + "\n"),
+    writeFile("./src/data/teams.json", JSON.stringify(teamsOrPlaceholders, null, 2) + "\n"),
     writeFile(
       "./src/data/groups.json",
-      JSON.stringify(Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))), null, 2),
+      JSON.stringify(Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))), null, 2) + "\n",
     ),
   ])
 } catch (error) {
