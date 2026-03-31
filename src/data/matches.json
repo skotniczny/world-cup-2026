@@ -26,9 +26,9 @@
       "flag": "🇰🇷"
     },
     "away": {
-      "name": "DEN/MKD/CZE/IRL",
-      "abbreviation": "DEN/MKD/CZE/IRL",
-      "flag": "🇺🇳"
+      "name": "Czechia",
+      "abbreviation": "CZE",
+      "flag": "🇨🇿"
     },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
@@ -43,9 +43,9 @@
       "flag": "🇨🇦"
     },
     "away": {
-      "name": "ITA/NIR/WAL/BIH",
-      "abbreviation": "ITA/NIR/WAL/BIH",
-      "flag": "🇺🇳"
+      "name": "Bosnia and Herzegovina",
+      "abbreviation": "BIH",
+      "flag": "🇧🇦"
     },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
@@ -128,9 +128,9 @@
       "flag": "🇦🇺"
     },
     "away": {
-      "name": "TUR/ROU/SVK/KOS",
-      "abbreviation": "TUR/ROU/SVK/KOS",
-      "flag": "🇺🇳"
+      "name": "Türkiye",
+      "abbreviation": "TUR",
+      "flag": "🇹🇷"
     },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver"
@@ -191,9 +191,9 @@
     "stage": "First Stage",
     "group": "F",
     "home": {
-      "name": "UKR/SWE/POL/ALB",
-      "abbreviation": "UKR/SWE/POL/ALB",
-      "flag": "🇺🇳"
+      "name": "Sweden",
+      "abbreviation": "SWE",
+      "flag": "🇸🇪"
     },
     "away": {
       "name": "Tunisia",
@@ -412,9 +412,9 @@
     "stage": "First Stage",
     "group": "A",
     "home": {
-      "name": "DEN/MKD/CZE/IRL",
-      "abbreviation": "DEN/MKD/CZE/IRL",
-      "flag": "🇺🇳"
+      "name": "Czechia",
+      "abbreviation": "CZE",
+      "flag": "🇨🇿"
     },
     "away": {
       "name": "South Africa",
@@ -434,9 +434,9 @@
       "flag": "🇨🇭"
     },
     "away": {
-      "name": "ITA/NIR/WAL/BIH",
-      "abbreviation": "ITA/NIR/WAL/BIH",
-      "flag": "🇺🇳"
+      "name": "Bosnia and Herzegovina",
+      "abbreviation": "BIH",
+      "flag": "🇧🇦"
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles"
@@ -531,9 +531,9 @@
     "stage": "First Stage",
     "group": "D",
     "home": {
-      "name": "TUR/ROU/SVK/KOS",
-      "abbreviation": "TUR/ROU/SVK/KOS",
-      "flag": "🇺🇳"
+      "name": "Türkiye",
+      "abbreviation": "TUR",
+      "flag": "🇹🇷"
     },
     "away": {
       "name": "Paraguay",
@@ -553,9 +553,9 @@
       "flag": "🇳🇱"
     },
     "away": {
-      "name": "UKR/SWE/POL/ALB",
-      "abbreviation": "UKR/SWE/POL/ALB",
-      "flag": "🇺🇳"
+      "name": "Sweden",
+      "abbreviation": "SWE",
+      "flag": "🇸🇪"
     },
     "stadium": "Houston Stadium",
     "city": "Houston"
@@ -820,9 +820,9 @@
     "stage": "First Stage",
     "group": "B",
     "home": {
-      "name": "ITA/NIR/WAL/BIH",
-      "abbreviation": "ITA/NIR/WAL/BIH",
-      "flag": "🇺🇳"
+      "name": "Bosnia and Herzegovina",
+      "abbreviation": "BIH",
+      "flag": "🇧🇦"
     },
     "away": {
       "name": "Qatar",
@@ -905,9 +905,9 @@
     "stage": "First Stage",
     "group": "A",
     "home": {
-      "name": "DEN/MKD/CZE/IRL",
-      "abbreviation": "DEN/MKD/CZE/IRL",
-      "flag": "🇺🇳"
+      "name": "Czechia",
+      "abbreviation": "CZE",
+      "flag": "🇨🇿"
     },
     "away": {
       "name": "Mexico",
@@ -978,9 +978,9 @@
       "flag": "🇯🇵"
     },
     "away": {
-      "name": "UKR/SWE/POL/ALB",
-      "abbreviation": "UKR/SWE/POL/ALB",
-      "flag": "🇺🇳"
+      "name": "Sweden",
+      "abbreviation": "SWE",
+      "flag": "🇸🇪"
     },
     "stadium": "Dallas Stadium",
     "city": "Dallas"
@@ -1007,9 +1007,9 @@
     "stage": "First Stage",
     "group": "D",
     "home": {
-      "name": "TUR/ROU/SVK/KOS",
-      "abbreviation": "TUR/ROU/SVK/KOS",
-      "flag": "🇺🇳"
+      "name": "Türkiye",
+      "abbreviation": "TUR",
+      "flag": "🇹🇷"
     },
     "away": {
       "name": "USA",

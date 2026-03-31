@@ -16,9 +16,9 @@
       "flag": "🇰🇷"
     },
     {
-      "name": "DEN/MKD/CZE/IRL",
-      "abbreviation": "DEN/MKD/CZE/IRL",
-      "flag": "🇺🇳"
+      "name": "Czechia",
+      "abbreviation": "CZE",
+      "flag": "🇨🇿"
     }
   ],
   "B": [
@@ -28,9 +28,9 @@
       "flag": "🇨🇦"
     },
     {
-      "name": "ITA/NIR/WAL/BIH",
-      "abbreviation": "ITA/NIR/WAL/BIH",
-      "flag": "🇺🇳"
+      "name": "Bosnia and Herzegovina",
+      "abbreviation": "BIH",
+      "flag": "🇧🇦"
     },
     {
       "name": "Qatar",
@@ -82,9 +82,9 @@
       "flag": "🇦🇺"
     },
     {
-      "name": "TUR/ROU/SVK/KOS",
-      "abbreviation": "TUR/ROU/SVK/KOS",
-      "flag": "🇺🇳"
+      "name": "Türkiye",
+      "abbreviation": "TUR",
+      "flag": "🇹🇷"
     }
   ],
   "E": [
@@ -121,9 +121,9 @@
       "flag": "🇯🇵"
     },
     {
-      "name": "UKR/SWE/POL/ALB",
-      "abbreviation": "UKR/SWE/POL/ALB",
-      "flag": "🇺🇳"
+      "name": "Sweden",
+      "abbreviation": "SWE",
+      "flag": "🇸🇪"
     },
     {
       "name": "Tunisia",

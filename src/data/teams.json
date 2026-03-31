@@ -14,20 +14,20 @@
     "abbreviation": "KOR",
     "flag": "🇰🇷"
   },
-  "DEN/MKD/CZE/IRL": {
-    "name": "DEN/MKD/CZE/IRL",
-    "abbreviation": "DEN/MKD/CZE/IRL",
-    "flag": "🇺🇳"
+  "CZE": {
+    "name": "Czechia",
+    "abbreviation": "CZE",
+    "flag": "🇨🇿"
   },
   "CAN": {
     "name": "Canada",
     "abbreviation": "CAN",
     "flag": "🇨🇦"
   },
-  "ITA/NIR/WAL/BIH": {
-    "name": "ITA/NIR/WAL/BIH",
-    "abbreviation": "ITA/NIR/WAL/BIH",
-    "flag": "🇺🇳"
+  "BIH": {
+    "name": "Bosnia and Herzegovina",
+    "abbreviation": "BIH",
+    "flag": "🇧🇦"
   },
   "USA": {
     "name": "USA",
@@ -74,10 +74,10 @@
     "abbreviation": "AUS",
     "flag": "🇦🇺"
   },
-  "TUR/ROU/SVK/KOS": {
-    "name": "TUR/ROU/SVK/KOS",
-    "abbreviation": "TUR/ROU/SVK/KOS",
-    "flag": "🇺🇳"
+  "TUR": {
+    "name": "Türkiye",
+    "abbreviation": "TUR",
+    "flag": "🇹🇷"
   },
   "GER": {
     "name": "Germany",
@@ -109,10 +109,10 @@
     "abbreviation": "ECU",
     "flag": "🇪🇨"
   },
-  "UKR/SWE/POL/ALB": {
-    "name": "UKR/SWE/POL/ALB",
-    "abbreviation": "UKR/SWE/POL/ALB",
-    "flag": "🇺🇳"
+  "SWE": {
+    "name": "Sweden",
+    "abbreviation": "SWE",
+    "flag": "🇸🇪"
   },
   "TUN": {
     "name": "Tunisia",
