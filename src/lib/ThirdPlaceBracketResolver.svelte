@@ -52,7 +52,10 @@
   <ol class="groups">
     {#each groupNames as g (g)}
       <li class="groups_item">
-        <label class="groups_label" for={`group${g}`} aria-label={`Group ${g}`}>{g}</label>
+        <label class="groups_label" for={`group${g}`}>
+          <span class="sr-only">Group {g}</span>
+          <span aria-hidden="true">{g}</span>
+        </label>
         <input
           id={`group${g}`}
           class="sr-only"
@@ -73,9 +76,11 @@
         <li class="matchup-item">
           <div class="matchup-header"><Time datetime={match.datetime} /></div>
           <div>
-            <span class="team-placeholder" aria-label={match.home.label}>{match.home.display}</span>
-            <abbr title="versus" aria-label="versus">vs.</abbr>
-            <span class="team-placeholder" aria-label={match.away.label}>{match.away.display}</span>
+            <span class="sr-only">{match.home.label}</span>
+            <span class="team-placeholder" aria-hidden="true">{match.home.display}</span>
+            <abbr title="versus">vs.</abbr>
+            <span class="sr-only">{match.away.label}</span>
+            <span class="team-placeholder" aria-hidden="true">{match.away.display}</span>
           </div>
           <div class="matchup-footer">{match.footer}</div>
         </li>
