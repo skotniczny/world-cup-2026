@@ -5,14 +5,7 @@
   import { type MatchItem } from "../data/matches"
   import { roundOf32Slots } from "../RoundOf32Setup"
   import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup"
-
-  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  }
+  import Time from "./Time.svelte"
 
   const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [
     number,
@@ -28,12 +21,11 @@
     const matchup = getThirdPlaceMatchup(advancingGroups)
     return slots.map(([key, item]) => {
       const match: MatchItem = findMatchById(key)
-      const date = new Date(match.datetime)
       const homeGroup = item.home.group
       const awayGroup = matchup[item.away.thirdPlaceIndex]
       return {
         key,
-        header: date.toLocaleDateString("pl-PL", dateTimeFormatOptions),
+        datetime: match.datetime,
         home: {
           display: `${item.home.position}${homeGroup}`,
           label: `Group ${homeGroup} winner`,
@@ -77,15 +69,15 @@
   {#if matchups}
     <h2>Matchups for advancing third-placed teams</h2>
     <ol class="matchup">
-      {#each matchups as item (item.key)}
+      {#each matchups as match (match.key)}
         <li class="matchup-item">
-          <div class="matchup-header">{item.header}</div>
+          <div class="matchup-header"><Time datetime={match.datetime} /></div>
           <div>
-            <span class="team-placeholder" aria-label={item.home.label}>{item.home.display}</span>
+            <span class="team-placeholder" aria-label={match.home.label}>{match.home.display}</span>
             <abbr title="versus" aria-label="versus">vs.</abbr>
-            <span class="team-placeholder" aria-label={item.away.label}>{item.away.display}</span>
+            <span class="team-placeholder" aria-label={match.away.label}>{match.away.display}</span>
           </div>
-          <div class="matchup-footer">{item.footer}</div>
+          <div class="matchup-footer">{match.footer}</div>
         </li>
       {/each}
     </ol>
