@@ -293,9 +293,9 @@
     "stage": "First Stage",
     "group": "I",
     "home": {
-      "name": "BOL/SUR/IRQ",
-      "abbreviation": "BOL/SUR/IRQ",
-      "flag": "🇺🇳"
+      "name": "Iraq",
+      "abbreviation": "IRQ",
+      "flag": "🇮🇶"
     },
     "away": {
       "name": "Norway",
@@ -349,9 +349,9 @@
       "flag": "🇵🇹"
     },
     "away": {
-      "name": "NCL/JAM/COD",
-      "abbreviation": "NCL/JAM/COD",
-      "flag": "🇺🇳"
+      "name": "Congo DR",
+      "abbreviation": "COD",
+      "flag": "🇨🇩"
     },
     "stadium": "Houston Stadium",
     "city": "Houston"
@@ -706,9 +706,9 @@
       "flag": "🇫🇷"
     },
     "away": {
-      "name": "BOL/SUR/IRQ",
-      "abbreviation": "BOL/SUR/IRQ",
-      "flag": "🇺🇳"
+      "name": "Iraq",
+      "abbreviation": "IRQ",
+      "flag": "🇮🇶"
     },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia"
@@ -808,9 +808,9 @@
       "flag": "🇨🇴"
     },
     "away": {
-      "name": "NCL/JAM/COD",
-      "abbreviation": "NCL/JAM/COD",
-      "flag": "🇺🇳"
+      "name": "Congo DR",
+      "abbreviation": "COD",
+      "flag": "🇨🇩"
     },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara"
@@ -1029,9 +1029,9 @@
       "flag": "🇸🇳"
     },
     "away": {
-      "name": "BOL/SUR/IRQ",
-      "abbreviation": "BOL/SUR/IRQ",
-      "flag": "🇺🇳"
+      "name": "Iraq",
+      "abbreviation": "IRQ",
+      "flag": "🇮🇶"
     },
     "stadium": "Toronto Stadium",
     "city": "Toronto"
@@ -1160,9 +1160,9 @@
     "stage": "First Stage",
     "group": "K",
     "home": {
-      "name": "NCL/JAM/COD",
-      "abbreviation": "NCL/JAM/COD",
-      "flag": "🇺🇳"
+      "name": "Congo DR",
+      "abbreviation": "COD",
+      "flag": "🇨🇩"
     },
     "away": {
       "name": "Uzbekistan",

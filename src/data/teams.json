@@ -169,10 +169,10 @@
     "abbreviation": "SEN",
     "flag": "🇸🇳"
   },
-  "BOL/SUR/IRQ": {
-    "name": "BOL/SUR/IRQ",
-    "abbreviation": "BOL/SUR/IRQ",
-    "flag": "🇺🇳"
+  "IRQ": {
+    "name": "Iraq",
+    "abbreviation": "IRQ",
+    "flag": "🇮🇶"
   },
   "NOR": {
     "name": "Norway",
@@ -204,10 +204,10 @@
     "abbreviation": "POR",
     "flag": "🇵🇹"
   },
-  "NCL/JAM/COD": {
-    "name": "NCL/JAM/COD",
-    "abbreviation": "NCL/JAM/COD",
-    "flag": "🇺🇳"
+  "COD": {
+    "name": "Congo DR",
+    "abbreviation": "COD",
+    "flag": "🇨🇩"
   },
   "ENG": {
     "name": "England",
