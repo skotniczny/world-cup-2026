@@ -6,8 +6,9 @@
   import Standings from "./lib/Standings.svelte"
   import Knockout from "./lib/Knockout.svelte"
   import ThirdPlaceBracketResolver from "./lib/ThirdPlaceBracketResolver.svelte"
+  import NotFound from "./lib/NotFound.svelte"
 
-  const basepath = "/world-cup-2026"
+  const basepath = import.meta.env.BASE_URL;
 </script>
 
 <Router {basepath}>
@@ -23,11 +24,12 @@
     </ul>
   </nav>
   <main id="main">
-    <Route path="" component={Home} />
+    <Route path="/" component={Home} />
     <Route path="standings" component={Standings} />
     <Route path="group/:groupName" component={Group} />
     <Route path="knockout" component={Knockout} />
     <Route path="resolver" component={ThirdPlaceBracketResolver} />
+    <Route component={NotFound} />
   </main>
 </Router>
 
