@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Match from "./Match.svelte"
-  import Table from "./Table.svelte"
+  import Match from "../lib/Match.svelte"
+  import Table from "../lib/Table.svelte"
   import type { MatchItem } from "../data/matches"
   import { matchesData } from "../stores/matches.svelte"
   import { groupsData } from "../stores/groups.svelte"

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { groupsData } from "../stores/groups.svelte"
-  import Table from "./Table.svelte"
+  import Table from "../lib/Table.svelte"
 </script>
 
 <h1>Standings</h1>

@@ -1,12 +1,10 @@
 <script lang="ts">
-  import Table from "./Table.svelte"
-  import Fixtures from "./Fixtures.svelte"
+  import Table from "../lib/Table.svelte"
+  import Fixtures from "../lib/Fixtures.svelte"
   import { groupsData, thirdPlaces } from "../stores/groups.svelte"
 </script>
 
-<header>
-  <h1>2026 FIFA World Cup</h1>
-</header>
+<h1>2026 FIFA World Cup</h1>
 <div class="home-grid">
   <Fixtures />
   <div class="grid-column">

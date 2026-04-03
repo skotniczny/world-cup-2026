@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MatchKnockout from "./MatchKnockout.svelte"
+  import MatchKnockout from "../lib/MatchKnockout.svelte"
   import { knockoutMatchesByRound } from "../data/knockoutTree"
   import { findMatchById } from "../stores/matches.svelte"
 

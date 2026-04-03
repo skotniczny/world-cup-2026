@@ -5,7 +5,7 @@
   import { type MatchItem } from "../data/matches"
   import { roundOf32Slots } from "../RoundOf32Setup"
   import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup"
-  import Time from "./Time.svelte"
+  import Time from "../lib/Time.svelte"
 
   const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [
     number,

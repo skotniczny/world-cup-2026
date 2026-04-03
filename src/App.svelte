@@ -1,12 +1,12 @@
 <script lang="ts">
   import { Router, Link, Route } from "svelte5-router"
   import { groupNames } from "./data/groups"
-  import Group from "./lib/Group.svelte"
-  import Home from "./lib/Home.svelte"
-  import Standings from "./lib/Standings.svelte"
-  import Knockout from "./lib/Knockout.svelte"
-  import ThirdPlaceBracketResolver from "./lib/ThirdPlaceBracketResolver.svelte"
-  import NotFound from "./lib/NotFound.svelte"
+  import Group from "./pages/Group.svelte"
+  import Home from "./pages/Home.svelte"
+  import Standings from "./pages/Standings.svelte"
+  import Knockout from "./pages/Knockout.svelte"
+  import ThirdPlaceBracketResolver from "./pages/ThirdPlaceBracketResolver.svelte"
+  import NotFound from "./pages/NotFound.svelte"
 
   const basepath = import.meta.env.BASE_URL;
 </script>
