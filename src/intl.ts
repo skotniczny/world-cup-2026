@@ -13,11 +13,11 @@ const timeFormatter = new Intl.DateTimeFormat(locale, {
 });
 
 function dateTimeFormatter(isoTimeString: string) {
-  const date = new Date(isoTimeString)
-   if (Number.isNaN(date.getTime())) {
-    throw new Error(`Invalid date: ${isoTimeString}`)
+  const date = new Date(isoTimeString);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`Invalid date: ${isoTimeString}`);
   }
-  return `${dateFormatter.format(date)} ${timeFormatter.format(date)}`
+  return `${dateFormatter.format(date)} ${timeFormatter.format(date)}`;
 }
 
-export { dateTimeFormatter }
+export { dateTimeFormatter };

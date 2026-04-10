@@ -8,7 +8,7 @@
   import ThirdPlaceBracketResolver from "./pages/ThirdPlaceBracketResolver.svelte"
   import NotFound from "./pages/NotFound.svelte"
 
-  const basepath = import.meta.env.BASE_URL;
+  const basepath = import.meta.env.BASE_URL
 </script>
 
 <Router {basepath}>
