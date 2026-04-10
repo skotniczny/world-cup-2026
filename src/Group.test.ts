@@ -85,6 +85,26 @@ describe("Group", () => {
       expect(groupB.table[0][5]).toBe(9);
     });
 
+    test("should accumulate 7 goals for", () => {
+      const groupB = new Group(nameB, teamsB);
+
+      groupB.setScore(canada, otherBTeams[0], [1, 0]);
+      groupB.setScore(canada, otherBTeams[1], [2, 0]);
+      groupB.setScore(canada, otherBTeams[2], [4, 0]);
+
+      expect(groupB.table[0][2]).toBe(7);
+    });
+
+    test("should accumulate 6 goals against", () => {
+      const groupB = new Group(nameB, teamsB);
+
+      groupB.setScore(canada, otherBTeams[0], [0, 1]);
+      groupB.setScore(canada, otherBTeams[1], [0, 2]);
+      groupB.setScore(canada, otherBTeams[2], [0, 3]);
+
+      expect(groupB.table[3][3]).toBe(6);
+    });
+
     test("should reset table to initial state after removing a result", () => {
       const groupA = new Group(nameA, teamsA);
       const initialTable = groupA.table.map((row) => [...row]);
