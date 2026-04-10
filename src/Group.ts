@@ -70,13 +70,12 @@ export default class Group {
     return 0;
   };
 
-  #calculateRecord(rowIndex: number): TeamRecord {
+  #calculateRecord(rowIndex: number, against = [...this.teams.keys()].filter((i) => i !== rowIndex)): TeamRecord {
     let matchesPlayed = 0;
     let goalsFor = 0;
     let goalsAgainst = 0;
     let points = 0;
-    for (let columnIndex = 0; columnIndex < this.#results.length; columnIndex++) {
-      if (rowIndex === columnIndex) continue;
+    for (const columnIndex of against) {
       const home = this.#results[rowIndex][columnIndex];
       const away = this.#results[columnIndex][rowIndex];
       if (home != null && away != null) matchesPlayed++;
