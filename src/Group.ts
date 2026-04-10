@@ -12,6 +12,20 @@ type TeamRecord = [
 
 export type TableRow = [team: TeamInfo, ...record: TeamRecord];
 
+// Input must be pre-sorted by key
+function chunkBy(items: number[], key: (item: number) => number | string): number[][] {
+  const groups: number[][] = [];
+  for (const item of items) {
+    const currentGroup = groups[groups.length - 1];
+    if (currentGroup && key(currentGroup[0]) === key(item)) {
+      currentGroup.push(item);
+    } else {
+      groups.push([item]);
+    }
+  }
+  return groups;
+}
+
 export default class Group {
   readonly name: string;
   #results: (Result | undefined)[][] = [
@@ -48,27 +62,74 @@ export default class Group {
     const [scoreHome, scoreAway] = result;
     this.#results[homeIndex][awayIndex] = scoreHome;
     this.#results[awayIndex][homeIndex] = scoreAway;
-    this.#table = this.#calculateTable().sort(this.#sortTable);
+    this.#table = this.#sortTable(this.#calculateTable());
   }
 
   #calculateTable(): TableRow[] {
     return this.teams.map((team, teamIndex) => [team, ...this.#calculateRecord(teamIndex)]);
   }
 
-  #sortTable = (a: TableRow, b: TableRow) => {
-    const [, , goalsForA, , goalDiffA, pointsA] = a;
-    const [, , goalsForB, , goalDiffB, pointsB] = b;
+  // FIFA World Cup 26 Regulations,
+  // Art. 13 — Equal points and qualification for knockout stages
+  // https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf
+  #sortTable(table: TableRow[]): TableRow[] {
+    // Step 1: apply criteria 1/2/3 using only matches played between the teams concerned.
+    // If a sub-group remains tied, recurse on that sub-group (smaller set of teams concerned).
+    // If this yields no resolution at all, fall through to Step 2.
+    const step1 = (group: number[]): number[] => {
+      if (group.length === 1) return group;
 
-    // 1. Points
-    if (pointsB !== pointsA) return pointsB - pointsA;
+      const opponents = (teamIndex: number) => group.filter((opponent) => opponent !== teamIndex);
+      const recordBetweenTeamsConcerned = (teamIndex: number): TeamRecord =>
+        this.#calculateRecord(teamIndex, opponents(teamIndex));
 
-    // 2. Goal Difference
-    if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
+      const sorted = [...group].sort((teamA, teamB) => {
+        const [, goalsForA, , goalDiffA, pointsA] = recordBetweenTeamsConcerned(teamA);
+        const [, goalsForB, , goalDiffB, pointsB] = recordBetweenTeamsConcerned(teamB);
 
-    // 3. Goals For
-    if (goalsForA !== goalsForB) return goalsForB - goalsForA;
-    return 0;
-  };
+        // 1. Points obtained in the matches played between the teams concerned
+        if (pointsB !== pointsA) return pointsB - pointsA;
+
+        // 2. Goal difference resulting from the matches played between the teams concerned
+        if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
+
+        // 3. Goals scored in the matches played between the teams concerned
+        if (goalsForA !== goalsForB) return goalsForB - goalsForA;
+        return 0;
+      });
+
+      // Teams with identical records between teams concerned — still tied after Step 1
+      const subGroups = chunkBy(sorted, (teamIndex) => recordBetweenTeamsConcerned(teamIndex).join(","));
+
+      return subGroups.flatMap((subGroup) => {
+        if (subGroup.length === 1) return subGroup;
+        // recurse only if the set of teams concerned narrowed; otherwise fall through to Step 2
+        if (subGroup.length < group.length) return step1(subGroup);
+        return step2(subGroup);
+      });
+    };
+
+    // Step 2: apply criteria 4/5 using all group stage matches.
+    // Does not restart after each criterion — remaining ties move directly to the next.
+    const step2 = (group: number[]): number[] => {
+      return [...group].sort((teamA, teamB) => {
+        const [, , goalsForA, , goalDiffA] = table[teamA];
+        const [, , goalsForB, , goalDiffB] = table[teamB];
+
+        // 4. Goal difference in all group stage matches
+        if (goalDiffB !== goalDiffA) return goalDiffB - goalDiffA;
+
+        // 5. Goals scored in all group stage matches
+        if (goalsForB !== goalsForA) return goalsForB - goalsForA;
+        return 0;
+      });
+    };
+    // 6. and beyond not implemented
+
+    const sortedByPoints = [...table.keys()].sort((teamA, teamB) => table[teamB][5] - table[teamA][5]);
+    const equalPointGroups = chunkBy(sortedByPoints, (teamIndex) => table[teamIndex][5]);
+    return equalPointGroups.flatMap(step1).map((teamIndex) => table[teamIndex]);
+  }
 
   #calculateRecord(rowIndex: number, against = [...this.teams.keys()].filter((i) => i !== rowIndex)): TeamRecord {
     let matchesPlayed = 0;
