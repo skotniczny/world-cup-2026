@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dateTimeFormatter } from "../intl"
+  import { dateTimeFormatter } from "../utils/intl"
   const { datetime }: { datetime: string } = $props()
 </script>
 
