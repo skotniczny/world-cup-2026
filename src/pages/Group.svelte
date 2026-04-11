@@ -9,7 +9,7 @@
 
   let { groupName }: { groupName: GroupName } = $props()
   let groupMatches: MatchItem[] = $derived(matchesData.filter((m) => m.group === groupName))
-  let groupTable: { name: string; table: TableRow[] } = $derived(groupsData[groupName])
+  let groupTable: { name: string; table: TableRow[]; hasUnresolvedTies: boolean } = $derived(groupsData[groupName])
 </script>
 
 <h1>Group {groupName}</h1>
@@ -21,7 +21,12 @@
   </div>
   <div class="standings-container">
     {#if groupTable}
-      <Table name={groupTable.name} table={groupTable.table} long={true} />
+      <Table
+        name={groupTable.name}
+        table={groupTable.table}
+        hasUnresolvedTies={groupTable.hasUnresolvedTies}
+        long={true}
+      />
     {/if}
   </div>
 </div>

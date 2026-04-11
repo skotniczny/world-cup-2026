@@ -20,21 +20,21 @@ const groups: Record<GroupName, Group> = {
   L: new Group("L", getGroup("L")),
 };
 
-export type GroupsData = Record<GroupName, { name: string; table: TableRow[] }>;
+export type GroupsData = Record<GroupName, { name: string; table: TableRow[]; hasUnresolvedTies: boolean }>;
 
 export const groupsData: GroupsData = $state({
-  A: { name: groups.A.name, table: groups.A.table },
-  B: { name: groups.B.name, table: groups.B.table },
-  C: { name: groups.C.name, table: groups.C.table },
-  D: { name: groups.D.name, table: groups.D.table },
-  E: { name: groups.E.name, table: groups.E.table },
-  F: { name: groups.F.name, table: groups.F.table },
-  G: { name: groups.G.name, table: groups.G.table },
-  H: { name: groups.H.name, table: groups.H.table },
-  I: { name: groups.I.name, table: groups.I.table },
-  J: { name: groups.J.name, table: groups.J.table },
-  K: { name: groups.K.name, table: groups.K.table },
-  L: { name: groups.L.name, table: groups.L.table },
+  A: { name: groups.A.name, table: groups.A.table, hasUnresolvedTies: groups.A.hasUnresolvedTies },
+  B: { name: groups.B.name, table: groups.B.table, hasUnresolvedTies: groups.B.hasUnresolvedTies },
+  C: { name: groups.C.name, table: groups.C.table, hasUnresolvedTies: groups.C.hasUnresolvedTies },
+  D: { name: groups.D.name, table: groups.D.table, hasUnresolvedTies: groups.D.hasUnresolvedTies },
+  E: { name: groups.E.name, table: groups.E.table, hasUnresolvedTies: groups.E.hasUnresolvedTies },
+  F: { name: groups.F.name, table: groups.F.table, hasUnresolvedTies: groups.F.hasUnresolvedTies },
+  G: { name: groups.G.name, table: groups.G.table, hasUnresolvedTies: groups.G.hasUnresolvedTies },
+  H: { name: groups.H.name, table: groups.H.table, hasUnresolvedTies: groups.H.hasUnresolvedTies },
+  I: { name: groups.I.name, table: groups.I.table, hasUnresolvedTies: groups.I.hasUnresolvedTies },
+  J: { name: groups.J.name, table: groups.J.table, hasUnresolvedTies: groups.J.hasUnresolvedTies },
+  K: { name: groups.K.name, table: groups.K.table, hasUnresolvedTies: groups.K.hasUnresolvedTies },
+  L: { name: groups.L.name, table: groups.L.table, hasUnresolvedTies: groups.L.hasUnresolvedTies },
 });
 
 export const thirdPlaces: ThirdPlaces = createThirdPlaces(groupsData);
@@ -51,7 +51,7 @@ export function updateGroupScore(match: MatchItem): void {
 
   const groupItem = groups[group];
   groupItem.setScore(home.abbreviation, away.abbreviation, result);
-  groupsData[group] = { name: groupItem.name, table: groupItem.table };
+  groupsData[group] = { name: groupItem.name, table: groupItem.table, hasUnresolvedTies: groupItem.hasUnresolvedTies };
 
   updateRoundOf32();
 }

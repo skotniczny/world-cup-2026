@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { Link } from "svelte5-router"
   import { type TableRow } from "../Group"
   import { type ThirdPlacesTableRow } from "../ThirdPlacedRanking"
   import TeamName from "./TeamName.svelte"
   interface Props {
     name: string
     table: TableRow[] | ThirdPlacesTableRow[]
+    hasUnresolvedTies?: boolean
     long?: boolean
     thirdPlaces?: boolean
   }
@@ -16,6 +18,9 @@
 </script>
 
 <div class={mainClass} id={props.name.replace(" ", "")}>
+  {#if props.hasUnresolvedTies}
+    <div class="standings_alert">Ranking undecided — <Link to="rules">fair play or FIFA ranking applies</Link></div>
+  {/if}
   <table>
     <caption>{props.name}</caption>
     <thead>
@@ -76,7 +81,6 @@
   .standings {
     box-shadow: var(--wc-shadow);
     border-radius: var(--wc-radius);
-    padding-top: 0.5rem;
     scroll-margin-top: 50px;
     background: var(--wc-color-natural0);
     overflow: auto;
@@ -91,6 +95,11 @@
     border-collapse: collapse;
     width: 100%;
   }
+
+  .standings caption {
+    margin-top: 0.5rem;
+  }
+
   .standings th,
   .standings td {
     padding: 0.35rem 1rem;
@@ -173,5 +182,17 @@
     width: 1.5rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .standings_alert {
+    background-color: var(--wc-color-danger100);
+    border-radius: var(--wc-radius) var(--wc-radius) 0 0;
+    color: var(--wc-color-natural0);
+    padding: 0.25rem var(--wc-space-sm);
+  }
+
+  .standings_alert :global(a) {
+    color: inherit;
+    text-decoration: underline;
   }
 </style>

@@ -36,6 +36,7 @@ export default class Group {
   ];
 
   #table: TableRow[] = [];
+  #hasUnresolvedTies: boolean = true;
 
   constructor(
     groupName: GroupName,
@@ -48,6 +49,10 @@ export default class Group {
 
   get table(): TableRow[] {
     return this.#table;
+  }
+
+  get hasUnresolvedTies(): boolean {
+    return this.#hasUnresolvedTies && this.#allMatchesPlayed();
   }
 
   setScore(homeAbbr: string, awayAbbr: string, result: [home: Result, away: Result]): void {
@@ -69,10 +74,16 @@ export default class Group {
     return this.teams.map((team, teamIndex) => [team, ...this.#calculateRecord(teamIndex)]);
   }
 
+  #allMatchesPlayed(): boolean {
+    return this.#results.every((row, i) => row.every((result, j) => i === j || result !== null));
+  }
+
   // FIFA World Cup 26 Regulations,
   // Art. 13 — Equal points and qualification for knockout stages
   // https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf
   #sortTable(table: TableRow[]): TableRow[] {
+    let hasUnresolvedTies = false;
+
     // Step 1: apply criteria 1/2/3 using only matches played between the teams concerned.
     // If a sub-group remains tied, recurse on that sub-group (smaller set of teams concerned).
     // If this yields no resolution at all, fall through to Step 2.
@@ -112,7 +123,7 @@ export default class Group {
     // Step 2: apply criteria 4/5 using all group stage matches.
     // Does not restart after each criterion — remaining ties move directly to the next.
     const step2 = (group: number[]): number[] => {
-      return [...group].sort((teamA, teamB) => {
+      const sorted = [...group].sort((teamA, teamB) => {
         const [, , goalsForA, , goalDiffA] = table[teamA];
         const [, , goalsForB, , goalDiffB] = table[teamB];
 
@@ -123,12 +134,23 @@ export default class Group {
         if (goalsForB !== goalsForA) return goalsForB - goalsForA;
         return 0;
       });
+
+      const stillTied = chunkBy(sorted, (teamIndex) => {
+        const [, , goalsFor, , goalDiff] = table[teamIndex];
+        return `${goalsFor}_${goalDiff}`;
+      }).some((subGroup) => subGroup.length > 1);
+      if (stillTied) hasUnresolvedTies = true;
+
+      return sorted;
     };
     // 6. and beyond not implemented
 
     const sortedByPoints = [...table.keys()].sort((teamA, teamB) => table[teamB][5] - table[teamA][5]);
     const equalPointGroups = chunkBy(sortedByPoints, (teamIndex) => table[teamIndex][5]);
-    return equalPointGroups.flatMap(step1).map((teamIndex) => table[teamIndex]);
+    const sortedTable = equalPointGroups.flatMap(step1).map((teamIndex) => table[teamIndex]);
+
+    this.#hasUnresolvedTies = hasUnresolvedTies;
+    return sortedTable;
   }
 
   #calculateRecord(rowIndex: number, against = [...this.teams.keys()].filter((i) => i !== rowIndex)): TeamRecord {

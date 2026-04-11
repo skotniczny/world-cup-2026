@@ -9,7 +9,7 @@
   <Fixtures />
   <div class="grid-column">
     {#each Object.values(groupsData) as group (group.name)}
-      <Table name={group.name} table={group.table} />
+      <Table name={group.name} table={group.table} hasUnresolvedTies={group.hasUnresolvedTies} />
     {/each}
     <Table name="Third-placed Ranking" table={thirdPlaces.table} thirdPlaces />
   </div>
