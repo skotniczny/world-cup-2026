@@ -7,6 +7,7 @@
   import Knockout from "./pages/Knockout.svelte"
   import ThirdPlaceBracketResolver from "./pages/ThirdPlaceBracketResolver.svelte"
   import NotFound from "./pages/NotFound.svelte"
+  import Rules from "./pages/Rules.svelte"
 
   const basepath = import.meta.env.BASE_URL
 </script>
@@ -29,6 +30,7 @@
     <Route path="group/:groupName" component={Group} />
     <Route path="knockout" component={Knockout} />
     <Route path="resolver" component={ThirdPlaceBracketResolver} />
+    <Route path="rules" component={Rules} />
     <Route component={NotFound} />
   </main>
 </Router>

@@ -2,6 +2,7 @@
   --wc-color-primary: #207de9;
   --wc-color-secondary: #405cf9;
   --wc-color-accent: #5af5cf;
+  --wc-color-warning100: #854d0e;
   --wc-color-danger100: #e53e3e;
   --wc-color-danger200: #3b1010;
   --wc-color-natural0: #213547;
@@ -43,6 +44,7 @@
     --wc-color-natural200: #ececec;
     --wc-color-natural300: #d6d6d6;
     --wc-color-natural900: #213547;
+    --wc-color-warning100: #fef08a;
     --wc-color-danger200: #fee2e2;
   }
 }
