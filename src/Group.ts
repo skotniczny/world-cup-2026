@@ -1,6 +1,7 @@
 import type { Result } from "./data/matches";
 import type { TeamInfo } from "./data/teams";
 import type { GroupName } from "./data/groups";
+import { chunkBy } from "./utils/chunkBy";
 
 type TeamRecord = [
   matchesPlayed: number,
@@ -12,19 +13,6 @@ type TeamRecord = [
 
 export type TableRow = [team: TeamInfo, ...record: TeamRecord];
 
-// Input must be pre-sorted by key
-function chunkBy(items: number[], key: (item: number) => number | string): number[][] {
-  const groups: number[][] = [];
-  for (const item of items) {
-    const currentGroup = groups[groups.length - 1];
-    if (currentGroup && key(currentGroup[0]) === key(item)) {
-      currentGroup.push(item);
-    } else {
-      groups.push([item]);
-    }
-  }
-  return groups;
-}
 
 export default class Group {
   readonly name: string;
