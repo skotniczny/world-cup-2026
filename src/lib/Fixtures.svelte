@@ -2,9 +2,17 @@
   import Match from "./Match.svelte"
   import { stages, type MatchItem } from "../data/matches"
   import { matchesData } from "../stores/matches.svelte"
+  import { createStorage } from "../utils/storage"
 
-  let sort = $state("date")
+  type SortMode = "date" | "stage"
+  const sortMode = createStorage<SortMode>("wc26-fixtures-sort", "date")
+
+  let sort: SortMode = $state(sortMode.load())
   let filter = $state("")
+
+  $effect(() => {
+    sortMode.save(sort)
+  })
 
   function sortMatchesByDatetime(a: MatchItem, b: MatchItem): number {
     return new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
