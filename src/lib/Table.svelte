@@ -6,7 +6,7 @@
   interface Props {
     name: string
     table: TableRow[] | ThirdPlacesTableRow[]
-    hasUnresolvedTies?: boolean
+    hasUnresolvedTies: boolean
     long?: boolean
     thirdPlaces?: boolean
   }
