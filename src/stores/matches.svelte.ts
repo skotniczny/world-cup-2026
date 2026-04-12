@@ -20,7 +20,7 @@ function updateStandings(match: MatchItem): void {
   }
 }
 
-type MatchScore = Pick<MatchItem, "id" | "result" | "penalties">;
+export type MatchScore = Pick<MatchItem, "id" | "result" | "penalties">;
 function applyMatchScore({ id, result, penalties }: MatchScore): void {
   const match = findMatchById(id);
   const isDraw = result && result[0] !== null && result[1] !== null && result[0] === result[1];
