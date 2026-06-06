@@ -99,7 +99,7 @@
       "flag": "🇲🇦"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-06-14T01:00:00Z",
@@ -286,7 +286,7 @@
       "flag": "🇸🇳"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-06-16T22:00:00Z",
@@ -728,7 +728,7 @@
       "flag": "🇸🇳"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-06-23T03:00:00Z",
@@ -949,7 +949,7 @@
       "flag": "🇩🇪"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-06-25T23:00:00Z",
@@ -1136,7 +1136,7 @@
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-06-27T21:00:00Z",
@@ -1323,7 +1323,7 @@
       "flag": "🇺🇳"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-07-01T01:00:00Z",
@@ -1544,7 +1544,7 @@
       "flag": "🇺🇳"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   },
   {
     "datetime": "2026-07-06T00:00:00Z",
@@ -1765,6 +1765,6 @@
       "flag": "🇺🇳"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New York"
+    "city": "New Jersey"
   }
 ]
