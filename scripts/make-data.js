@@ -43,7 +43,7 @@ function makeItem(match) {
   console.log(match.MatchNumber)
   const homeName = match.Home?.ShortClubName || match.PlaceHolderA
   const awayName = match.Away?.ShortClubName || match.PlaceHolderB
-  return {
+  const item = {
     datetime: match.Date,
     stage: match.StageName[0].Description,
     group: match.GroupName[0]?.Description.replace("Group ", "") || "",
@@ -60,4 +60,8 @@ function makeItem(match) {
     stadium: match.Stadium.Name[0].Description,
     city: match.Stadium.CityName[0].Description,
   }
+  if (match.HomeTeamScore != null && match.AwayTeamScore != null) {
+    item.result = [match.HomeTeamScore, match.AwayTeamScore]
+  }
+  return item
 }
