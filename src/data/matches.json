@@ -56,7 +56,11 @@
       "flag": "🇧🇦"
     },
     "stadium": "Toronto Stadium",
-    "city": "Toronto"
+    "city": "Toronto",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-13T01:00:00Z",
