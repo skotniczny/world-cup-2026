@@ -35,7 +35,11 @@
       "flag": "🇨🇿"
     },
     "stadium": "Guadalajara Stadium",
-    "city": "Guadalajara"
+    "city": "Guadalajara",
+    "result": [
+      2,
+      1
+    ]
   },
   {
     "datetime": "2026-06-12T19:00:00Z",
