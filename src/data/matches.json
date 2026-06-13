@@ -98,7 +98,11 @@
       "flag": "🇨🇭"
     },
     "stadium": "San Francisco Bay Area Stadium",
-    "city": "San Francisco Bay Area"
+    "city": "San Francisco Bay Area",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-13T22:00:00Z",
