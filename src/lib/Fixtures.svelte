@@ -3,6 +3,7 @@
   import { stages, type MatchItem } from "../data/matches"
   import { matchesData } from "../stores/matches.svelte"
   import { createStorage } from "../utils/storage"
+  import { dateTimeFormatter } from "../utils/intl"
 
   type SortMode = "date" | "stage"
   const sortMode = createStorage<SortMode>("wc26-fixtures-sort", "date")
@@ -27,8 +28,12 @@
 
   const filteredMatches = $derived.by(() => {
     const list = filter === "" ? matchesData : matchesData.filter((m) => m.stage === filter)
-    if (sort === "stage") return [...list].sort(sortMatchesByStage)
-    return [...list].sort(sortMatchesByDatetime)
+    const sorted = sort === "stage" ? [...list].sort(sortMatchesByStage) : [...list].sort(sortMatchesByDatetime)
+    const groupBy = Object.groupBy(sorted, ({ datetime, group, stage }) => {
+      if (sort === "stage") return group ? `Group ${group}` : `${stage}`
+      return dateTimeFormatter(datetime).slice(0, -6)
+    })
+    return Object.entries(groupBy).map(([label, matches]) => ({ label, matches }))
   })
 </script>
 
@@ -47,9 +52,22 @@
       <option value="stage">Stage</option>
     </select>
   </div>
-  <div class="matches-list">
-    {#each filteredMatches as item (item.id)}
-      <Match match={item} />
+  <div class="matches">
+    {#each filteredMatches as group (group.label)}
+      <div class="matches-header">{group.label}</div>
+      <div class="matches-list">
+        {#each group.matches as item (item.id)}
+          <Match match={item} />
+        {/each}
+      </div>
     {/each}
   </div>
 </div>
+
+<style>
+  .matches-header {
+    text-align: left;
+    font-family: var(--wc-headings-ff);
+    margin: var(--wc-space-sm) 0;
+  }
+</style>
