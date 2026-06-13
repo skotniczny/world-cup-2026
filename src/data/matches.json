@@ -77,7 +77,11 @@
       "flag": "🇵🇾"
     },
     "stadium": "Los Angeles Stadium",
-    "city": "Los Angeles"
+    "city": "Los Angeles",
+    "result": [
+      4,
+      1
+    ]
   },
   {
     "datetime": "2026-06-13T19:00:00Z",
