@@ -13,7 +13,6 @@ type TeamRecord = [
 
 export type TableRow = [team: TeamInfo, ...record: TeamRecord];
 
-
 export default class Group {
   readonly name: string;
   #results: (Result | undefined)[][] = [

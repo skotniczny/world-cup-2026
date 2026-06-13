@@ -15,16 +15,17 @@ export interface ThirdPlaces {
 export function createThirdPlaces(data: GroupsData): ThirdPlaces {
   return {
     get table() {
-      const thirdPlacedData: ThirdPlacesTableRow[] = Object
-        .entries(data)
-        .map(([groupKey, { table }]) => [...table[2], groupKey]);
+      const thirdPlacedData: ThirdPlacesTableRow[] = Object.entries(data).map(([groupKey, { table }]) => [
+        ...table[2],
+        groupKey,
+      ]);
 
       return thirdPlacedData.sort(sortThirdPlacedRanking);
     },
     get advancingGroups() {
       return this.table
         .slice(0, ADVANCING_THIRD_PLACES)
-        .map(row => row[6])
+        .map((row) => row[6])
         .sort()
         .join("");
     },

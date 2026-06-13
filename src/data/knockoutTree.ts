@@ -70,11 +70,7 @@ const knockoutTree: Required<TreeNode> = {
 
 type KnockoutFlatMap = Record<number, { next: number; slot: Slot }>;
 
-
-function buildFlatTree(
-  node: TreeNode,
-  map: KnockoutFlatMap = {},
-): KnockoutFlatMap {
+function buildFlatTree(node: TreeNode, map: KnockoutFlatMap = {}): KnockoutFlatMap {
   for (const slot of ["home", "away"] as const) {
     const child = node[slot];
     if (child) {
