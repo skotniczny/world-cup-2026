@@ -35,10 +35,19 @@
     })
     return Object.entries(groupBy).map(([label, matches]) => ({ label, matches }))
   })
+
+  function scrollToToday() {
+    let todayAnchor = dateTimeFormatter(new Date().toISOString()).replaceAll(" ", "").slice(0, -5)
+    const groupHeader = document.getElementById(todayAnchor)
+    if (groupHeader) groupHeader.scrollIntoView({ behavior: "smooth" })
+  }
 </script>
 
 <div class="fixtures">
   <div class="text-right mb-sm">
+    {#if sort === "date"}
+      <button class="btn" onclick={scrollToToday}>↳ today</button>
+    {/if}
     <label for="filter" class="sr-only">Filter stage</label>
     <select id="filter" class="select-ctrl" bind:value={filter}>
       <option selected value="">All stages</option>
@@ -54,7 +63,7 @@
   </div>
   <div class="matches">
     {#each filteredMatches as group (group.label)}
-      <div class="matches-header">{group.label}</div>
+      <div class="matches-header" id={group.label.replaceAll(" ", "")}>{group.label}</div>
       <div class="matches-list">
         {#each group.matches as item (item.id)}
           <Match match={item} />
@@ -69,5 +78,6 @@
     text-align: left;
     font-family: var(--wc-headings-ff);
     margin: var(--wc-space-sm) 0;
+    scroll-margin-top: 3rem;
   }
 </style>
