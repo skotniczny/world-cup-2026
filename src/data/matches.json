@@ -203,7 +203,11 @@
       "flag": "🇯🇵"
     },
     "stadium": "Dallas Stadium",
-    "city": "Dallas"
+    "city": "Dallas",
+    "result": [
+      2,
+      2
+    ]
   },
   {
     "datetime": "2026-06-14T23:00:00Z",
