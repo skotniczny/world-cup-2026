@@ -108,7 +108,10 @@ a:hover {
   border-color: var(--wc-color-accent);
 }
 
-.btn:focus,
+.btn:focus {
+  outline: none;
+}
+
 .btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
@@ -180,6 +183,14 @@ a:hover {
 }
 
 /* Utils */
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
 
 .text-left {
   text-align: left;

@@ -10,6 +10,12 @@
   import Rules from "./pages/Rules.svelte"
 
   const basepath = import.meta.env.BASE_URL
+  let scrollY = $state(0)
+  let show = $derived(scrollY > 300)
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 </script>
 
 <Router {basepath}>
@@ -34,6 +40,8 @@
     <Route component={NotFound} />
   </main>
 </Router>
+<svelte:window bind:scrollY={scrollY} />
+<button class="btn nav-top {show ? 'opacity-100' : 'opacity-0'}" onclick={scrollToTop}>↥ Back to top</button>
 
 <style>
   .nav {
@@ -72,5 +80,12 @@
 
   .nav ul li :global(a[aria-current="page"]) {
     border-bottom-color: var(--wc-color-secondary);
+  }
+
+  .nav-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    transition: opacity 250ms;
   }
 </style>
