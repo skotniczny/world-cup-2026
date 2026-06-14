@@ -37,8 +37,8 @@
             <th>Group</th>
           {/if}
         {:else}
-          <th><abbr class="text-help" title="Goals For">GF</abbr></th>
-          <th><abbr class="text-help" title="Goals Against">GA</abbr></th>
+          <th><abbr class="text-help" title="Matches Played">P</abbr></th>
+          <th><abbr class="text-help" title="Goal Difference">GD</abbr></th>
           <th><abbr class="text-help" title="Points">Pts</abbr></th>
           {#if thirdPlaces}
             <th><abbr class="text-help" title="Group">GP</abbr></th>
@@ -53,14 +53,12 @@
           <td class="table_team">
             <TeamName team={row[0]} compact={!long} />
           </td>
+          <td class="table_mp">{row[1]}</td>
           {#if long}
-            <td class="table_mp">{row[1]}</td>
+            <td class="table_for">{row[2]}</td>
+            <td class="table_against">{row[3]}</td>
           {/if}
-          <td class="table_for">{row[2]}</td>
-          <td class="table_against">{row[3]}</td>
-          {#if long}
-            <td class="table_gd">{row[4]}</td>
-          {/if}
+          <td class="table_gd">{row[4]}</td>
           <td class="table_points">{row[5]}</td>
           {#if thirdPlaces}
             <td class="table_group">{row[6]}</td>
