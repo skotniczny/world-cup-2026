@@ -119,7 +119,11 @@
       "flag": "🇲🇦"
     },
     "stadium": "New York/New Jersey Stadium",
-    "city": "New Jersey"
+    "city": "New Jersey",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-14T01:00:00Z",
@@ -136,7 +140,11 @@
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "stadium": "Boston Stadium",
-    "city": "Boston"
+    "city": "Boston",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-14T04:00:00Z",
@@ -153,7 +161,11 @@
       "flag": "🇹🇷"
     },
     "stadium": "BC Place Vancouver",
-    "city": "Vancouver"
+    "city": "Vancouver",
+    "result": [
+      2,
+      0
+    ]
   },
   {
     "datetime": "2026-06-14T17:00:00Z",
