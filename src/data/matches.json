@@ -182,7 +182,11 @@
       "flag": "🇨🇼"
     },
     "stadium": "Houston Stadium",
-    "city": "Houston"
+    "city": "Houston",
+    "result": [
+      7,
+      1
+    ]
   },
   {
     "datetime": "2026-06-14T20:00:00Z",
