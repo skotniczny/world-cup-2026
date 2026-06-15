@@ -40,7 +40,7 @@
     <Route component={NotFound} />
   </main>
 </Router>
-<svelte:window bind:scrollY={scrollY} />
+<svelte:window bind:scrollY />
 <button class="btn nav-top {show ? 'opacity-100' : 'opacity-0'}" onclick={scrollToTop}>↥ Back to top</button>
 
 <style>
