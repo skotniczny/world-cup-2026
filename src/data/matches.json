@@ -224,7 +224,11 @@
       "flag": "🇪🇨"
     },
     "stadium": "Philadelphia Stadium",
-    "city": "Philadelphia"
+    "city": "Philadelphia",
+    "result": [
+      1,
+      0
+    ]
   },
   {
     "datetime": "2026-06-15T02:00:00Z",
@@ -241,7 +245,11 @@
       "flag": "🇹🇳"
     },
     "stadium": "Monterrey Stadium",
-    "city": "Monterrey"
+    "city": "Monterrey",
+    "result": [
+      5,
+      1
+    ]
   },
   {
     "datetime": "2026-06-15T16:00:00Z",
