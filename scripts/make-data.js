@@ -59,6 +59,7 @@ function makeItem(match) {
     },
     stadium: match.Stadium.Name[0].Description,
     city: match.Stadium.CityName[0].Description,
+    url: `https://www.fifa.com/en/match-centre/match/${match.IdCompetition}/${match.IdSeason}/${match.IdStage}/${match.IdMatch}`,
   }
   if (match.HomeTeamScore != null && match.AwayTeamScore != null) {
     item.result = [match.HomeTeamScore, match.AwayTeamScore]

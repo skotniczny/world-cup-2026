@@ -21,6 +21,7 @@ export type MatchItem = {
   penalties?: [Result, Result];
   stadium: string;
   city: string;
+  url: string;
   completed: boolean;
 };
 

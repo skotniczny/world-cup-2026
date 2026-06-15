@@ -5,7 +5,7 @@
   import Time from "./Time.svelte"
 
   const { match }: { match: MatchItem } = $props()
-  const { datetime, stage, group, city, stadium, completed } = match
+  const { datetime, stage, group, city, stadium, completed, url } = match
   const home = $derived(match.home)
   const away = $derived(match.away)
   const uid = $props.id()
@@ -42,6 +42,7 @@
 <div class="match">
   <div class="match-header">
     <Time {datetime} />
+    <a class="match-url" href={url}>🌐</a>
   </div>
   <div class="match-form">
     <label class="match-team text-truncate text-right" for="{uid}--home"><TeamName team={home} /></label>
@@ -105,6 +106,13 @@
   .match-header,
   .match-footer {
     font-size: var(--wc-text-sm);
+    position: relative;
+  }
+
+  .match-url {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .match-form {
