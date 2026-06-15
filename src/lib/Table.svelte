@@ -182,6 +182,10 @@
     margin-right: auto;
   }
 
+  .table_points {
+    font-weight: 600;
+  }
+
   .standings_alert {
     background-color: var(--wc-color-danger100);
     border-radius: var(--wc-radius) var(--wc-radius) 0 0;
