@@ -301,7 +301,11 @@
     },
     "stadium": "Seattle Stadium",
     "city": "Seattle",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021478"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021478",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-15T22:00:00Z",
