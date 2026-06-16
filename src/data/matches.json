@@ -323,7 +323,11 @@
     },
     "stadium": "Miami Stadium",
     "city": "Miami",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021486"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021486",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-16T01:00:00Z",
@@ -341,7 +345,11 @@
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021476"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021476",
+    "result": [
+      2,
+      2
+    ]
   },
   {
     "datetime": "2026-06-16T19:00:00Z",
