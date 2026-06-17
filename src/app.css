@@ -112,6 +112,11 @@ a:hover {
   outline: none;
 }
 
+.btn:disabled {
+  border-color: var(--wc-color-natural300);
+  cursor: default;
+}
+
 .btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
@@ -203,6 +208,10 @@ a:hover {
 
 .text-right {
   text-align: right;
+}
+
+.align-self-end {
+  align-self: flex-end;
 }
 
 .mb-sm {

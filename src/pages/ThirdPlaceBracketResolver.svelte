@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { groupNames, type GroupName } from "../data/groups"
+  import { type GroupName } from "../data/groups"
   import { getThirdPlaceMatchup } from "../data/thirdPlaceMatchups"
   import { findMatchById } from "../stores/matches.svelte"
   import { type MatchItem } from "../data/matches"
   import { roundOf32Slots } from "../RoundOf32Setup"
   import { type GroupSlot, type ThirdPlaceSlot } from "../RoundOf32Setup"
   import Time from "../lib/Time.svelte"
+  import GroupSelect from "../lib/GroupSelect.svelte"
 
   const slots = [...roundOf32Slots].filter(([, { away }]) => away.position === 3) as [
     number,
@@ -49,24 +50,9 @@
   </p>
   <p>Use the tool to select the 8 qualifying groups and instantly see the generated matchups.</p>
 
-  <ol class="groups">
-    {#each groupNames as g (g)}
-      <li class="groups_item">
-        <label class="groups_label" for={`group${g}`}>
-          <span class="sr-only">Group {g}</span>
-          <span aria-hidden="true">{g}</span>
-        </label>
-        <input
-          id={`group${g}`}
-          class="sr-only"
-          type="checkbox"
-          value={g}
-          bind:group={selected}
-          disabled={maxReached && !selected.includes(g)}
-        />
-      </li>
-    {/each}
-  </ol>
+  <div class="group-picker">
+    <GroupSelect bind:selected max={8} />
+  </div>
 </section>
 <section aria-live="polite">
   {#if matchups}
@@ -90,15 +76,7 @@
 </section>
 
 <style>
-  .groups {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: var(--wc-space-lg);
-    row-gap: var(--wc-space-sm);
-    list-style: none;
-    justify-content: center;
-    font-family: var(--wc-headings-ff);
-    padding: 0;
+  .group-picker {
     margin: 0 auto 1rem;
     max-width: 448px;
   }
@@ -107,27 +85,10 @@
     font-family: var(--wc-headings-ff);
   }
 
-  .groups_label,
   .matchup-item {
     padding: 0.5rem 1rem;
     border-radius: var(--wc-radius);
     box-shadow: var(--wc-shadow);
-  }
-
-  .groups_label {
-    border: 1px solid var(--wc-color-natural300);
-    cursor: pointer;
-    display: inline-block;
-    width: 3rem;
-    text-align: center;
-  }
-
-  .groups_label:has(+ input:checked) {
-    background: var(--wc-color-natural0);
-  }
-
-  .groups_label:has(+ input:focus-visible) {
-    outline: 1px solid var(--wc-color-accent);
   }
 
   .matchup {
