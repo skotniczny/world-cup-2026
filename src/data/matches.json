@@ -367,7 +367,11 @@
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New Jersey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021490"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021490",
+    "result": [
+      3,
+      1
+    ]
   },
   {
     "datetime": "2026-06-16T22:00:00Z",
@@ -385,7 +389,11 @@
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021488"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021488",
+    "result": [
+      1,
+      4
+    ]
   },
   {
     "datetime": "2026-06-17T01:00:00Z",
@@ -403,7 +411,11 @@
     },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021496"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021496",
+    "result": [
+      3,
+      0
+    ]
   },
   {
     "datetime": "2026-06-17T04:00:00Z",
@@ -421,7 +433,11 @@
     },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021498"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021498",
+    "result": [
+      3,
+      1
+    ]
   },
   {
     "datetime": "2026-06-17T17:00:00Z",
