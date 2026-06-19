@@ -6,7 +6,7 @@
 <h1>Standings</h1>
 <div class="standings-grid">
   {#each Object.values(groupsData) as group (group.name)}
-    <Table name={group.name} table={group.table} />
+    <Table name={group.name} table={group.table} hasUnresolvedTies={group.hasUnresolvedTies} />
   {/each}
 </div>
 
