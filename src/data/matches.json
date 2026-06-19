@@ -543,7 +543,11 @@
     },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021440"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021440",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-18T19:00:00Z",
@@ -561,7 +565,11 @@
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021446"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021446",
+    "result": [
+      4,
+      1
+    ]
   },
   {
     "datetime": "2026-06-18T22:00:00Z",
@@ -579,7 +587,11 @@
     },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021450"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021450",
+    "result": [
+      6,
+      0
+    ]
   },
   {
     "datetime": "2026-06-19T01:00:00Z",
@@ -597,7 +609,11 @@
     },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021442"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021442",
+    "result": [
+      1,
+      0
+    ]
   },
   {
     "datetime": "2026-06-19T19:00:00Z",
@@ -1504,9 +1520,9 @@
     "stage": "Round of 32",
     "group": "",
     "home": {
-      "name": "1A",
-      "abbreviation": "1A",
-      "flag": "🇺🇳"
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
     },
     "away": {
       "name": "3CEFHI",
