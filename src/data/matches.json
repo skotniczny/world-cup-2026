@@ -719,7 +719,11 @@
     },
     "stadium": "Houston Stadium",
     "city": "Houston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021472"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021472",
+    "result": [
+      5,
+      1
+    ]
   },
   {
     "datetime": "2026-06-20T20:00:00Z",
