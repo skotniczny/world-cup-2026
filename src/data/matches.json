@@ -653,7 +653,11 @@
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021454"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021454",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-20T00:30:00Z",
@@ -671,7 +675,11 @@
     },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021457"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021457",
+    "result": [
+      3,
+      0
+    ]
   },
   {
     "datetime": "2026-06-20T03:00:00Z",
@@ -689,7 +697,11 @@
     },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021460"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021460",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-20T17:00:00Z",
@@ -1578,9 +1590,9 @@
     "stage": "Round of 32",
     "group": "",
     "home": {
-      "name": "1D",
-      "abbreviation": "1D",
-      "flag": "🇺🇳"
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
     },
     "away": {
       "name": "3BEFIJ",
