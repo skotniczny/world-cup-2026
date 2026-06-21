@@ -741,7 +741,11 @@
     },
     "stadium": "Toronto Stadium",
     "city": "Toronto",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021469"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021469",
+    "result": [
+      2,
+      1
+    ]
   },
   {
     "datetime": "2026-06-21T00:00:00Z",
@@ -759,7 +763,11 @@
     },
     "stadium": "Kansas City Stadium",
     "city": "Kansas City",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021465"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021465",
+    "result": [
+      0,
+      0
+    ]
   },
   {
     "datetime": "2026-06-21T04:00:00Z",
@@ -777,7 +785,11 @@
     },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021475"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021475",
+    "result": [
+      0,
+      4
+    ]
   },
   {
     "datetime": "2026-06-21T16:00:00Z",
@@ -1468,9 +1480,9 @@
     "stage": "Round of 32",
     "group": "",
     "home": {
-      "name": "1E",
-      "abbreviation": "1E",
-      "flag": "🇺🇳"
+      "name": "Germany",
+      "abbreviation": "GER",
+      "flag": "🇩🇪"
     },
     "away": {
       "name": "3ABCDF",
