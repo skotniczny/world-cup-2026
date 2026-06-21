@@ -6,7 +6,7 @@
 
   const { match }: { match: MatchItem } = $props()
 
-  const { datetime, city, completed } = match
+  const { datetime, number, city, completed } = match
   const home = $derived(match.home)
   const away = $derived(match.away)
   const uid = $props.id()
@@ -91,7 +91,7 @@
       />
     </div>
   </div>
-  <div class="matchko-footer text-truncate">M{match.id} • {city}</div>
+  <div class="matchko-footer text-truncate">M{number} • {city}</div>
 </div>
 
 <style>

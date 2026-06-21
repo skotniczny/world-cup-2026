@@ -14,6 +14,7 @@ export type MatchItem = {
   id: number;
   datetime: string;
   group?: GroupName;
+  number: number;
   stage: string;
   home: TeamInfo;
   away: TeamInfo;

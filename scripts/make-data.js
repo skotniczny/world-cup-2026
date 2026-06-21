@@ -47,6 +47,7 @@ function makeItem(match) {
     datetime: match.Date,
     stage: match.StageName[0].Description,
     group: match.GroupName[0]?.Description.replace("Group ", "") || "",
+    number: match.MatchNumber,
     home: {
       name: homeName,
       abbreviation: match.Home?.Abbreviation || match.PlaceHolderA,
