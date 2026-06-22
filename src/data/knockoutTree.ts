@@ -13,27 +13,27 @@ const knockoutTree: Required<TreeNode> = {
     home: {
       matchId: 97,
       home: {
-        matchId: 89,
-        home: { matchId: 73 },
-        away: { matchId: 75 },
+        matchId: 90,
+        home: { matchId: 75 },
+        away: { matchId: 78 },
       },
       away: {
-        matchId: 90,
-        home: { matchId: 74 },
-        away: { matchId: 77 },
+        matchId: 89,
+        home: { matchId: 73 },
+        away: { matchId: 76 },
       },
     },
     away: {
       matchId: 98,
       home: {
         matchId: 93,
-        home: { matchId: 83 },
-        away: { matchId: 84 },
+        home: { matchId: 84 },
+        away: { matchId: 83 },
       },
       away: {
         matchId: 94,
-        home: { matchId: 81 },
-        away: { matchId: 82 },
+        home: { matchId: 82 },
+        away: { matchId: 81 },
       },
     },
   },
@@ -43,8 +43,8 @@ const knockoutTree: Required<TreeNode> = {
       matchId: 99,
       home: {
         matchId: 91,
-        home: { matchId: 76 },
-        away: { matchId: 78 },
+        home: { matchId: 74 },
+        away: { matchId: 77 },
       },
       away: {
         matchId: 92,
@@ -56,13 +56,13 @@ const knockoutTree: Required<TreeNode> = {
       matchId: 100,
       home: {
         matchId: 95,
-        home: { matchId: 86 },
-        away: { matchId: 88 },
+        home: { matchId: 87 },
+        away: { matchId: 86 },
       },
       away: {
         matchId: 96,
         home: { matchId: 85 },
-        away: { matchId: 87 },
+        away: { matchId: 88 },
       },
     },
   },
