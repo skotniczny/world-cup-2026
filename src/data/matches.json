@@ -844,7 +844,11 @@
     },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483",
+    "result": [
+      4,
+      0
+    ]
   },
   {
     "datetime": "2026-06-21T19:00:00Z",
@@ -863,7 +867,11 @@
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477",
+    "result": [
+      0,
+      0
+    ]
   },
   {
     "datetime": "2026-06-21T22:00:00Z",
@@ -882,7 +890,11 @@
     },
     "stadium": "Miami Stadium",
     "city": "Miami",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021487"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021487",
+    "result": [
+      2,
+      2
+    ]
   },
   {
     "datetime": "2026-06-22T01:00:00Z",
@@ -901,7 +913,11 @@
     },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021480"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021480",
+    "result": [
+      1,
+      3
+    ]
   },
   {
     "datetime": "2026-06-22T17:00:00Z",
