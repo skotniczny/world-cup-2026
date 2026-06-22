@@ -936,7 +936,11 @@
     },
     "stadium": "Dallas Stadium",
     "city": "Dallas",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021494"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021494",
+    "result": [
+      2,
+      0
+    ]
   },
   {
     "datetime": "2026-06-22T21:00:00Z",
