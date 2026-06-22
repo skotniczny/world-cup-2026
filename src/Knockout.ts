@@ -13,7 +13,7 @@ function rankTeams(match: MatchItem, [home, away]: [number, number]): [winner: T
 }
 
 function getTeamOrPlaceholder(match: MatchItem, type: "winner" | "runner"): TeamInfo {
-  const placeholder = type === "winner" ? `W${match.id}` : `RU${match.id}`;
+  const placeholder = type === "winner" ? `W${match.number}` : `RU${match.number}`;
 
   if (!isFilled(match.result)) return getTeam(placeholder);
   const [scoreHome, scoreAway] = match.result;
