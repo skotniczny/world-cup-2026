@@ -6,7 +6,7 @@
 
   const { match }: { match: MatchItem } = $props()
 
-  const { datetime, number, city, completed } = match
+  const { datetime, number, city, completed, url } = match
   const home = $derived(match.home)
   const away = $derived(match.away)
   const uid = $props.id()
@@ -91,7 +91,7 @@
       />
     </div>
   </div>
-  <div class="matchko-footer text-truncate">M{number} • {city}</div>
+  <div class="matchko-footer text-truncate"><a href={url} class="matchko-url">M{number}</a> • {city}</div>
 </div>
 
 <style>
@@ -191,5 +191,10 @@
   .matchko-team {
     display: block;
     flex-grow: 1;
+  }
+
+  .matchko-url {
+    text-decoration: underline;
+    color: inherit;
   }
 </style>
