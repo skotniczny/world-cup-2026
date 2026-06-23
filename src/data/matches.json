@@ -1028,7 +1028,11 @@
     },
     "stadium": "Houston Stadium",
     "city": "Houston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021503"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021503",
+    "result": [
+      5,
+      0
+    ]
   },
   {
     "datetime": "2026-06-23T20:00:00Z",
@@ -1047,7 +1051,11 @@
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021506"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021506",
+    "result": [
+      0,
+      0
+    ]
   },
   {
     "datetime": "2026-06-23T23:00:00Z",
