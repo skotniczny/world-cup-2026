@@ -38,6 +38,10 @@ export default class Group {
     return this.#table;
   }
 
+  get isComplete() {
+    return this.#allMatchesPlayed();
+  }
+
   get hasUnresolvedTies(): boolean {
     return this.#hasUnresolvedTies && this.#allMatchesPlayed();
   }

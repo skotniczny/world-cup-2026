@@ -9,6 +9,7 @@ export type ThirdPlacesTableRow = [...TableRow, group: string];
 export interface ThirdPlaces {
   readonly table: ThirdPlacesTableRow[];
   readonly advancingGroups: string;
+  readonly isComplete: boolean;
   readonly hasUnresolvedTies: boolean;
 }
 
@@ -29,10 +30,12 @@ export function createThirdPlaces(data: GroupsData): ThirdPlaces {
         .sort()
         .join("");
     },
+    get isComplete() {
+      return this.table.every(([, matchesPlayed]) => matchesPlayed === 3);
+    },
     get hasUnresolvedTies() {
       const sorted = this.table;
-      const allMatchesPlayed = sorted.every(([, matchesPlayed]) => matchesPlayed === 3);
-      if (!allMatchesPlayed) return false;
+      if (!this.isComplete) return false;
       return chunkBy([...sorted.keys()], (i) => {
         const [, , goalsFor, , goalDiff, points] = sorted[i];
         return `${points}_${goalDiff}_${goalsFor}`;
