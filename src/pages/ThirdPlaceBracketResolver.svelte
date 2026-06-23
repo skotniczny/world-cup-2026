@@ -42,7 +42,7 @@
 </script>
 
 <section>
-  <h1>Round of 32 combinations for eight best third‑placed teams</h1>
+  <h1>Round of 32 combinations for the top eight third‑placed teams</h1>
   <p>
     FIFA has pre-defined all 495 possible combinations in the official tournament regulations (<a
       href="https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf">Annex C</a
