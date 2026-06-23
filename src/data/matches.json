@@ -959,7 +959,11 @@
     },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021492"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021492",
+    "result": [
+      3,
+      0
+    ]
   },
   {
     "datetime": "2026-06-23T00:00:00Z",
@@ -978,7 +982,11 @@
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New Jersey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021491"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021491",
+    "result": [
+      3,
+      2
+    ]
   },
   {
     "datetime": "2026-06-23T03:00:00Z",
@@ -997,7 +1005,11 @@
     },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021499"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021499",
+    "result": [
+      1,
+      2
+    ]
   },
   {
     "datetime": "2026-06-23T17:00:00Z",
@@ -1803,9 +1815,9 @@
     "group": "",
     "number": 86,
     "home": {
-      "name": "1J",
-      "abbreviation": "1J",
-      "flag": "🇺🇳"
+      "name": "Argentina",
+      "abbreviation": "ARG",
+      "flag": "🇦🇷"
     },
     "away": {
       "name": "2H",
