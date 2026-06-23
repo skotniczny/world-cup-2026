@@ -197,6 +197,10 @@ a:hover {
   opacity: 1;
 }
 
+.pe-none {
+  pointer-events: none;
+}
+
 .text-left {
   text-align: left;
 }
