@@ -1074,7 +1074,11 @@
     },
     "stadium": "Toronto Stadium",
     "city": "Toronto",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021511"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021511",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-24T02:00:00Z",
@@ -1093,7 +1097,11 @@
     },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021501"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021501",
+    "result": [
+      1,
+      0
+    ]
   },
   {
     "datetime": "2026-06-24T19:00:00Z",
