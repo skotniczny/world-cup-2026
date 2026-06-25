@@ -1120,7 +1120,11 @@
     },
     "stadium": "Seattle Stadium",
     "city": "Seattle",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021448"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021448",
+    "result": [
+      3,
+      1
+    ]
   },
   {
     "datetime": "2026-06-24T19:00:00Z",
@@ -1139,7 +1143,11 @@
     },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021451"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021451",
+    "result": [
+      2,
+      1
+    ]
   },
   {
     "datetime": "2026-06-24T22:00:00Z",
@@ -1158,7 +1166,11 @@
     },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021452"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021452",
+    "result": [
+      4,
+      2
+    ]
   },
   {
     "datetime": "2026-06-24T22:00:00Z",
@@ -1177,7 +1189,11 @@
     },
     "stadium": "Miami Stadium",
     "city": "Miami",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021455"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021455",
+    "result": [
+      0,
+      3
+    ]
   },
   {
     "datetime": "2026-06-25T01:00:00Z",
@@ -1196,7 +1212,11 @@
     },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021445"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021445",
+    "result": [
+      1,
+      0
+    ]
   },
   {
     "datetime": "2026-06-25T01:00:00Z",
@@ -1215,7 +1235,11 @@
     },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021444"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021444",
+    "result": [
+      0,
+      3
+    ]
   },
   {
     "datetime": "2026-06-25T20:00:00Z",
@@ -1565,14 +1589,14 @@
     "group": "",
     "number": 73,
     "home": {
-      "name": "2A",
-      "abbreviation": "2A",
-      "flag": "🇺🇳"
+      "name": "South Africa",
+      "abbreviation": "RSA",
+      "flag": "🇿🇦"
     },
     "away": {
-      "name": "2B",
-      "abbreviation": "2B",
-      "flag": "🇺🇳"
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles",
@@ -1584,9 +1608,9 @@
     "group": "",
     "number": 76,
     "home": {
-      "name": "1C",
-      "abbreviation": "1C",
-      "flag": "🇺🇳"
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
     },
     "away": {
       "name": "2F",
@@ -1627,9 +1651,9 @@
       "flag": "🇺🇳"
     },
     "away": {
-      "name": "2C",
-      "abbreviation": "2C",
-      "flag": "🇺🇳"
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
     },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
@@ -1793,9 +1817,9 @@
     "group": "",
     "number": 85,
     "home": {
-      "name": "1B",
-      "abbreviation": "1B",
-      "flag": "🇺🇳"
+      "name": "Switzerland",
+      "abbreviation": "SUI",
+      "flag": "🇨🇭"
     },
     "away": {
       "name": "3EFGIJ",
