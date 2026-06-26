@@ -1396,7 +1396,11 @@
     },
     "stadium": "Toronto Stadium",
     "city": "Toronto",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021493"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021493",
+    "result": [
+      5,
+      0
+    ]
   },
   {
     "datetime": "2026-06-26T19:00:00Z",
@@ -1415,7 +1419,11 @@
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021489"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021489",
+    "result": [
+      1,
+      4
+    ]
   },
   {
     "datetime": "2026-06-27T00:00:00Z",
@@ -1694,9 +1702,9 @@
       "flag": "🇨🇮"
     },
     "away": {
-      "name": "2I",
-      "abbreviation": "2I",
-      "flag": "🇺🇳"
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
     },
     "stadium": "Dallas Stadium",
     "city": "Dallas",
@@ -1708,9 +1716,9 @@
     "group": "",
     "number": 77,
     "home": {
-      "name": "1I",
-      "abbreviation": "1I",
-      "flag": "🇺🇳"
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
     },
     "away": {
       "name": "3CDFGH",
