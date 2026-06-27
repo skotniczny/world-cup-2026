@@ -1442,7 +1442,11 @@
     },
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021484"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021484",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-27T00:00:00Z",
@@ -1461,7 +1465,11 @@
     },
     "stadium": "Houston Stadium",
     "city": "Houston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021485"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021485",
+    "result": [
+      0,
+      0
+    ]
   },
   {
     "datetime": "2026-06-27T03:00:00Z",
@@ -1480,7 +1488,11 @@
     },
     "stadium": "BC Place Vancouver",
     "city": "Vancouver",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021481"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021481",
+    "result": [
+      1,
+      5
+    ]
   },
   {
     "datetime": "2026-06-27T03:00:00Z",
@@ -1499,7 +1511,11 @@
     },
     "stadium": "Seattle Stadium",
     "city": "Seattle",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021479"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021479",
+    "result": [
+      1,
+      1
+    ]
   },
   {
     "datetime": "2026-06-27T21:00:00Z",
@@ -1664,9 +1680,9 @@
       "flag": "🇩🇪"
     },
     "away": {
-      "name": "3ABCDF",
-      "abbreviation": "3ABCDF",
-      "flag": "🇺🇳"
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
@@ -1721,9 +1737,9 @@
       "flag": "🇫🇷"
     },
     "away": {
-      "name": "3CDFGH",
-      "abbreviation": "3CDFGH",
-      "flag": "🇺🇳"
+      "name": "Sweden",
+      "abbreviation": "SWE",
+      "flag": "🇸🇪"
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New Jersey",
@@ -1773,9 +1789,9 @@
     "group": "",
     "number": 82,
     "home": {
-      "name": "1G",
-      "abbreviation": "1G",
-      "flag": "🇺🇳"
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
     },
     "away": {
       "name": "3AEHIJ",
@@ -1811,9 +1827,9 @@
     "group": "",
     "number": 84,
     "home": {
-      "name": "1H",
-      "abbreviation": "1H",
-      "flag": "🇺🇳"
+      "name": "Spain",
+      "abbreviation": "ESP",
+      "flag": "🇪🇸"
     },
     "away": {
       "name": "2J",
@@ -1873,9 +1889,9 @@
       "flag": "🇦🇺"
     },
     "away": {
-      "name": "2G",
-      "abbreviation": "2G",
-      "flag": "🇺🇳"
+      "name": "Egypt",
+      "abbreviation": "EGY",
+      "flag": "🇪🇬"
     },
     "stadium": "Dallas Stadium",
     "city": "Dallas",
@@ -1892,9 +1908,9 @@
       "flag": "🇦🇷"
     },
     "away": {
-      "name": "2H",
-      "abbreviation": "2H",
-      "flag": "🇺🇳"
+      "name": "Cabo Verde",
+      "abbreviation": "CPV",
+      "flag": "🇨🇻"
     },
     "stadium": "Miami Stadium",
     "city": "Miami",
