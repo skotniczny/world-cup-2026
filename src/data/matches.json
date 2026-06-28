@@ -1672,7 +1672,11 @@
     },
     "stadium": "Los Angeles Stadium",
     "city": "Los Angeles",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021518"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021518",
+    "result": [
+      0,
+      1
+    ]
   },
   {
     "datetime": "2026-06-29T17:00:00Z",
@@ -1965,9 +1969,9 @@
     "group": "",
     "number": 90,
     "home": {
-      "name": "W73",
-      "abbreviation": "W73",
-      "flag": "🇺🇳"
+      "name": "Canada",
+      "abbreviation": "CAN",
+      "flag": "🇨🇦"
     },
     "away": {
       "name": "W75",
