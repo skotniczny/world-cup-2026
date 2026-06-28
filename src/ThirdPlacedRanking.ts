@@ -1,6 +1,5 @@
 import type { TableRow } from "./Group";
 import type { GroupsData } from "./stores/groups.svelte";
-import { chunkBy } from "./utils/chunkBy";
 
 const ADVANCING_THIRD_PLACES = 8;
 
@@ -36,10 +35,9 @@ export function createThirdPlaces(data: GroupsData): ThirdPlaces {
     get hasUnresolvedTies() {
       const sorted = this.table;
       if (!this.isComplete) return false;
-      return chunkBy([...sorted.keys()], (i) => {
-        const [, , goalsFor, , goalDiff, points] = sorted[i];
-        return `${points}_${goalDiff}_${goalsFor}`;
-      }).some((subGroup) => subGroup.length > 1 && subGroup[0] < ADVANCING_THIRD_PLACES);
+      const [, , goalsForA, , goalDiffA, pointsA ] = sorted[ADVANCING_THIRD_PLACES - 1];
+      const [, , goalsForB, , goalDiffB, pointsB ] = sorted[ADVANCING_THIRD_PLACES];
+      return goalsForA === goalsForB && goalDiffA === goalDiffB && pointsA === pointsB;
     },
   };
 }
