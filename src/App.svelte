@@ -22,11 +22,11 @@
   <nav class="nav">
     <ul>
       <li><Link to="">Home</Link></li>
+      <li><Link to="knockout">Knockout</Link></li>
       {#each groupNames as g (g)}
         <li><Link to="group/{g}">Group {g}</Link></li>
       {/each}
       <li><Link to="standings">Standings</Link></li>
-      <li><Link to="knockout">Knockout</Link></li>
       <li><Link to="resolver">Resolver</Link></li>
     </ul>
   </nav>
