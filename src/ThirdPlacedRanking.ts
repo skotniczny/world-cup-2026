@@ -35,8 +35,8 @@ export function createThirdPlaces(data: GroupsData): ThirdPlaces {
     get hasUnresolvedTies() {
       const sorted = this.table;
       if (!this.isComplete) return false;
-      const [, , goalsForA, , goalDiffA, pointsA ] = sorted[ADVANCING_THIRD_PLACES - 1];
-      const [, , goalsForB, , goalDiffB, pointsB ] = sorted[ADVANCING_THIRD_PLACES];
+      const [, , goalsForA, , goalDiffA, pointsA] = sorted[ADVANCING_THIRD_PLACES - 1];
+      const [, , goalsForB, , goalDiffB, pointsB] = sorted[ADVANCING_THIRD_PLACES];
       return goalsForA === goalsForB && goalDiffA === goalDiffB && pointsA === pointsB;
     },
   };
