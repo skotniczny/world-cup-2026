@@ -1695,7 +1695,11 @@
     },
     "stadium": "Houston Stadium",
     "city": "Houston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021516"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021516",
+    "result": [
+      2,
+      1
+    ]
   },
   {
     "datetime": "2026-06-29T20:30:00Z",
@@ -2007,9 +2011,9 @@
     "group": "",
     "number": 91,
     "home": {
-      "name": "W76",
-      "abbreviation": "W76",
-      "flag": "🇺🇳"
+      "name": "Brazil",
+      "abbreviation": "BRA",
+      "flag": "🇧🇷"
     },
     "away": {
       "name": "W78",
