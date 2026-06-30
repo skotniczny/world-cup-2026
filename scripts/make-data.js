@@ -65,5 +65,8 @@ function makeItem(match) {
   if (match.HomeTeamScore != null && match.AwayTeamScore != null) {
     item.result = [match.HomeTeamScore, match.AwayTeamScore]
   }
+  if (match.HomeTeamPenaltyScore !== null && match.AwayTeamPenaltyScore !== null) {
+    item.penalties = [match.HomeTeamPenaltyScore, match.AwayTeamPenaltyScore]
+  }
   return item
 }
