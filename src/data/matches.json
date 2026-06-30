@@ -1718,7 +1718,15 @@
     },
     "stadium": "Boston Stadium",
     "city": "Boston",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021513"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021513",
+    "result": [
+      1,
+      1
+    ],
+    "penalties": [
+      3,
+      4
+    ]
   },
   {
     "datetime": "2026-06-30T01:00:00Z",
@@ -1737,7 +1745,15 @@
     },
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021522"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021522",
+    "result": [
+      1,
+      1
+    ],
+    "penalties": [
+      2,
+      3
+    ]
   },
   {
     "datetime": "2026-06-30T17:00:00Z",
@@ -1978,9 +1994,9 @@
       "flag": "🇨🇦"
     },
     "away": {
-      "name": "W75",
-      "abbreviation": "W75",
-      "flag": "🇺🇳"
+      "name": "Morocco",
+      "abbreviation": "MAR",
+      "flag": "🇲🇦"
     },
     "stadium": "Houston Stadium",
     "city": "Houston",
@@ -1992,9 +2008,9 @@
     "group": "",
     "number": 89,
     "home": {
-      "name": "W74",
-      "abbreviation": "W74",
-      "flag": "🇺🇳"
+      "name": "Paraguay",
+      "abbreviation": "PAR",
+      "flag": "🇵🇾"
     },
     "away": {
       "name": "W77",
