@@ -1772,7 +1772,11 @@
     },
     "stadium": "Dallas Stadium",
     "city": "Dallas",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021514"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021514",
+    "result": [
+      1,
+      2
+    ]
   },
   {
     "datetime": "2026-06-30T21:00:00Z",
@@ -1791,10 +1795,14 @@
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New Jersey",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021523"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021523",
+    "result": [
+      3,
+      0
+    ]
   },
   {
-    "datetime": "2026-07-01T01:00:00Z",
+    "datetime": "2026-07-01T02:00:00Z",
     "stage": "Round of 32",
     "group": "",
     "number": 79,
@@ -1810,7 +1818,11 @@
     },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021520"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021520",
+    "result": [
+      2,
+      0
+    ]
   },
   {
     "datetime": "2026-07-01T16:00:00Z",
@@ -2013,9 +2025,9 @@
       "flag": "🇵🇾"
     },
     "away": {
-      "name": "W77",
-      "abbreviation": "W77",
-      "flag": "🇺🇳"
+      "name": "France",
+      "abbreviation": "FRA",
+      "flag": "🇫🇷"
     },
     "stadium": "Philadelphia Stadium",
     "city": "Philadelphia",
@@ -2032,9 +2044,9 @@
       "flag": "🇧🇷"
     },
     "away": {
-      "name": "W78",
-      "abbreviation": "W78",
-      "flag": "🇺🇳"
+      "name": "Norway",
+      "abbreviation": "NOR",
+      "flag": "🇳🇴"
     },
     "stadium": "New York/New Jersey Stadium",
     "city": "New Jersey",
@@ -2046,9 +2058,9 @@
     "group": "",
     "number": 92,
     "home": {
-      "name": "W79",
-      "abbreviation": "W79",
-      "flag": "🇺🇳"
+      "name": "Mexico",
+      "abbreviation": "MEX",
+      "flag": "🇲🇽"
     },
     "away": {
       "name": "W80",
