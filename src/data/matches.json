@@ -1841,7 +1841,11 @@
     },
     "stadium": "Atlanta Stadium",
     "city": "Atlanta",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021512"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021512",
+    "result": [
+      2,
+      1
+    ]
   },
   {
     "datetime": "2026-07-01T20:00:00Z",
@@ -1860,7 +1864,11 @@
     },
     "stadium": "Seattle Stadium",
     "city": "Seattle",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021525"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021525",
+    "result": [
+      3,
+      2
+    ]
   },
   {
     "datetime": "2026-07-02T00:00:00Z",
@@ -1879,7 +1887,11 @@
     },
     "stadium": "San Francisco Bay Area Stadium",
     "city": "San Francisco Bay Area",
-    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021524"
+    "url": "https://www.fifa.com/en/match-centre/match/17/285023/289287/400021524",
+    "result": [
+      2,
+      0
+    ]
   },
   {
     "datetime": "2026-07-02T19:00:00Z",
@@ -2063,9 +2075,9 @@
       "flag": "🇲🇽"
     },
     "away": {
-      "name": "W80",
-      "abbreviation": "W80",
-      "flag": "🇺🇳"
+      "name": "England",
+      "abbreviation": "ENG",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "stadium": "Mexico City Stadium",
     "city": "Mexico City",
@@ -2096,14 +2108,14 @@
     "group": "",
     "number": 94,
     "home": {
-      "name": "W81",
-      "abbreviation": "W81",
-      "flag": "🇺🇳"
+      "name": "USA",
+      "abbreviation": "USA",
+      "flag": "🇺🇸"
     },
     "away": {
-      "name": "W82",
-      "abbreviation": "W82",
-      "flag": "🇺🇳"
+      "name": "Belgium",
+      "abbreviation": "BEL",
+      "flag": "🇧🇪"
     },
     "stadium": "Seattle Stadium",
     "city": "Seattle",
